@@ -9,7 +9,7 @@
   <meta name="description" content="1. 模块概述管理中心是AI NAS的系统管理模块，提供用户管理、权限管理、系统设置、系统监控等功能。 1.1 功能定位 用户管理：用户创建、编辑、删除、审核 权限管理：权限分配和管理 系统设置：系统配置管理 系统监控：系统健康检查和监控 数据仓库：数据统计和分析  1.2 访问路径 用户管理：&#x2F;static&#x2F;user_management.html 系统设置：&#x2F;static&#x2F;settings.h">
 <meta property="og:type" content="article">
 <meta property="og:title" content="管理中心模块架构说明">
-<meta property="og:url" content="https://1660479817.github.io/AIDF.github.io/management-architecture.html">
+<meta property="og:url" content="https://1660479817.github.io/AIDF.github.io/management-architecture.md">
 <meta property="og:site_name" content="AI NAS 技术博客">
 <meta property="og:description" content="1. 模块概述管理中心是AI NAS的系统管理模块，提供用户管理、权限管理、系统设置、系统监控等功能。 1.1 功能定位 用户管理：用户创建、编辑、删除、审核 权限管理：权限分配和管理 系统设置：系统配置管理 系统监控：系统健康检查和监控 数据仓库：数据统计和分析  1.2 访问路径 用户管理：&#x2F;static&#x2F;user_management.html 系统设置：&#x2F;static&#x2F;settings.h">
 <meta property="og:locale" content="zh_CN">
@@ -82,7 +82,7 @@
       <div class="outer">
         <section id="main"><article id="post-management-architecture" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/AIDF.github.io/management-architecture.html" class="article-date">
+    <a href="/AIDF.github.io/management-architecture.md" class="article-date">
   <time class="dt-published" datetime="2025-12-30T07:50:06.000Z" itemprop="datePublished">2025-12-30</time>
 </a>
     
@@ -166,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/management-architecture.html" data-id="cmjsemxz9000h8a1wfiuw5enl" data-title="管理中心模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/management-architecture.md" data-id="cmjsez65l000hy71w4uvlgxyu" data-title="管理中心模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -178,7 +178,7 @@
     
 <nav id="article-nav">
   
-    <a href="/AIDF.github.io/management-api.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/AIDF.github.io/management-api.md" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">前一篇</strong>
       <div class="article-nav-title">
         
@@ -188,7 +188,7 @@
     </a>
   
   
-    <a href="/AIDF.github.io/project_center-api.html" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/AIDF.github.io/project_center-api.md" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
       <div class="article-nav-title">项目中心模块API接口文档</div>
     </a>
@@ -249,23 +249,23 @@
       <ul>
         
           <li>
-            <a href="/AIDF.github.io/README.html">AI NAS - 企业级智能文档管理系统</a>
+            <a href="/AIDF.github.io/README.md">AI NAS - 企业级智能文档管理系统</a>
           </li>
         
           <li>
-            <a href="/AIDF.github.io/api.html">API接口说明文档</a>
+            <a href="/AIDF.github.io/api.md">API接口说明文档</a>
           </li>
         
           <li>
-            <a href="/AIDF.github.io/architecture.html">AI NAS 系统架构说明</a>
+            <a href="/AIDF.github.io/architecture.md">AI NAS 系统架构说明</a>
           </li>
         
           <li>
-            <a href="/AIDF.github.io/data_factory-api.html">数据工场模块API接口文档</a>
+            <a href="/AIDF.github.io/data_factory-api.md">数据工场模块API接口文档</a>
           </li>
         
           <li>
-            <a href="/AIDF.github.io/data_factory-architecture.html">数据工场模块架构说明</a>
+            <a href="/AIDF.github.io/data_factory-architecture.md">数据工场模块架构说明</a>
           </li>
         
       </ul>

@@ -9,7 +9,7 @@
   <meta name="description" content="1. 概述Smart Chat模块使用的API接口，提供智能对话、执行器管理、会话管理等功能。 1.1 基础信息 Base URL：http:&#x2F;&#x2F;localhost:8000 API前缀：&#x2F;api&#x2F;v1&#x2F;smart-chat Content-Type：application&#x2F;json  2. 对话API2.1 发送消息接口：POST &#x2F;api&#x2F;v1&#x2F;smart-chat&#x2F;chat 说明：发送消息并">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Smart Chat 模块API接口文档">
-<meta property="og:url" content="https://1660479817.github.io/AIDF.github.io/smart_chat-api.html">
+<meta property="og:url" content="https://1660479817.github.io/AIDF.github.io/smart_chat-api.md">
 <meta property="og:site_name" content="AI NAS 技术博客">
 <meta property="og:description" content="1. 概述Smart Chat模块使用的API接口，提供智能对话、执行器管理、会话管理等功能。 1.1 基础信息 Base URL：http:&#x2F;&#x2F;localhost:8000 API前缀：&#x2F;api&#x2F;v1&#x2F;smart-chat Content-Type：application&#x2F;json  2. 对话API2.1 发送消息接口：POST &#x2F;api&#x2F;v1&#x2F;smart-chat&#x2F;chat 说明：发送消息并">
 <meta property="og:locale" content="zh_CN">
@@ -82,7 +82,7 @@
       <div class="outer">
         <section id="main"><article id="post-smart_chat-api" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/AIDF.github.io/smart_chat-api.html" class="article-date">
+    <a href="/AIDF.github.io/smart_chat-api.md" class="article-date">
   <time class="dt-published" datetime="2025-12-30T07:50:06.000Z" itemprop="datePublished">2025-12-30</time>
 </a>
     
@@ -197,7 +197,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/smart_chat-api.html" data-id="cmjsemxzb000r8a1wafpo0nkc" data-title="Smart Chat 模块API接口文档" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/smart_chat-api.md" data-id="cmjsez65n000ry71w4kcrgwj1" data-title="Smart Chat 模块API接口文档" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -209,7 +209,7 @@
     
 <nav id="article-nav">
   
-    <a href="/AIDF.github.io/project_center-architecture.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/AIDF.github.io/project_center-architecture.md" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">前一篇</strong>
       <div class="article-nav-title">
         
@@ -219,7 +219,7 @@
     </a>
   
   
-    <a href="/AIDF.github.io/smart_chat-architecture.html" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/AIDF.github.io/smart_chat-architecture.md" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
       <div class="article-nav-title">Smart Chat 模块架构说明</div>
     </a>
@@ -280,23 +280,23 @@
       <ul>
         
           <li>
-            <a href="/AIDF.github.io/README.html">AI NAS - 企业级智能文档管理系统</a>
+            <a href="/AIDF.github.io/README.md">AI NAS - 企业级智能文档管理系统</a>
           </li>
         
           <li>
-            <a href="/AIDF.github.io/api.html">API接口说明文档</a>
+            <a href="/AIDF.github.io/api.md">API接口说明文档</a>
           </li>
         
           <li>
-            <a href="/AIDF.github.io/architecture.html">AI NAS 系统架构说明</a>
+            <a href="/AIDF.github.io/architecture.md">AI NAS 系统架构说明</a>
           </li>
         
           <li>
-            <a href="/AIDF.github.io/data_factory-api.html">数据工场模块API接口文档</a>
+            <a href="/AIDF.github.io/data_factory-api.md">数据工场模块API接口文档</a>
           </li>
         
           <li>
-            <a href="/AIDF.github.io/data_factory-architecture.html">数据工场模块架构说明</a>
+            <a href="/AIDF.github.io/data_factory-architecture.md">数据工场模块架构说明</a>
           </li>
         
       </ul>

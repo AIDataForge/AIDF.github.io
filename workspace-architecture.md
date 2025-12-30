@@ -9,7 +9,7 @@
   <meta name="description" content="1. 模块概述文档中心是AI NAS的核心功能模块，提供文档搜索、浏览、管理和上传等完整功能。 1.1 功能定位 文档搜索：支持全文检索、智能搜索、向量搜索 文档浏览：列表视图、卡片视图、目录浏览 文档管理：上传、下载、删除、编辑元数据 文档处理：查看处理状态、重新处理、手动处理  1.2 访问路径 URL：&#x2F;static&#x2F;workspace.html 文件位置：static&#x2F;workspace.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="文档中心模块架构说明">
-<meta property="og:url" content="https://1660479817.github.io/AIDF.github.io/workspace-architecture.html">
+<meta property="og:url" content="https://1660479817.github.io/AIDF.github.io/workspace-architecture.md">
 <meta property="og:site_name" content="AI NAS 技术博客">
 <meta property="og:description" content="1. 模块概述文档中心是AI NAS的核心功能模块，提供文档搜索、浏览、管理和上传等完整功能。 1.1 功能定位 文档搜索：支持全文检索、智能搜索、向量搜索 文档浏览：列表视图、卡片视图、目录浏览 文档管理：上传、下载、删除、编辑元数据 文档处理：查看处理状态、重新处理、手动处理  1.2 访问路径 URL：&#x2F;static&#x2F;workspace.html 文件位置：static&#x2F;workspace.">
 <meta property="og:locale" content="zh_CN">
@@ -82,7 +82,7 @@
       <div class="outer">
         <section id="main"><article id="post-workspace-architecture" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/AIDF.github.io/workspace-architecture.html" class="article-date">
+    <a href="/AIDF.github.io/workspace-architecture.md" class="article-date">
   <time class="dt-published" datetime="2025-12-30T07:50:06.000Z" itemprop="datePublished">2025-12-30</time>
 </a>
     
@@ -258,7 +258,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/workspace-architecture.html" data-id="cmjsemxzc000z8a1w050g02ea" data-title="文档中心模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/workspace-architecture.md" data-id="cmjsez65p000zy71wbzh955nx" data-title="文档中心模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -270,7 +270,7 @@
     
 <nav id="article-nav">
   
-    <a href="/AIDF.github.io/workspace-api.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/AIDF.github.io/workspace-api.md" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">前一篇</strong>
       <div class="article-nav-title">
         
@@ -336,23 +336,23 @@
       <ul>
         
           <li>
-            <a href="/AIDF.github.io/README.html">AI NAS - 企业级智能文档管理系统</a>
+            <a href="/AIDF.github.io/README.md">AI NAS - 企业级智能文档管理系统</a>
           </li>
         
           <li>
-            <a href="/AIDF.github.io/api.html">API接口说明文档</a>
+            <a href="/AIDF.github.io/api.md">API接口说明文档</a>
           </li>
         
           <li>
-            <a href="/AIDF.github.io/architecture.html">AI NAS 系统架构说明</a>
+            <a href="/AIDF.github.io/architecture.md">AI NAS 系统架构说明</a>
           </li>
         
           <li>
-            <a href="/AIDF.github.io/data_factory-api.html">数据工场模块API接口文档</a>
+            <a href="/AIDF.github.io/data_factory-api.md">数据工场模块API接口文档</a>
           </li>
         
           <li>
-            <a href="/AIDF.github.io/data_factory-architecture.html">数据工场模块架构说明</a>
+            <a href="/AIDF.github.io/data_factory-architecture.md">数据工场模块架构说明</a>
           </li>
         
       </ul>
