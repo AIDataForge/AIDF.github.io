@@ -81,7 +81,7 @@
     <article id="post-README" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/AIDF.github.io/2025/12/30/README/" class="article-date">
-  <time class="dt-published" datetime="2025-12-30T07:32:18.000Z" itemprop="datePublished">2025-12-30</time>
+  <time class="dt-published" datetime="2025-12-30T07:37:21.000Z" itemprop="datePublished">2025-12-30</time>
 </a>
     
   <div class="article-category">
@@ -104,87 +104,40 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="AI-NAS-企业级智能文档管理系统"><a href="#AI-NAS-企业级智能文档管理系统" class="headerlink" title="AI NAS - 企业级智能文档管理系统"></a>AI NAS - 企业级智能文档管理系统</h1><h2 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h2><p>AI NAS (Artificial Intelligence Data Forge) 是一个基于 MAAS (Model as a Service) 的企业级智能文档管理系统，旨在为企业提供文档转换、知识锻造、智能检索、异常恢复与健康监控的完整能力栈。</p>
-<h2 id="核心特点"><a href="#核心特点" class="headerlink" title="核心特点"></a>核心特点</h2><h3 id="1-从”文档存储”到”知识锻造”"><a href="#1-从”文档存储”到”知识锻造”" class="headerlink" title="1. 从”文档存储”到”知识锻造”"></a>1. 从”文档存储”到”知识锻造”</h3><p>不仅存储文档，还通过AI智能提取结构化知识，将非结构化文档锻造成统一、可信、可检索的知识底座。</p>
-<h3 id="2-从”单一处理”到”多模态智能”"><a href="#2-从”单一处理”到”多模态智能”" class="headerlink" title="2. 从”单一处理”到”多模态智能”"></a>2. 从”单一处理”到”多模态智能”</h3><p>支持文档、图片、音频、视频等多种格式的智能处理和分析，提供全方位的文档理解能力。</p>
-<h3 id="3-从”数据系统”到”智能平台”"><a href="#3-从”数据系统”到”智能平台”" class="headerlink" title="3. 从”数据系统”到”智能平台”"></a>3. 从”数据系统”到”智能平台”</h3><p>提供完整的文档管理、智能对话、项目流程管理等企业级能力，构建智能化的知识工作平台。</p>
-<h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><ul>
-<li><strong>Web框架</strong>：FastAPI (异步Web框架)</li>
-<li><strong>数据库</strong>：PostgreSQL (双数据库架构：ai_nas核心库 + ai_nas_app业务库)</li>
-<li><strong>ORM框架</strong>：SQLAlchemy</li>
-<li><strong>文档处理</strong>：MarkItDown + 自研解析器</li>
-<li><strong>LLM集成</strong>：OpenAI API (支持多种LLM提供商)</li>
-<li><strong>VLM集成</strong>：视觉语言模型支持</li>
-<li><strong>向量检索</strong>：Embedding + 向量数据库</li>
-<li><strong>异步编程</strong>：Python asyncio</li>
-<li><strong>任务调度</strong>：后台任务管理器</li>
-<li><strong>版本管理</strong>：Alembic (数据库迁移)</li>
-</ul>
-<h2 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h2><p>系统采用<strong>分层架构设计</strong>，各层职责清晰，便于维护和扩展：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                     入口层 (main.py)                      │</span><br><span class="line">│  - 系统启动和初始化                                        │</span><br><span class="line">│  - Web服务启动                                            │</span><br><span class="line">│  - 数据库初始化（双库并行）                                │</span><br><span class="line">│  - 后台服务启动                                            │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                   Web服务层 (app/api/v1/)                 │</span><br><span class="line">│  - FastAPI应用                                            │</span><br><span class="line">│  - API路由 (统一响应模型)                                 │</span><br><span class="line">│  - 认证和权限中间件                                        │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                 业务逻辑层 (app/services/)                │</span><br><span class="line">│  - 文档转换服务 (Doc2MD)                                  │</span><br><span class="line">│  - 文件管理服务 (FileManage)                              │</span><br><span class="line">│  - 文档对话服务 (Chat2Doc)                                │</span><br><span class="line">│  - 后台任务服务 (Background)                              │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                 业务模块层 (app/modules/)                 │</span><br><span class="line">│  - Smart Chat (智能对话)                                  │</span><br><span class="line">│  - 项目中心 (Project Flow)                                │</span><br><span class="line">│  - 其他业务模块                                            │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                  数据层 (双数据库架构)                    │</span><br><span class="line">│  - ai_nas (核心库)                                        │</span><br><span class="line">│  - ai_nas_app (业务库)                                    │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>📖 <a href="./architecture.md">查看完整系统架构说明 →</a></p>
+        <h1 id="AI-NAS-企业级智能文档管理系统"><a href="#AI-NAS-企业级智能文档管理系统" class="headerlink" title="AI NAS - 企业级智能文档管理系统"></a>AI NAS - 企业级智能文档管理系统</h1><blockquote>
+<p>将非结构化文档转换为可检索的知识底座，让AI理解你的文档</p>
 </blockquote>
-<h2 id="核心功能模块"><a href="#核心功能模块" class="headerlink" title="核心功能模块"></a>核心功能模块</h2><h3 id="1-系统首页"><a href="#1-系统首页" class="headerlink" title="1. 系统首页"></a>1. 系统首页</h3><p>系统入口、功能导航、系统概览</p>
-<ul>
-<li><a href="./modules/home/architecture.md">📐 架构说明</a></li>
-<li><a href="./modules/home/api.md">🔌 API接口</a></li>
+<hr>
+<h2 id="✨-核心特性"><a href="#✨-核心特性" class="headerlink" title="✨ 核心特性"></a>✨ 核心特性</h2><ul>
+<li>🧠 <strong>知识锻造</strong> - AI智能提取结构化知识，构建统一、可信、可检索的知识底座</li>
+<li>🔄 <strong>多模态处理</strong> - 支持文档、图片、音频、视频等多种格式的智能处理</li>
+<li>💬 <strong>智能对话</strong> - 基于RAG的文档问答系统，让文档”会说话”</li>
+<li>📊 <strong>企业级平台</strong> - 完整的文档管理、项目管理、权限控制能力</li>
 </ul>
-<h3 id="2-文档中心"><a href="#2-文档中心" class="headerlink" title="2. 文档中心"></a>2. 文档中心</h3><p>文档搜索、文档浏览、文档管理、文档上传</p>
-<ul>
-<li><a href="./modules/workspace/architecture.md">📐 架构说明</a></li>
-<li><a href="./modules/workspace/api.md">🔌 API接口</a></li>
+<h2 id="🛠️-技术栈"><a href="#🛠️-技术栈" class="headerlink" title="🛠️ 技术栈"></a>🛠️ 技术栈</h2><p><strong>FastAPI</strong> | <strong>PostgreSQL</strong> | <strong>SQLAlchemy</strong> | <strong>OpenAI API</strong> | <strong>向量检索</strong></p>
+<p><a href="./architecture.md#%E6%8A%80%E6%9C%AF%E6%A0%88">查看完整技术栈 →</a></p>
+<h2 id="🏗️-系统架构"><a href="#🏗️-系统架构" class="headerlink" title="🏗️ 系统架构"></a>🏗️ 系统架构</h2><p>系统采用<strong>分层架构设计</strong>，从入口层到数据层，各层职责清晰：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">入口层 → Web服务层 → 业务逻辑层 → 业务模块层 → 核心服务层 → 数据层</span><br></pre></td></tr></table></figure>
+
+<p><a href="./architecture.md">查看详细架构设计 →</a></p>
+<h2 id="📚-文档导航"><a href="#📚-文档导航" class="headerlink" title="📚 文档导航"></a>📚 文档导航</h2><h3 id="系统总览"><a href="#系统总览" class="headerlink" title="系统总览"></a>系统总览</h3><ul>
+<li><a href="./architecture.md">📐 系统架构</a> | <a href="./api.md">🔌 API文档</a></li>
 </ul>
-<h3 id="3-Smart-Chat"><a href="#3-Smart-Chat" class="headerlink" title="3. Smart Chat"></a>3. Smart Chat</h3><p>智能对话、文档检索、问题分析、知识解释</p>
-<ul>
-<li><a href="./modules/smart_chat/architecture.md">📐 架构说明</a></li>
-<li><a href="./modules/smart_chat/api.md">🔌 API接口</a></li>
+<h3 id="功能模块"><a href="#功能模块" class="headerlink" title="功能模块"></a>功能模块</h3><ul>
+<li><a href="./modules/workspace/">📁 文档中心</a> | <a href="./modules/smart_chat/">💬 Smart Chat</a> | <a href="./modules/project_center/">📊 项目中心</a></li>
+<li><a href="./modules/data_factory/">⚙️ 数据工场</a> | <a href="./modules/management/">🔧 管理中心</a></li>
 </ul>
-<h3 id="4-项目中心"><a href="#4-项目中心" class="headerlink" title="4. 项目中心"></a>4. 项目中心</h3><p>项目管理、成员管理、记录管理、文档关联</p>
-<ul>
-<li><a href="./modules/project_center/architecture.md">📐 架构说明</a></li>
-<li><a href="./modules/project_center/api.md">🔌 API接口</a></li>
+<h3 id="快速查找"><a href="#快速查找" class="headerlink" title="快速查找"></a>快速查找</h3><ul>
+<li><strong>按功能</strong>：文档管理 | 智能对话 | 项目管理 | 处理监控 | 系统管理</li>
+<li><strong>按角色</strong>：普通用户 | 管理员</li>
 </ul>
-<h3 id="5-数据工场"><a href="#5-数据工场" class="headerlink" title="5. 数据工场"></a>5. 数据工场</h3><p>处理监控、队列管理、处理统计、异常处理</p>
-<ul>
-<li><a href="./modules/data_factory/architecture.md">📐 架构说明</a></li>
-<li><a href="./modules/data_factory/api.md">🔌 API接口</a></li>
-</ul>
-<h3 id="6-管理中心"><a href="#6-管理中心" class="headerlink" title="6. 管理中心"></a>6. 管理中心</h3><p>用户管理、权限管理、系统设置、系统监控、数据仓库</p>
-<ul>
-<li><a href="./modules/management/architecture.md">📐 架构说明</a></li>
-<li><a href="./modules/management/api.md">🔌 API接口</a></li>
-</ul>
-<h2 id="文档导航"><a href="#文档导航" class="headerlink" title="文档导航"></a>文档导航</h2><h3 id="系统总览"><a href="#系统总览" class="headerlink" title="系统总览"></a>系统总览</h3><ul>
-<li><a href="./architecture.md">📐 系统架构说明</a> - 系统整体架构设计</li>
-<li><a href="./api.md">🔌 API接口总览</a> - 所有API接口规范</li>
-</ul>
-<h3 id="快速导航"><a href="#快速导航" class="headerlink" title="快速导航"></a>快速导航</h3><p><strong>按功能查找：</strong></p>
-<ul>
-<li>📁 <strong>文档管理</strong> → <a href="./modules/workspace/">文档中心</a></li>
-<li>💬 <strong>智能对话</strong> → <a href="./modules/smart_chat/">Smart Chat</a></li>
-<li>📊 <strong>项目管理</strong> → <a href="./modules/project_center/">项目中心</a></li>
-<li>⚙️ <strong>处理监控</strong> → <a href="./modules/data_factory/">数据工场</a></li>
-<li>🔧 <strong>系统管理</strong> → <a href="./modules/management/">管理中心</a></li>
-</ul>
-<p><strong>按角色查找：</strong></p>
-<ul>
-<li>👤 <strong>普通用户</strong> → 系统首页、文档中心、Smart Chat、项目中心</li>
-<li>👨‍💼 <strong>管理员</strong> → 所有模块 + 管理中心</li>
-</ul>
-<h2 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h2><ol>
-<li><strong>了解系统架构</strong> → <a href="./architecture.md">查看系统架构说明</a></li>
-<li><strong>查看API文档</strong> → <a href="./api.md">查看API接口总览</a></li>
-<li><strong>深入了解模块</strong> → 点击上方各模块的架构说明或API接口链接</li>
-</ol>
 <hr>
 <p><em>最后更新：2025-10-19</em></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/README/" data-id="cmjs9s0wq0000g11wg41hahag" data-title="AI NAS - 企业级智能文档管理系统" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/README/" data-id="cmjs9ybvv0000ys1w5ju05fnz" data-title="AI NAS - 企业级智能文档管理系统" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -201,7 +154,7 @@
     <article id="post-api" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/AIDF.github.io/2025/12/30/api/" class="article-date">
-  <time class="dt-published" datetime="2025-12-30T07:32:18.000Z" itemprop="datePublished">2025-12-30</time>
+  <time class="dt-published" datetime="2025-12-30T07:37:21.000Z" itemprop="datePublished">2025-12-30</time>
 </a>
     
   <div class="article-category">
@@ -354,7 +307,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/api/" data-id="cmjs9s0wt0001g11wa2qza1rx" data-title="API接口说明文档" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/api/" data-id="cmjs9ybvx0001ys1w23fr3n7e" data-title="API接口说明文档" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -371,7 +324,7 @@
     <article id="post-architecture" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/AIDF.github.io/2025/12/30/architecture/" class="article-date">
-  <time class="dt-published" datetime="2025-12-30T07:32:18.000Z" itemprop="datePublished">2025-12-30</time>
+  <time class="dt-published" datetime="2025-12-30T07:37:21.000Z" itemprop="datePublished">2025-12-30</time>
 </a>
     
   <div class="article-category">
@@ -491,7 +444,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/architecture/" data-id="cmjs9s0wv0004g11w1pzq4xau" data-title="AI NAS 系统架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/architecture/" data-id="cmjs9ybvz0004ys1wf7tec1qk" data-title="AI NAS 系统架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -508,7 +461,7 @@
     <article id="post-data_factory-api" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/AIDF.github.io/2025/12/30/data_factory-api/" class="article-date">
-  <time class="dt-published" datetime="2025-12-30T07:32:18.000Z" itemprop="datePublished">2025-12-30</time>
+  <time class="dt-published" datetime="2025-12-30T07:37:21.000Z" itemprop="datePublished">2025-12-30</time>
 </a>
     
   <div class="article-category">
@@ -574,7 +527,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/data_factory-api/" data-id="cmjs9s0ww0005g11wbf0c31es" data-title="数据工场模块API接口文档" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/data_factory-api/" data-id="cmjs9ybw00005ys1wf8oxeyrr" data-title="数据工场模块API接口文档" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -591,7 +544,7 @@
     <article id="post-data_factory-architecture" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/AIDF.github.io/2025/12/30/data_factory-architecture/" class="article-date">
-  <time class="dt-published" datetime="2025-12-30T07:32:18.000Z" itemprop="datePublished">2025-12-30</time>
+  <time class="dt-published" datetime="2025-12-30T07:37:21.000Z" itemprop="datePublished">2025-12-30</time>
 </a>
     
   <div class="article-category">
@@ -703,7 +656,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/data_factory-architecture/" data-id="cmjs9s0ww0006g11w1i5shuo8" data-title="数据工场模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/data_factory-architecture/" data-id="cmjs9ybw00006ys1wd2tc0g3c" data-title="数据工场模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -717,10 +670,177 @@
 
 
   
+    <article id="post-home-architecture" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/AIDF.github.io/2025/12/30/home-architecture/" class="article-date">
+  <time class="dt-published" datetime="2025-12-30T07:37:21.000Z" itemprop="datePublished">2025-12-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/AIDF.github.io/categories/AI-NAS-%E7%B3%BB%E7%BB%9F%E9%A6%96%E9%A1%B5/">AI NAS - 系统首页</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/AIDF.github.io/2025/12/30/home-architecture/">系统首页模块架构说明</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="系统首页模块架构说明"><a href="#系统首页模块架构说明" class="headerlink" title="系统首页模块架构说明"></a>系统首页模块架构说明</h1><h2 id="1-模块概述"><a href="#1-模块概述" class="headerlink" title="1. 模块概述"></a>1. 模块概述</h2><p>系统首页是AI NAS的入口页面，提供系统概览、快速导航和核心功能入口。</p>
+<h3 id="1-1-功能定位"><a href="#1-1-功能定位" class="headerlink" title="1.1 功能定位"></a>1.1 功能定位</h3><ul>
+<li><strong>系统入口</strong>：用户访问系统的第一个页面</li>
+<li><strong>功能导航</strong>：快速访问各个核心功能模块</li>
+<li><strong>系统概览</strong>：展示系统统计信息和状态</li>
+<li><strong>快速操作</strong>：提供常用功能的快速入口</li>
+</ul>
+<h3 id="1-2-访问路径"><a href="#1-2-访问路径" class="headerlink" title="1.2 访问路径"></a>1.2 访问路径</h3><ul>
+<li><strong>URL</strong>：<code>/</code></li>
+<li><strong>文件位置</strong>：<code>static/home.html</code></li>
+<li><strong>权限要求</strong>：所有用户（包括游客）可访问</li>
+</ul>
+<h2 id="2-模块架构"><a href="#2-模块架构" class="headerlink" title="2. 模块架构"></a>2. 模块架构</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                    前端页面层                              │</span><br><span class="line">│  - home.html (静态页面)                                   │</span><br><span class="line">│  - 导航栏组件 (navbar.html)                              │</span><br><span class="line">│  - JavaScript交互逻辑                                     │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                    API接口层                              │</span><br><span class="line">│  - GET /api/v1/system/info (系统信息)                    │</span><br><span class="line">│  - GET /api/v1/stats/summary (系统统计)                   │</span><br><span class="line">│  - GET /api/v1/stats/dashboard (仪表板数据)              │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                   业务服务层                              │</span><br><span class="line">│  - System Service (系统服务)                             │</span><br><span class="line">│  - Stats Service (统计服务)                              │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                   数据层                                  │</span><br><span class="line">│  - ai_nas: system_logs, processing_logs                  │</span><br><span class="line">│  - ai_nas_app: users (用户统计)                          │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-核心组件"><a href="#3-核心组件" class="headerlink" title="3. 核心组件"></a>3. 核心组件</h2><h3 id="3-1-前端组件"><a href="#3-1-前端组件" class="headerlink" title="3.1 前端组件"></a>3.1 前端组件</h3><h4 id="3-1-1-Hero区域"><a href="#3-1-1-Hero区域" class="headerlink" title="3.1.1 Hero区域"></a>3.1.1 Hero区域</h4><p><strong>功能</strong>：</p>
+<ul>
+<li>展示系统Logo和标题</li>
+<li>显示系统描述和口号</li>
+<li>提供快速操作按钮（文档中心、AI助手）</li>
+</ul>
+<p><strong>实现</strong>：</p>
+<ul>
+<li>HTML结构：<code>hero-section</code></li>
+<li>CSS样式：渐变背景、动画效果</li>
+<li>JavaScript：动态加载系统信息</li>
+</ul>
+<h4 id="3-1-2-功能卡片区域"><a href="#3-1-2-功能卡片区域" class="headerlink" title="3.1.2 功能卡片区域"></a>3.1.2 功能卡片区域</h4><p><strong>功能</strong>：</p>
+<ul>
+<li>展示核心功能模块卡片</li>
+<li>提供快速导航入口</li>
+<li>显示功能描述和图标</li>
+</ul>
+<p><strong>核心功能卡片</strong>：</p>
+<ol>
+<li><strong>文档中心</strong>：文档搜索、浏览、管理</li>
+<li><strong>AI助手中心</strong>：智能对话、企业查询等AI应用</li>
+<li><strong>数据工场</strong>：AI文档处理流水线</li>
+<li><strong>数据仓库看板</strong>：文档统计、趋势分析</li>
+</ol>
+<h4 id="3-1-3-系统统计区域"><a href="#3-1-3-系统统计区域" class="headerlink" title="3.1.3 系统统计区域"></a>3.1.3 系统统计区域</h4><p><strong>功能</strong>：</p>
+<ul>
+<li>展示系统统计数据</li>
+<li>显示文档数量、处理状态等</li>
+<li>实时更新系统状态</li>
+</ul>
+<p><strong>统计数据</strong>：</p>
+<ul>
+<li>总文档数</li>
+<li>处理中文档数</li>
+<li>已完成文档数</li>
+<li>失败文档数</li>
+<li>系统版本信息</li>
+</ul>
+<h3 id="3-2-后端API"><a href="#3-2-后端API" class="headerlink" title="3.2 后端API"></a>3.2 后端API</h3><h4 id="3-2-1-系统信息API"><a href="#3-2-1-系统信息API" class="headerlink" title="3.2.1 系统信息API"></a>3.2.1 系统信息API</h4><p><strong>接口</strong>：<code>GET /api/v1/system/info</code></p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>获取系统基本信息</li>
+<li>返回系统版本、IP地址、端口等</li>
+<li>提供访问链接</li>
+</ul>
+<p><strong>响应数据</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;v5.10.1&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;AI NAS&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;local_ip&quot;</span><span class="punctuation">:</span> <span class="string">&quot;192.168.1.100&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;port&quot;</span><span class="punctuation">:</span> <span class="number">8000</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;local_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://localhost:8000&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;network_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://192.168.1.100:8000&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;api_docs_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://192.168.1.100:8000/docs&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data_storage_path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/path/to/data&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;system_status&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>...<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;stats&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>...<span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-2-系统统计API"><a href="#3-2-2-系统统计API" class="headerlink" title="3.2.2 系统统计API"></a>3.2.2 系统统计API</h4><p><strong>接口</strong>：<code>GET /api/v1/stats/summary</code></p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>获取系统整体统计信息</li>
+<li>返回文档数量、处理状态统计</li>
+<li>提供系统健康度指标</li>
+</ul>
+<p><strong>响应数据</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;total_files&quot;</span><span class="punctuation">:</span> <span class="number">100</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;total_size&quot;</span><span class="punctuation">:</span> <span class="number">1024000000</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;completed_files&quot;</span><span class="punctuation">:</span> <span class="number">90</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;failed_files&quot;</span><span class="punctuation">:</span> <span class="number">3</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;processing_files&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;queued_files&quot;</span><span class="punctuation">:</span> <span class="number">5</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-3-仪表板数据API"><a href="#3-2-3-仪表板数据API" class="headerlink" title="3.2.3 仪表板数据API"></a>3.2.3 仪表板数据API</h4><p><strong>接口</strong>：<code>GET /api/v1/stats/dashboard</code></p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>获取仪表板详细数据</li>
+<li>返回趋势分析、分类统计等</li>
+<li>提供可视化数据支持</li>
+</ul>
+<h2 id="4-数据流"><a href="#4-数据流" class="headerlink" title="4. 数据流"></a>4. 数据流</h2><h3 id="4-1-页面加载流程"><a href="#4-1-页面加载流程" class="headerlink" title="4.1 页面加载流程"></a>4.1 页面加载流程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">用户访问首页 (/)</span><br><span class="line">    ↓</span><br><span class="line">加载静态HTML (home.html)</span><br><span class="line">    ↓</span><br><span class="line">初始化JavaScript</span><br><span class="line">    ↓</span><br><span class="line">并行请求API</span><br><span class="line">    ├─ GET /api/v1/system/info</span><br><span class="line">    ├─ GET /api/v1/stats/summary</span><br><span class="line">    └─ GET /api/v1/stats/dashboard</span><br><span class="line">    ↓</span><br><span class="line">渲染页面内容</span><br><span class="line">    ├─ Hero区域</span><br><span class="line">    ├─ 功能卡片区域</span><br><span class="line">    └─ 系统统计区域</span><br><span class="line">    ↓</span><br><span class="line">页面展示完成</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-数据更新流程"><a href="#4-2-数据更新流程" class="headerlink" title="4.2 数据更新流程"></a>4.2 数据更新流程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">定时器触发 (每30秒)</span><br><span class="line">    ↓</span><br><span class="line">请求系统统计API</span><br><span class="line">    ↓</span><br><span class="line">更新统计数据</span><br><span class="line">    ↓</span><br><span class="line">刷新统计区域显示</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-技术实现"><a href="#5-技术实现" class="headerlink" title="5. 技术实现"></a>5. 技术实现</h2><h3 id="5-1-前端技术"><a href="#5-1-前端技术" class="headerlink" title="5.1 前端技术"></a>5.1 前端技术</h3><ul>
+<li><strong>HTML5</strong>：页面结构</li>
+<li><strong>CSS3</strong>：样式和动画（渐变、过渡、浮动动画）</li>
+<li><strong>JavaScript</strong>：交互逻辑和API调用</li>
+<li><strong>Bootstrap</strong>：响应式布局</li>
+<li><strong>Font Awesome</strong>：图标库</li>
+</ul>
+<h3 id="5-2-后端技术"><a href="#5-2-后端技术" class="headerlink" title="5.2 后端技术"></a>5.2 后端技术</h3><ul>
+<li><strong>FastAPI</strong>：API服务</li>
+<li><strong>SQLAlchemy</strong>：数据库查询</li>
+<li><strong>异步处理</strong>：API异步响应</li>
+</ul>
+<h3 id="5-3-性能优化"><a href="#5-3-性能优化" class="headerlink" title="5.3 性能优化"></a>5.3 性能优化</h3><ul>
+<li><strong>静态资源缓存</strong>：CSS、JS文件缓存</li>
+<li><strong>API请求合并</strong>：并行请求多个API</li>
+<li><strong>懒加载</strong>：统计区域按需加载</li>
+<li><strong>响应式设计</strong>：适配不同屏幕尺寸</li>
+</ul>
+<h2 id="6-扩展性"><a href="#6-扩展性" class="headerlink" title="6. 扩展性"></a>6. 扩展性</h2><h3 id="6-1-功能扩展"><a href="#6-1-功能扩展" class="headerlink" title="6.1 功能扩展"></a>6.1 功能扩展</h3><ul>
+<li>支持自定义功能卡片</li>
+<li>支持动态配置导航链接</li>
+<li>支持主题切换</li>
+</ul>
+<h3 id="6-2-数据扩展"><a href="#6-2-数据扩展" class="headerlink" title="6.2 数据扩展"></a>6.2 数据扩展</h3><ul>
+<li>支持更多统计维度</li>
+<li>支持自定义仪表板</li>
+<li>支持实时数据推送</li>
+</ul>
+<h2 id="7-安全设计"><a href="#7-安全设计" class="headerlink" title="7. 安全设计"></a>7. 安全设计</h2><h3 id="7-1-访问控制"><a href="#7-1-访问控制" class="headerlink" title="7.1 访问控制"></a>7.1 访问控制</h3><ul>
+<li>首页对所有用户开放（包括游客）</li>
+<li>功能卡片根据权限显示&#x2F;隐藏</li>
+<li>API接口根据用户角色返回不同数据</li>
+</ul>
+<h3 id="7-2-数据安全"><a href="#7-2-数据安全" class="headerlink" title="7.2 数据安全"></a>7.2 数据安全</h3><ul>
+<li>敏感信息不暴露在首页</li>
+<li>统计数据聚合显示，不暴露详细信息</li>
+<li>API接口有权限验证</li>
+</ul>
+<h2 id="8-总结"><a href="#8-总结" class="headerlink" title="8. 总结"></a>8. 总结</h2><p>系统首页作为AI NAS的入口页面，提供了清晰的导航和系统概览功能。通过模块化的设计和异步API调用，实现了良好的用户体验和性能表现。页面设计简洁美观，功能布局合理，为用户提供了便捷的系统访问入口。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/home-architecture/" data-id="cmjs9ybw20009ys1wetzw0bw8" data-title="系统首页模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/AIDF.github.io/tags/%E6%9E%B6%E6%9E%84/" rel="tag">架构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/AIDF.github.io/tags/%E6%A8%A1%E5%9D%97%E6%9E%B6%E6%9E%84/" rel="tag">模块架构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/AIDF.github.io/tags/%E7%B3%BB%E7%BB%9F%E9%A6%96%E9%A1%B5/" rel="tag">系统首页</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-home-api" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/AIDF.github.io/2025/12/30/home-api/" class="article-date">
-  <time class="dt-published" datetime="2025-12-30T07:32:18.000Z" itemprop="datePublished">2025-12-30</time>
+  <time class="dt-published" datetime="2025-12-30T07:37:21.000Z" itemprop="datePublished">2025-12-30</time>
 </a>
     
   <div class="article-category">
@@ -924,7 +1044,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/home-api/" data-id="cmjs9s0wy0009g11w4cbi0p3y" data-title="系统首页模块API接口文档" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/home-api/" data-id="cmjs9ybw2000ays1w3mo36xic" data-title="系统首页模块API接口文档" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -938,177 +1058,10 @@
 
 
   
-    <article id="post-home-architecture" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/AIDF.github.io/2025/12/30/home-architecture/" class="article-date">
-  <time class="dt-published" datetime="2025-12-30T07:32:18.000Z" itemprop="datePublished">2025-12-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/AIDF.github.io/categories/AI-NAS-%E7%B3%BB%E7%BB%9F%E9%A6%96%E9%A1%B5/">AI NAS - 系统首页</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/AIDF.github.io/2025/12/30/home-architecture/">系统首页模块架构说明</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="系统首页模块架构说明"><a href="#系统首页模块架构说明" class="headerlink" title="系统首页模块架构说明"></a>系统首页模块架构说明</h1><h2 id="1-模块概述"><a href="#1-模块概述" class="headerlink" title="1. 模块概述"></a>1. 模块概述</h2><p>系统首页是AI NAS的入口页面，提供系统概览、快速导航和核心功能入口。</p>
-<h3 id="1-1-功能定位"><a href="#1-1-功能定位" class="headerlink" title="1.1 功能定位"></a>1.1 功能定位</h3><ul>
-<li><strong>系统入口</strong>：用户访问系统的第一个页面</li>
-<li><strong>功能导航</strong>：快速访问各个核心功能模块</li>
-<li><strong>系统概览</strong>：展示系统统计信息和状态</li>
-<li><strong>快速操作</strong>：提供常用功能的快速入口</li>
-</ul>
-<h3 id="1-2-访问路径"><a href="#1-2-访问路径" class="headerlink" title="1.2 访问路径"></a>1.2 访问路径</h3><ul>
-<li><strong>URL</strong>：<code>/</code></li>
-<li><strong>文件位置</strong>：<code>static/home.html</code></li>
-<li><strong>权限要求</strong>：所有用户（包括游客）可访问</li>
-</ul>
-<h2 id="2-模块架构"><a href="#2-模块架构" class="headerlink" title="2. 模块架构"></a>2. 模块架构</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                    前端页面层                              │</span><br><span class="line">│  - home.html (静态页面)                                   │</span><br><span class="line">│  - 导航栏组件 (navbar.html)                              │</span><br><span class="line">│  - JavaScript交互逻辑                                     │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                    API接口层                              │</span><br><span class="line">│  - GET /api/v1/system/info (系统信息)                    │</span><br><span class="line">│  - GET /api/v1/stats/summary (系统统计)                   │</span><br><span class="line">│  - GET /api/v1/stats/dashboard (仪表板数据)              │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                   业务服务层                              │</span><br><span class="line">│  - System Service (系统服务)                             │</span><br><span class="line">│  - Stats Service (统计服务)                              │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                   数据层                                  │</span><br><span class="line">│  - ai_nas: system_logs, processing_logs                  │</span><br><span class="line">│  - ai_nas_app: users (用户统计)                          │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-核心组件"><a href="#3-核心组件" class="headerlink" title="3. 核心组件"></a>3. 核心组件</h2><h3 id="3-1-前端组件"><a href="#3-1-前端组件" class="headerlink" title="3.1 前端组件"></a>3.1 前端组件</h3><h4 id="3-1-1-Hero区域"><a href="#3-1-1-Hero区域" class="headerlink" title="3.1.1 Hero区域"></a>3.1.1 Hero区域</h4><p><strong>功能</strong>：</p>
-<ul>
-<li>展示系统Logo和标题</li>
-<li>显示系统描述和口号</li>
-<li>提供快速操作按钮（文档中心、AI助手）</li>
-</ul>
-<p><strong>实现</strong>：</p>
-<ul>
-<li>HTML结构：<code>hero-section</code></li>
-<li>CSS样式：渐变背景、动画效果</li>
-<li>JavaScript：动态加载系统信息</li>
-</ul>
-<h4 id="3-1-2-功能卡片区域"><a href="#3-1-2-功能卡片区域" class="headerlink" title="3.1.2 功能卡片区域"></a>3.1.2 功能卡片区域</h4><p><strong>功能</strong>：</p>
-<ul>
-<li>展示核心功能模块卡片</li>
-<li>提供快速导航入口</li>
-<li>显示功能描述和图标</li>
-</ul>
-<p><strong>核心功能卡片</strong>：</p>
-<ol>
-<li><strong>文档中心</strong>：文档搜索、浏览、管理</li>
-<li><strong>AI助手中心</strong>：智能对话、企业查询等AI应用</li>
-<li><strong>数据工场</strong>：AI文档处理流水线</li>
-<li><strong>数据仓库看板</strong>：文档统计、趋势分析</li>
-</ol>
-<h4 id="3-1-3-系统统计区域"><a href="#3-1-3-系统统计区域" class="headerlink" title="3.1.3 系统统计区域"></a>3.1.3 系统统计区域</h4><p><strong>功能</strong>：</p>
-<ul>
-<li>展示系统统计数据</li>
-<li>显示文档数量、处理状态等</li>
-<li>实时更新系统状态</li>
-</ul>
-<p><strong>统计数据</strong>：</p>
-<ul>
-<li>总文档数</li>
-<li>处理中文档数</li>
-<li>已完成文档数</li>
-<li>失败文档数</li>
-<li>系统版本信息</li>
-</ul>
-<h3 id="3-2-后端API"><a href="#3-2-后端API" class="headerlink" title="3.2 后端API"></a>3.2 后端API</h3><h4 id="3-2-1-系统信息API"><a href="#3-2-1-系统信息API" class="headerlink" title="3.2.1 系统信息API"></a>3.2.1 系统信息API</h4><p><strong>接口</strong>：<code>GET /api/v1/system/info</code></p>
-<p><strong>功能</strong>：</p>
-<ul>
-<li>获取系统基本信息</li>
-<li>返回系统版本、IP地址、端口等</li>
-<li>提供访问链接</li>
-</ul>
-<p><strong>响应数据</strong>：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;v5.10.1&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;AI NAS&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;local_ip&quot;</span><span class="punctuation">:</span> <span class="string">&quot;192.168.1.100&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;port&quot;</span><span class="punctuation">:</span> <span class="number">8000</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;local_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://localhost:8000&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;network_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://192.168.1.100:8000&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;api_docs_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://192.168.1.100:8000/docs&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data_storage_path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/path/to/data&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;system_status&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>...<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;stats&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>...<span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="3-2-2-系统统计API"><a href="#3-2-2-系统统计API" class="headerlink" title="3.2.2 系统统计API"></a>3.2.2 系统统计API</h4><p><strong>接口</strong>：<code>GET /api/v1/stats/summary</code></p>
-<p><strong>功能</strong>：</p>
-<ul>
-<li>获取系统整体统计信息</li>
-<li>返回文档数量、处理状态统计</li>
-<li>提供系统健康度指标</li>
-</ul>
-<p><strong>响应数据</strong>：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;total_files&quot;</span><span class="punctuation">:</span> <span class="number">100</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;total_size&quot;</span><span class="punctuation">:</span> <span class="number">1024000000</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;completed_files&quot;</span><span class="punctuation">:</span> <span class="number">90</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;failed_files&quot;</span><span class="punctuation">:</span> <span class="number">3</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;processing_files&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;queued_files&quot;</span><span class="punctuation">:</span> <span class="number">5</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="3-2-3-仪表板数据API"><a href="#3-2-3-仪表板数据API" class="headerlink" title="3.2.3 仪表板数据API"></a>3.2.3 仪表板数据API</h4><p><strong>接口</strong>：<code>GET /api/v1/stats/dashboard</code></p>
-<p><strong>功能</strong>：</p>
-<ul>
-<li>获取仪表板详细数据</li>
-<li>返回趋势分析、分类统计等</li>
-<li>提供可视化数据支持</li>
-</ul>
-<h2 id="4-数据流"><a href="#4-数据流" class="headerlink" title="4. 数据流"></a>4. 数据流</h2><h3 id="4-1-页面加载流程"><a href="#4-1-页面加载流程" class="headerlink" title="4.1 页面加载流程"></a>4.1 页面加载流程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">用户访问首页 (/)</span><br><span class="line">    ↓</span><br><span class="line">加载静态HTML (home.html)</span><br><span class="line">    ↓</span><br><span class="line">初始化JavaScript</span><br><span class="line">    ↓</span><br><span class="line">并行请求API</span><br><span class="line">    ├─ GET /api/v1/system/info</span><br><span class="line">    ├─ GET /api/v1/stats/summary</span><br><span class="line">    └─ GET /api/v1/stats/dashboard</span><br><span class="line">    ↓</span><br><span class="line">渲染页面内容</span><br><span class="line">    ├─ Hero区域</span><br><span class="line">    ├─ 功能卡片区域</span><br><span class="line">    └─ 系统统计区域</span><br><span class="line">    ↓</span><br><span class="line">页面展示完成</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-2-数据更新流程"><a href="#4-2-数据更新流程" class="headerlink" title="4.2 数据更新流程"></a>4.2 数据更新流程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">定时器触发 (每30秒)</span><br><span class="line">    ↓</span><br><span class="line">请求系统统计API</span><br><span class="line">    ↓</span><br><span class="line">更新统计数据</span><br><span class="line">    ↓</span><br><span class="line">刷新统计区域显示</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-技术实现"><a href="#5-技术实现" class="headerlink" title="5. 技术实现"></a>5. 技术实现</h2><h3 id="5-1-前端技术"><a href="#5-1-前端技术" class="headerlink" title="5.1 前端技术"></a>5.1 前端技术</h3><ul>
-<li><strong>HTML5</strong>：页面结构</li>
-<li><strong>CSS3</strong>：样式和动画（渐变、过渡、浮动动画）</li>
-<li><strong>JavaScript</strong>：交互逻辑和API调用</li>
-<li><strong>Bootstrap</strong>：响应式布局</li>
-<li><strong>Font Awesome</strong>：图标库</li>
-</ul>
-<h3 id="5-2-后端技术"><a href="#5-2-后端技术" class="headerlink" title="5.2 后端技术"></a>5.2 后端技术</h3><ul>
-<li><strong>FastAPI</strong>：API服务</li>
-<li><strong>SQLAlchemy</strong>：数据库查询</li>
-<li><strong>异步处理</strong>：API异步响应</li>
-</ul>
-<h3 id="5-3-性能优化"><a href="#5-3-性能优化" class="headerlink" title="5.3 性能优化"></a>5.3 性能优化</h3><ul>
-<li><strong>静态资源缓存</strong>：CSS、JS文件缓存</li>
-<li><strong>API请求合并</strong>：并行请求多个API</li>
-<li><strong>懒加载</strong>：统计区域按需加载</li>
-<li><strong>响应式设计</strong>：适配不同屏幕尺寸</li>
-</ul>
-<h2 id="6-扩展性"><a href="#6-扩展性" class="headerlink" title="6. 扩展性"></a>6. 扩展性</h2><h3 id="6-1-功能扩展"><a href="#6-1-功能扩展" class="headerlink" title="6.1 功能扩展"></a>6.1 功能扩展</h3><ul>
-<li>支持自定义功能卡片</li>
-<li>支持动态配置导航链接</li>
-<li>支持主题切换</li>
-</ul>
-<h3 id="6-2-数据扩展"><a href="#6-2-数据扩展" class="headerlink" title="6.2 数据扩展"></a>6.2 数据扩展</h3><ul>
-<li>支持更多统计维度</li>
-<li>支持自定义仪表板</li>
-<li>支持实时数据推送</li>
-</ul>
-<h2 id="7-安全设计"><a href="#7-安全设计" class="headerlink" title="7. 安全设计"></a>7. 安全设计</h2><h3 id="7-1-访问控制"><a href="#7-1-访问控制" class="headerlink" title="7.1 访问控制"></a>7.1 访问控制</h3><ul>
-<li>首页对所有用户开放（包括游客）</li>
-<li>功能卡片根据权限显示&#x2F;隐藏</li>
-<li>API接口根据用户角色返回不同数据</li>
-</ul>
-<h3 id="7-2-数据安全"><a href="#7-2-数据安全" class="headerlink" title="7.2 数据安全"></a>7.2 数据安全</h3><ul>
-<li>敏感信息不暴露在首页</li>
-<li>统计数据聚合显示，不暴露详细信息</li>
-<li>API接口有权限验证</li>
-</ul>
-<h2 id="8-总结"><a href="#8-总结" class="headerlink" title="8. 总结"></a>8. 总结</h2><p>系统首页作为AI NAS的入口页面，提供了清晰的导航和系统概览功能。通过模块化的设计和异步API调用，实现了良好的用户体验和性能表现。页面设计简洁美观，功能布局合理，为用户提供了便捷的系统访问入口。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/home-architecture/" data-id="cmjs9s0wy000ag11w6nbcb77x" data-title="系统首页模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/AIDF.github.io/tags/%E6%9E%B6%E6%9E%84/" rel="tag">架构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/AIDF.github.io/tags/%E6%A8%A1%E5%9D%97%E6%9E%B6%E6%9E%84/" rel="tag">模块架构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/AIDF.github.io/tags/%E7%B3%BB%E7%BB%9F%E9%A6%96%E9%A1%B5/" rel="tag">系统首页</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-management-api" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/AIDF.github.io/2025/12/30/management-api/" class="article-date">
-  <time class="dt-published" datetime="2025-12-30T07:32:18.000Z" itemprop="datePublished">2025-12-30</time>
+  <time class="dt-published" datetime="2025-12-30T07:37:21.000Z" itemprop="datePublished">2025-12-30</time>
 </a>
     
   <div class="article-category">
@@ -1173,7 +1126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/management-api/" data-id="cmjs9s0wz000eg11wgukrbuib" data-title="管理中心模块API接口文档" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/management-api/" data-id="cmjs9ybw3000eys1w7vtl9yp8" data-title="管理中心模块API接口文档" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -1190,7 +1143,7 @@
     <article id="post-management-architecture" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/AIDF.github.io/2025/12/30/management-architecture/" class="article-date">
-  <time class="dt-published" datetime="2025-12-30T07:32:18.000Z" itemprop="datePublished">2025-12-30</time>
+  <time class="dt-published" datetime="2025-12-30T07:37:21.000Z" itemprop="datePublished">2025-12-30</time>
 </a>
     
   <div class="article-category">
@@ -1273,7 +1226,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/management-architecture/" data-id="cmjs9s0x0000gg11w4ky74znv" data-title="管理中心模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/management-architecture/" data-id="cmjs9ybw4000gys1w4fmy1axj" data-title="管理中心模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -1290,7 +1243,7 @@
     <article id="post-project_center-api" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/AIDF.github.io/2025/12/30/project_center-api/" class="article-date">
-  <time class="dt-published" datetime="2025-12-30T07:32:18.000Z" itemprop="datePublished">2025-12-30</time>
+  <time class="dt-published" datetime="2025-12-30T07:37:21.000Z" itemprop="datePublished">2025-12-30</time>
 </a>
     
   <div class="article-category">
@@ -1451,7 +1404,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/project_center-api/" data-id="cmjs9s0x0000lg11w3pctc8fw" data-title="项目中心模块API接口文档" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/project_center-api/" data-id="cmjs9ybw4000lys1wdtcde42q" data-title="项目中心模块API接口文档" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
