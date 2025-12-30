@@ -149,7 +149,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/data_factory-api.md" data-id="cmjsf781u0006vn1w3ovdap26" data-title="数据工场模块API接口文档" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/data_factory-api.md" data-id="cmjsfnpnb00061e1w8mlfdokf" data-title="数据工场模块API接口文档" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       

@@ -148,7 +148,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/management-api.md" data-id="cmjsf781x000fvn1wggo0ehfo" data-title="管理中心模块API接口文档" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/management-api.md" data-id="cmjsfnpnf000f1e1wc6uz5bvw" data-title="管理中心模块API接口文档" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       

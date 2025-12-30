@@ -140,7 +140,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/README.md" data-id="cmjsf781q0001vn1wdou34zo9" data-title="AI NAS - 企业级智能文档管理系统" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/README.md" data-id="cmjsfnpn700011e1wdywqdeym" data-title="AI NAS - 企业级智能文档管理系统" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       

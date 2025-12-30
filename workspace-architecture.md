@@ -258,7 +258,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/workspace-architecture.md" data-id="cmjsf7821000zvn1wayay7ze4" data-title="文档中心模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/workspace-architecture.md" data-id="cmjsfnpnj000z1e1w84yu4xj6" data-title="文档中心模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
