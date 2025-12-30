@@ -242,7 +242,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/project_center-architecture.md" data-id="cmjsez65m000ny71w4nsealsm" data-title="项目中心模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/project_center-architecture.md" data-id="cmjsf781z000nvn1wbpbo2uhg" data-title="项目中心模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       

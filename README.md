@@ -6,15 +6,15 @@
   
   <title>AI NAS - 企业级智能文档管理系统 | AI NAS 技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="AI NAS - 企业级智能文档管理系统 将非结构化文档转换为可检索的知识底座，让AI理解你的文档   ✨ 核心特性 🧠 知识锻造 - AI智能提取结构化知识，构建统一、可信、可检索的知识底座 🔄 多模态处理 - 支持文档、图片、音频、视频等多种格式的智能处理 💬 智能对话 - 基于RAG的文档问答系统，让文档”会说话” 📊 企业级平台 - 完整的文档管理、项目管理、权限控制能力  🛠️">
+  <meta name="description" content="将非结构化文档转换为可检索的知识底座，让AI理解你的文档   ✨ 核心特性 🧠 知识锻造 - AI智能提取结构化知识，构建统一、可信、可检索的知识底座 🔄 多模态处理 - 支持文档、图片、音频、视频等多种格式的智能处理 💬 智能对话 - 基于RAG的文档问答系统，让文档”会说话” 📊 企业级平台 - 完整的文档管理、项目管理、权限控制能力  🛠️ 技术栈FastAPI | Post">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AI NAS - 企业级智能文档管理系统">
 <meta property="og:url" content="https://1660479817.github.io/AIDF.github.io/README.md">
 <meta property="og:site_name" content="AI NAS 技术博客">
-<meta property="og:description" content="AI NAS - 企业级智能文档管理系统 将非结构化文档转换为可检索的知识底座，让AI理解你的文档   ✨ 核心特性 🧠 知识锻造 - AI智能提取结构化知识，构建统一、可信、可检索的知识底座 🔄 多模态处理 - 支持文档、图片、音频、视频等多种格式的智能处理 💬 智能对话 - 基于RAG的文档问答系统，让文档”会说话” 📊 企业级平台 - 完整的文档管理、项目管理、权限控制能力  🛠️">
+<meta property="og:description" content="将非结构化文档转换为可检索的知识底座，让AI理解你的文档   ✨ 核心特性 🧠 知识锻造 - AI智能提取结构化知识，构建统一、可信、可检索的知识底座 🔄 多模态处理 - 支持文档、图片、音频、视频等多种格式的智能处理 💬 智能对话 - 基于RAG的文档问答系统，让文档”会说话” 📊 企业级平台 - 完整的文档管理、项目管理、权限控制能力  🛠️ 技术栈FastAPI | Post">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-12-30T07:50:06.000Z">
-<meta property="article:modified_time" content="2025-12-30T08:28:07.685Z">
+<meta property="article:modified_time" content="2025-12-30T10:01:44.010Z">
 <meta property="article:author" content="AI NAS Team">
 <meta property="article:tag" content="总览">
 <meta property="article:tag" content="文档中心">
@@ -105,7 +105,9 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="AI-NAS-企业级智能文档管理系统"><a href="#AI-NAS-企业级智能文档管理系统" class="headerlink" title="AI NAS - 企业级智能文档管理系统"></a>AI NAS - 企业级智能文档管理系统</h1><blockquote>
+        <!-- # AI NAS - 企业级智能文档管理系统 -->
+
+<blockquote>
 <p>将非结构化文档转换为可检索的知识底座，让AI理解你的文档</p>
 </blockquote>
 <hr>
@@ -138,7 +140,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/README.md" data-id="cmjsez65d0001y71westx56xo" data-title="AI NAS - 企业级智能文档管理系统" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/README.md" data-id="cmjsf781q0001vn1wdou34zo9" data-title="AI NAS - 企业级智能文档管理系统" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       

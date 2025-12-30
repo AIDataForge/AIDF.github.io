@@ -166,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/management-architecture.md" data-id="cmjsez65l000hy71w4uvlgxyu" data-title="管理中心模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/management-architecture.md" data-id="cmjsf781y000hvn1w8p8200q2" data-title="管理中心模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       

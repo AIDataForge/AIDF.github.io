@@ -233,7 +233,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/home-architecture.md" data-id="cmjsez65k000by71w7iolc7cf" data-title="系统首页模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/home-architecture.md" data-id="cmjsf781w000bvn1wfjma8xpz" data-title="系统首页模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       

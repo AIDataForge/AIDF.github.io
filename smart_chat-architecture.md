@@ -223,7 +223,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/smart_chat-architecture.md" data-id="cmjsez65o000ty71w5qbmhsyw" data-title="Smart Chat 模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/smart_chat-architecture.md" data-id="cmjsf7820000tvn1w01b1flny" data-title="Smart Chat 模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       

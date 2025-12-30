@@ -244,7 +244,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/project_center-api.md" data-id="cmjsez65m000my71w2gnj0t9l" data-title="项目中心模块API接口文档" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/project_center-api.md" data-id="cmjsf781y000mvn1wg0kocdt4" data-title="项目中心模块API接口文档" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
