@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>AI NAS 系统架构说明 | AI NAS 技术博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="文档导航本文档提供系统整体架构的概述说明。各模块的详细架构说明请参考对应的模块文档：  系统首页模块 文档中心模块 Smart Chat模块 项目中心模块 数据工场模块 管理中心模块  1. 项目概述AI NAS (Artificial Intelligence Data Forge) 是一个基于 MAAS (Model as a Service) 的企业级智能文档管理系统，旨在为企业提供文档转换">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI NAS 系统架构说明">
+<meta property="og:url" content="https://1660479817.github.io/AIDF.github.io/2025/12/30/architecture/index.html">
+<meta property="og:site_name" content="AI NAS 技术博客">
+<meta property="og:description" content="文档导航本文档提供系统整体架构的概述说明。各模块的详细架构说明请参考对应的模块文档：  系统首页模块 文档中心模块 Smart Chat模块 项目中心模块 数据工场模块 管理中心模块  1. 项目概述AI NAS (Artificial Intelligence Data Forge) 是一个基于 MAAS (Model as a Service) 的企业级智能文档管理系统，旨在为企业提供文档转换">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-12-30T07:50:06.000Z">
+<meta property="article:modified_time" content="2025-12-30T09:21:14.959Z">
+<meta property="article:author" content="AI NAS Team">
+<meta property="article:tag" content="架构">
+<meta property="article:tag" content="系统架构">
+<meta name="twitter:card" content="summary">
+  
+  
+  
+  
+<link rel="stylesheet" href="/AIDF.github.io/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+  <style>
+    /* 确保 Emoji 图标正确显示 */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "EmojiOne Color", "EmojiOne Mozilla", "Twemoji Mozilla", "Segoe UI Emoji", "Segoe UI Symbol", Arial, sans-serif;
+    }
+    /* 为 Emoji 添加更好的渲染支持 */
+    * {
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/AIDF.github.io/" id="logo">AI NAS 技术博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/AIDF.github.io/" id="subtitle">AI NAS 系统技术文档与分享</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+        <a class="nav-icon nav-search-btn" title="search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://1660479817.github.io/AIDF.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-architecture" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/AIDF.github.io/2025/12/30/architecture/" class="article-date">
+  <time class="dt-published" datetime="2025-12-30T07:50:06.000Z" itemprop="datePublished">2025-12-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/AIDF.github.io/categories/AI-NAS/">AI NAS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      AI NAS 系统架构说明
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="文档导航"><a href="#文档导航" class="headerlink" title="文档导航"></a>文档导航</h2><p>本文档提供系统整体架构的概述说明。各模块的详细架构说明请参考对应的模块文档：</p>
+<ul>
+<li><a href="./modules/home/architecture.md">系统首页模块</a></li>
+<li><a href="./modules/workspace/architecture.md">文档中心模块</a></li>
+<li><a href="./modules/smart_chat/architecture.md">Smart Chat模块</a></li>
+<li><a href="./modules/project_center/architecture.md">项目中心模块</a></li>
+<li><a href="./modules/data_factory/architecture.md">数据工场模块</a></li>
+<li><a href="./modules/management/architecture.md">管理中心模块</a></li>
+</ul>
+<h2 id="1-项目概述"><a href="#1-项目概述" class="headerlink" title="1. 项目概述"></a>1. 项目概述</h2><p>AI NAS (Artificial Intelligence Data Forge) 是一个基于 MAAS (Model as a Service) 的企业级智能文档管理系统，旨在为企业提供文档转换、知识锻造、智能检索、异常恢复与健康监控的完整能力栈。</p>
+<h3 id="1-1-核心特点"><a href="#1-1-核心特点" class="headerlink" title="1.1 核心特点"></a>1.1 核心特点</h3><ol>
+<li><strong>从”文档存储”到”知识锻造”</strong>：不仅存储文档，还通过AI智能提取结构化知识，将非结构化文档锻造成统一、可信、可检索的知识底座</li>
+<li><strong>从”单一处理”到”多模态智能”</strong>：支持文档、图片、音频、视频等多种格式的智能处理和分析</li>
+<li><strong>从”数据系统”到”智能平台”</strong>：提供完整的文档管理、智能对话、项目流程管理等企业级能力</li>
+</ol>
+<h3 id="1-2-技术栈"><a href="#1-2-技术栈" class="headerlink" title="1.2 技术栈"></a>1.2 技术栈</h3><ul>
+<li><strong>Web框架</strong>：FastAPI (异步Web框架)</li>
+<li><strong>数据库</strong>：PostgreSQL (双数据库架构：ai_nas核心库 + ai_nas_app业务库)</li>
+<li><strong>ORM框架</strong>：SQLAlchemy</li>
+<li><strong>文档处理</strong>：MarkItDown + 自研解析器</li>
+<li><strong>LLM集成</strong>：OpenAI API (支持多种LLM提供商)</li>
+<li><strong>VLM集成</strong>：视觉语言模型支持</li>
+<li><strong>向量检索</strong>：Embedding + 向量数据库</li>
+<li><strong>异步编程</strong>：Python asyncio</li>
+<li><strong>任务调度</strong>：后台任务管理器</li>
+<li><strong>版本管理</strong>：Alembic (数据库迁移)</li>
+</ul>
+<h2 id="2-系统架构"><a href="#2-系统架构" class="headerlink" title="2. 系统架构"></a>2. 系统架构</h2><p>系统采用<strong>分层架构设计</strong>，各层职责清晰，便于维护和扩展。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                     入口层 (main.py)                      │</span><br><span class="line">│  - 系统启动和初始化                                        │</span><br><span class="line">│  - Web服务启动                                            │</span><br><span class="line">│  - 数据库初始化（双库并行）                                │</span><br><span class="line">│  - 后台服务启动                                            │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                   Web服务层 (app/api/v1/)                 │</span><br><span class="line">│  - FastAPI应用                                            │</span><br><span class="line">│  - API路由 (统一响应模型)                                 │</span><br><span class="line">│  - 认证和权限中间件                                        │</span><br><span class="line">│  - 请求隔离中间件                                          │</span><br><span class="line">│  - 静态文件服务                                            │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                 业务逻辑层 (app/services/)                │</span><br><span class="line">│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐ │</span><br><span class="line">│  │  Doc2MD      │  │  FileManage  │  │  Chat2Doc    │ │</span><br><span class="line">│  │  (文档转换)   │  │  (文件管理)   │  │  (文档对话)   │ │</span><br><span class="line">│  └──────────────┘  └──────────────┘  └──────────────┘ │</span><br><span class="line">│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐ │</span><br><span class="line">│  │  Background  │  │  System      │  │  Processing  │ │</span><br><span class="line">│  │  (后台服务)   │  │  (系统服务)   │  │  (处理服务)   │ │</span><br><span class="line">│  └──────────────┘  └──────────────┘  └──────────────┘ │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                 业务模块层 (app/modules/)                 │</span><br><span class="line">│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐ │</span><br><span class="line">│  │ Smart Chat   │  │  Contract    │  │  Enterprise  │ │</span><br><span class="line">│  │ (智能对话)    │  │  Management  │  │  Query      │ │</span><br><span class="line">│  └──────────────┘  └──────────────┘  └──────────────┘ │</span><br><span class="line">│  ┌──────────────┐                                      │</span><br><span class="line">│  │ Project Flow │                                      │</span><br><span class="line">│  │ (项目流程)    │                                      │</span><br><span class="line">│  └──────────────┘                                      │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                  核心服务层 (app/core/)                   │</span><br><span class="line">│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐ │</span><br><span class="line">│  │  Config      │  │  Database    │  │  PathManager│ │</span><br><span class="line">│  │  (配置管理)   │  │  (数据库管理)  │  │  (路径管理)  │ │</span><br><span class="line">│  └──────────────┘  └──────────────┘  └──────────────┘ │</span><br><span class="line">│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐ │</span><br><span class="line">│  │  StatusUtils │  │  LLM/VLM     │  │  Logging     │ │</span><br><span class="line">│  │  (状态管理)   │  │  (AI客户端)   │  │  (日志系统)   │ │</span><br><span class="line">│  └──────────────┘  └──────────────┘  └──────────────┘ │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                  数据层 (双数据库架构)                    │</span><br><span class="line">│  ┌────────────────────┐  ┌────────────────────┐        │</span><br><span class="line">│  │  ai_nas (核心库)   │  │  ai_nas_app (业务库)│        │</span><br><span class="line">│  │  - file_meta       │  │  - 业务模块表       │        │</span><br><span class="line">│  │  - processing_logs │  │  - 用户表          │        │</span><br><span class="line">│  │  - directories     │  │  - 权限表          │        │</span><br><span class="line">│  │  - keywords        │  │  - 模块数据        │        │</span><br><span class="line">│  │  - token_usage     │  │                    │        │</span><br><span class="line">│  └────────────────────┘  └────────────────────┘        │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-架构层次说明"><a href="#3-架构层次说明" class="headerlink" title="3. 架构层次说明"></a>3. 架构层次说明</h2><h3 id="3-1-入口层-app-main-py"><a href="#3-1-入口层-app-main-py" class="headerlink" title="3.1 入口层 (app&#x2F;main.py)"></a>3.1 入口层 (app&#x2F;main.py)</h3><p><strong>职责</strong>：系统启动和初始化</p>
+<ul>
+<li>Web服务启动（使用uvicorn）</li>
+<li>双数据库初始化（并行执行）</li>
+<li>后台服务启动</li>
+<li>优雅关闭处理</li>
+</ul>
+<h3 id="3-2-Web服务层-app-api-v1"><a href="#3-2-Web服务层-app-api-v1" class="headerlink" title="3.2 Web服务层 (app&#x2F;api&#x2F;v1&#x2F;)"></a>3.2 Web服务层 (app&#x2F;api&#x2F;v1&#x2F;)</h3><p><strong>职责</strong>：API接口层</p>
+<ul>
+<li>RESTful API接口（统一响应模型）</li>
+<li>认证和权限中间件</li>
+<li>请求隔离中间件</li>
+<li>API缓存优化</li>
+</ul>
+<h3 id="3-3-业务逻辑层-app-services"><a href="#3-3-业务逻辑层-app-services" class="headerlink" title="3.3 业务逻辑层 (app&#x2F;services&#x2F;)"></a>3.3 业务逻辑层 (app&#x2F;services&#x2F;)</h3><p><strong>职责</strong>：核心业务服务</p>
+<ul>
+<li><strong>Doc2MD服务</strong>：文档转换服务，支持多格式文档转换</li>
+<li><strong>FileManage服务</strong>：文件管理服务，管理文件元数据、分类、标签</li>
+<li><strong>Chat2Doc服务</strong>：文档对话服务，基于RAG的智能文档问答</li>
+<li><strong>Background服务</strong>：后台任务管理服务</li>
+<li><strong>System服务</strong>：系统服务，提供系统级功能</li>
+<li><strong>Processing服务</strong>：文档处理服务，管理文档处理流程</li>
+</ul>
+<h3 id="3-4-业务模块层-app-modules"><a href="#3-4-业务模块层-app-modules" class="headerlink" title="3.4 业务模块层 (app&#x2F;modules&#x2F;)"></a>3.4 业务模块层 (app&#x2F;modules&#x2F;)</h3><p><strong>职责</strong>：业务功能模块</p>
+<ul>
+<li><strong>Smart Chat模块</strong>：智能对话模块，提供企业级智能对话能力</li>
+<li><strong>Contract Management模块</strong>：合同管理模块</li>
+<li><strong>Enterprise Query模块</strong>：企业查询模块</li>
+<li><strong>Project Flow模块</strong>：项目流程管理模块</li>
+</ul>
+<h3 id="3-5-核心服务层-app-core"><a href="#3-5-核心服务层-app-core" class="headerlink" title="3.5 核心服务层 (app&#x2F;core&#x2F;)"></a>3.5 核心服务层 (app&#x2F;core&#x2F;)</h3><p><strong>职责</strong>：核心基础设施</p>
+<ul>
+<li><strong>Config模块</strong>：统一配置管理</li>
+<li><strong>Database模块</strong>：核心数据库（ai_nas）管理</li>
+<li><strong>AppDatabase模块</strong>：业务数据库（ai_nas_app）管理</li>
+<li><strong>PathManager模块</strong>：统一路径管理</li>
+<li><strong>StatusUtils模块</strong>：状态管理工具</li>
+<li><strong>LLM&#x2F;VLM模块</strong>：AI客户端管理</li>
+<li><strong>Logging模块</strong>：日志系统</li>
+</ul>
+<h3 id="3-6-数据层"><a href="#3-6-数据层" class="headerlink" title="3.6 数据层"></a>3.6 数据层</h3><p><strong>职责</strong>：数据存储</p>
+<ul>
+<li><strong>ai_nas核心库</strong>：存储核心数据（文件元数据、处理日志等）</li>
+<li><strong>ai_nas_app业务库</strong>：存储业务数据（用户、权限、模块数据等）</li>
+</ul>
+<h2 id="4-设计原则"><a href="#4-设计原则" class="headerlink" title="4. 设计原则"></a>4. 设计原则</h2><h3 id="4-1-分层架构"><a href="#4-1-分层架构" class="headerlink" title="4.1 分层架构"></a>4.1 分层架构</h3><p>系统采用清晰的分层架构，各层职责明确，便于维护和扩展。</p>
+<h3 id="4-2-双数据库设计"><a href="#4-2-双数据库设计" class="headerlink" title="4.2 双数据库设计"></a>4.2 双数据库设计</h3><ul>
+<li><strong>ai_nas核心库</strong>：存储系统核心数据，结构稳定</li>
+<li><strong>ai_nas_app业务库</strong>：存储业务模块数据，灵活扩展</li>
+</ul>
+<h3 id="4-3-统一响应模型"><a href="#4-3-统一响应模型" class="headerlink" title="4.3 统一响应模型"></a>4.3 统一响应模型</h3><p>所有API接口遵循统一的响应格式，便于前端处理和错误处理。</p>
+<h3 id="4-4-异步处理"><a href="#4-4-异步处理" class="headerlink" title="4.4 异步处理"></a>4.4 异步处理</h3><p>系统全面采用异步处理，提高并发性能和响应速度。</p>
+<h2 id="5-深入了解"><a href="#5-深入了解" class="headerlink" title="5. 深入了解"></a>5. 深入了解</h2><p>要了解各模块的详细架构设计，请查看对应的模块文档：</p>
+<ul>
+<li><a href="./modules/home/architecture.md">系统首页模块架构</a></li>
+<li><a href="./modules/workspace/architecture.md">文档中心模块架构</a></li>
+<li><a href="./modules/smart_chat/architecture.md">Smart Chat模块架构</a></li>
+<li><a href="./modules/project_center/architecture.md">项目中心模块架构</a></li>
+<li><a href="./modules/data_factory/architecture.md">数据工场模块架构</a></li>
+<li><a href="./modules/management/architecture.md">管理中心模块架构</a></li>
+</ul>
+<hr>
+<p><a href="./README.md">← 返回首页</a> | <a href="./api.md">查看API文档 →</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/architecture/" data-id="cmjsdrfgu0005wm1w7jmx477n" data-title="AI NAS 系统架构说明" class="article-share-link"><span class="fa fa-share">share</span></a>
+      
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/AIDF.github.io/tags/%E6%9E%B6%E6%9E%84/" rel="tag">架构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/AIDF.github.io/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" rel="tag">系统架构</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/AIDF.github.io/2025/12/30/api/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
+        
+          API接口说明文档
+        
+      </div>
+    </a>
+  
+  
+    <a href="/AIDF.github.io/2025/12/30/data_factory-api/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title">数据工场模块API接口文档</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 AI NAS Team<br>
+      powered_by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+</nav>
+    
+
+
+<script src="/AIDF.github.io/js/jquery-3.6.4.min.js"></script>
+
+
+
+
+<script>
+// 修复 exmid 错误：捕获并忽略相关错误
+(function() {
+  var originalErrorHandler = window.onerror;
+  window.addEventListener('error', function(event) {
+    // 检查是否是 exmid 相关的错误
+    if (event.message && (
+      event.message.indexOf('exmid') !== -1 || 
+      event.message.indexOf('Cannot set properties of null') !== -1
+    )) {
+      event.preventDefault();
+      event.stopPropagation();
+      console.warn('已忽略 exmid 相关错误（不影响功能）');
+      return true;
+    }
+    // 其他错误正常处理
+    if (originalErrorHandler) {
+      return originalErrorHandler.apply(this, arguments);
+    }
+    return false;
+  }, true);
+})();
+</script>
+
+<script src="/AIDF.github.io/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
+

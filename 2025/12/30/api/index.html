@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>API接口说明文档 | AI NAS 技术博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="文档导航本文档提供API接口的规范和概述说明。各模块的详细API接口请参考对应的模块文档：  系统首页API 文档中心API Smart Chat API 项目中心API 数据工场API 管理中心API  1. 概述AI NAS 提供完整的 RESTful API 接口，基于 FastAPI 框架实现。所有 API 接口都支持异步处理，返回 JSON 格式数据。 1.1 基础信息 Base URL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="API接口说明文档">
+<meta property="og:url" content="https://1660479817.github.io/AIDF.github.io/2025/12/30/api/index.html">
+<meta property="og:site_name" content="AI NAS 技术博客">
+<meta property="og:description" content="文档导航本文档提供API接口的规范和概述说明。各模块的详细API接口请参考对应的模块文档：  系统首页API 文档中心API Smart Chat API 项目中心API 数据工场API 管理中心API  1. 概述AI NAS 提供完整的 RESTful API 接口，基于 FastAPI 框架实现。所有 API 接口都支持异步处理，返回 JSON 格式数据。 1.1 基础信息 Base URL">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-12-30T07:50:06.000Z">
+<meta property="article:modified_time" content="2025-12-30T09:21:14.959Z">
+<meta property="article:author" content="AI NAS Team">
+<meta property="article:tag" content="API">
+<meta property="article:tag" content="接口文档">
+<meta name="twitter:card" content="summary">
+  
+  
+  
+  
+<link rel="stylesheet" href="/AIDF.github.io/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+  <style>
+    /* 确保 Emoji 图标正确显示 */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "EmojiOne Color", "EmojiOne Mozilla", "Twemoji Mozilla", "Segoe UI Emoji", "Segoe UI Symbol", Arial, sans-serif;
+    }
+    /* 为 Emoji 添加更好的渲染支持 */
+    * {
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/AIDF.github.io/" id="logo">AI NAS 技术博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/AIDF.github.io/" id="subtitle">AI NAS 系统技术文档与分享</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+        <a class="nav-icon nav-search-btn" title="search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://1660479817.github.io/AIDF.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-api" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/AIDF.github.io/2025/12/30/api/" class="article-date">
+  <time class="dt-published" datetime="2025-12-30T07:50:06.000Z" itemprop="datePublished">2025-12-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/AIDF.github.io/categories/AI-NAS/">AI NAS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      API接口说明文档
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="文档导航"><a href="#文档导航" class="headerlink" title="文档导航"></a>文档导航</h2><p>本文档提供API接口的规范和概述说明。各模块的详细API接口请参考对应的模块文档：</p>
+<ul>
+<li><a href="./modules/home/api.md">系统首页API</a></li>
+<li><a href="./modules/workspace/api.md">文档中心API</a></li>
+<li><a href="./modules/smart_chat/api.md">Smart Chat API</a></li>
+<li><a href="./modules/project_center/api.md">项目中心API</a></li>
+<li><a href="./modules/data_factory/api.md">数据工场API</a></li>
+<li><a href="./modules/management/api.md">管理中心API</a></li>
+</ul>
+<h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><p>AI NAS 提供完整的 RESTful API 接口，基于 FastAPI 框架实现。所有 API 接口都支持异步处理，返回 JSON 格式数据。</p>
+<h3 id="1-1-基础信息"><a href="#1-1-基础信息" class="headerlink" title="1.1 基础信息"></a>1.1 基础信息</h3><ul>
+<li><strong>Base URL</strong>：<code>http://localhost:8000</code>（开发环境）</li>
+<li><strong>API前缀</strong>：<code>/api/v1</code></li>
+<li><strong>Content-Type</strong>：<code>application/json</code></li>
+<li><strong>响应格式</strong>：统一使用 JSON 格式</li>
+</ul>
+<h3 id="1-2-统一响应格式"><a href="#1-2-统一响应格式" class="headerlink" title="1.2 统一响应格式"></a>1.2 统一响应格式</h3><p>所有 API 接口遵循统一的响应格式：</p>
+<p><strong>成功响应（数据响应）</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;操作成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>...<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">123</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>成功响应（列表响应）</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;操作成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;items&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span>...<span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;total&quot;</span><span class="punctuation">:</span> <span class="number">100</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;page&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;page_size&quot;</span><span class="punctuation">:</span> <span class="number">20</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;total_pages&quot;</span><span class="punctuation">:</span> <span class="number">5</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">123</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>错误响应</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;error&quot;</span><span class="punctuation">:</span> <span class="string">&quot;错误信息&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;error_code&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ERROR_CODE&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;details&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>...<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">123</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-状态码"><a href="#1-3-状态码" class="headerlink" title="1.3 状态码"></a>1.3 状态码</h3><ul>
+<li><code>200</code>：成功</li>
+<li><code>400</code>：请求参数错误</li>
+<li><code>401</code>：未授权</li>
+<li><code>403</code>：禁止访问</li>
+<li><code>404</code>：资源不存在</li>
+<li><code>500</code>：服务器内部错误</li>
+</ul>
+<h3 id="1-4-认证"><a href="#1-4-认证" class="headerlink" title="1.4 认证"></a>1.4 认证</h3><p>大部分API需要认证，使用Bearer Token方式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Authorization: Bearer &lt;token&gt;</span><br></pre></td></tr></table></figure>
+
+<p>或者通过Cookie传递：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cookie: auth_token=&lt;token&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-API分类"><a href="#2-API分类" class="headerlink" title="2. API分类"></a>2. API分类</h2><h3 id="2-1-认证API"><a href="#2-1-认证API" class="headerlink" title="2.1 认证API"></a>2.1 认证API</h3><p>提供用户注册、登录、登出、权限验证等功能。</p>
+<p><strong>主要接口：</strong></p>
+<ul>
+<li><code>POST /api/v1/auth/register</code> - 用户注册</li>
+<li><code>POST /api/v1/auth/login</code> - 用户登录</li>
+<li><code>POST /api/v1/auth/logout</code> - 用户登出</li>
+<li><code>GET /api/v1/auth/me</code> - 获取当前用户信息</li>
+<li><code>GET /api/v1/auth/permissions</code> - 获取用户权限</li>
+<li><code>POST /api/v1/auth/change-password</code> - 修改密码</li>
+</ul>
+<blockquote>
+<p>📖 <a href="./modules/home/api.md#%E8%AE%A4%E8%AF%81api">查看详细API文档 →</a></p>
+</blockquote>
+<h3 id="2-2-文件管理API"><a href="#2-2-文件管理API" class="headerlink" title="2.2 文件管理API"></a>2.2 文件管理API</h3><p>提供文件上传、下载、列表查询、详情获取等功能。</p>
+<p><strong>主要接口：</strong></p>
+<ul>
+<li><code>POST /api/v1/files/upload</code> - 上传文件</li>
+<li><code>GET /api/v1/files/</code> - 获取文件列表</li>
+<li><code>GET /api/v1/files/&#123;file_id&#125;</code> - 获取文件详情</li>
+<li><code>GET /api/v1/files/&#123;file_id&#125;/download</code> - 下载文件</li>
+<li><code>DELETE /api/v1/files/&#123;file_id&#125;</code> - 删除文件</li>
+</ul>
+<blockquote>
+<p>📖 <a href="./modules/workspace/api.md#%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86api">查看详细API文档 →</a></p>
+</blockquote>
+<h3 id="2-3-文档处理API"><a href="#2-3-文档处理API" class="headerlink" title="2.3 文档处理API"></a>2.3 文档处理API</h3><p>提供文档处理状态查询、处理队列管理等功能。</p>
+<p><strong>主要接口：</strong></p>
+<ul>
+<li><code>GET /api/v1/processing/status</code> - 获取处理状态</li>
+<li><code>GET /api/v1/processing/queue</code> - 获取处理队列</li>
+<li><code>POST /api/v1/processing/process/&#123;file_id&#125;</code> - 触发文档处理</li>
+</ul>
+<blockquote>
+<p>📖 <a href="./modules/data_factory/api.md">查看详细API文档 →</a></p>
+</blockquote>
+<h3 id="2-4-智能对话API"><a href="#2-4-智能对话API" class="headerlink" title="2.4 智能对话API"></a>2.4 智能对话API</h3><p>提供文档对话、智能问答等功能。</p>
+<p><strong>主要接口：</strong></p>
+<ul>
+<li><code>POST /api/v1/chat2doc/chat</code> - 文档对话</li>
+<li><code>POST /api/v1/chat2doc/stream</code> - 流式对话</li>
+<li><code>GET /api/v1/chat2doc/history</code> - 获取对话历史</li>
+</ul>
+<blockquote>
+<p>📖 <a href="./modules/smart_chat/api.md">查看详细API文档 →</a></p>
+</blockquote>
+<h3 id="2-5-项目管理API"><a href="#2-5-项目管理API" class="headerlink" title="2.5 项目管理API"></a>2.5 项目管理API</h3><p>提供项目管理、成员管理、记录管理等功能。</p>
+<p><strong>主要接口：</strong></p>
+<ul>
+<li><code>GET /api/v1/projects/</code> - 获取项目列表</li>
+<li><code>POST /api/v1/projects/</code> - 创建项目</li>
+<li><code>GET /api/v1/projects/&#123;project_id&#125;</code> - 获取项目详情</li>
+<li><code>POST /api/v1/projects/&#123;project_id&#125;/members</code> - 添加项目成员</li>
+</ul>
+<blockquote>
+<p>📖 <a href="./modules/project_center/api.md">查看详细API文档 →</a></p>
+</blockquote>
+<h3 id="2-6-系统管理API"><a href="#2-6-系统管理API" class="headerlink" title="2.6 系统管理API"></a>2.6 系统管理API</h3><p>提供用户管理、权限管理、系统设置等功能。</p>
+<p><strong>主要接口：</strong></p>
+<ul>
+<li><code>GET /api/v1/user-management/users/</code> - 获取用户列表</li>
+<li><code>POST /api/v1/user-management/users/</code> - 创建用户</li>
+<li><code>GET /api/v1/system/info</code> - 获取系统信息</li>
+<li><code>GET /api/v1/stats/summary</code> - 获取系统统计</li>
+</ul>
+<blockquote>
+<p>📖 <a href="./modules/management/api.md">查看详细API文档 →</a></p>
+</blockquote>
+<h2 id="3-API设计原则"><a href="#3-API设计原则" class="headerlink" title="3. API设计原则"></a>3. API设计原则</h2><h3 id="3-1-RESTful设计"><a href="#3-1-RESTful设计" class="headerlink" title="3.1 RESTful设计"></a>3.1 RESTful设计</h3><ul>
+<li>使用标准HTTP方法（GET、POST、PUT、DELETE）</li>
+<li>资源导向的URL设计</li>
+<li>状态码语义化</li>
+</ul>
+<h3 id="3-2-统一响应格式"><a href="#3-2-统一响应格式" class="headerlink" title="3.2 统一响应格式"></a>3.2 统一响应格式</h3><p>所有API接口遵循统一的响应格式，便于前端统一处理。</p>
+<h3 id="3-3-异步处理"><a href="#3-3-异步处理" class="headerlink" title="3.3 异步处理"></a>3.3 异步处理</h3><p>所有API接口支持异步处理，提高系统并发性能。</p>
+<h3 id="3-4-错误处理"><a href="#3-4-错误处理" class="headerlink" title="3.4 错误处理"></a>3.4 错误处理</h3><p>统一的错误响应格式，包含错误码和详细信息，便于问题定位。</p>
+<h2 id="4-深入了解"><a href="#4-深入了解" class="headerlink" title="4. 深入了解"></a>4. 深入了解</h2><p>要了解各模块的详细API接口，请查看对应的模块文档：</p>
+<ul>
+<li><a href="./modules/home/api.md">系统首页API</a></li>
+<li><a href="./modules/workspace/api.md">文档中心API</a></li>
+<li><a href="./modules/smart_chat/api.md">Smart Chat API</a></li>
+<li><a href="./modules/project_center/api.md">项目中心API</a></li>
+<li><a href="./modules/data_factory/api.md">数据工场API</a></li>
+<li><a href="./modules/management/api.md">管理中心API</a></li>
+</ul>
+<hr>
+<p><a href="./README.md">← 返回首页</a> | <a href="./architecture.md">查看架构文档 →</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/api/" data-id="cmjsdrfgs0002wm1w4suy5a4n" data-title="API接口说明文档" class="article-share-link"><span class="fa fa-share">share</span></a>
+      
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/AIDF.github.io/tags/API/" rel="tag">API</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/AIDF.github.io/tags/%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" rel="tag">接口文档</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/AIDF.github.io/2025/12/30/README/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
+        
+          AI NAS - 企业级智能文档管理系统
+        
+      </div>
+    </a>
+  
+  
+    <a href="/AIDF.github.io/2025/12/30/architecture/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title">AI NAS 系统架构说明</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 AI NAS Team<br>
+      powered_by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+</nav>
+    
+
+
+<script src="/AIDF.github.io/js/jquery-3.6.4.min.js"></script>
+
+
+
+
+<script>
+// 修复 exmid 错误：捕获并忽略相关错误
+(function() {
+  var originalErrorHandler = window.onerror;
+  window.addEventListener('error', function(event) {
+    // 检查是否是 exmid 相关的错误
+    if (event.message && (
+      event.message.indexOf('exmid') !== -1 || 
+      event.message.indexOf('Cannot set properties of null') !== -1
+    )) {
+      event.preventDefault();
+      event.stopPropagation();
+      console.warn('已忽略 exmid 相关错误（不影响功能）');
+      return true;
+    }
+    // 其他错误正常处理
+    if (originalErrorHandler) {
+      return originalErrorHandler.apply(this, arguments);
+    }
+    return false;
+  }, true);
+})();
+</script>
+
+<script src="/AIDF.github.io/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
+

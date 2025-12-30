@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>系统首页模块架构说明 | AI NAS 技术博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="1. 模块概述系统首页是AI NAS的入口页面，提供系统概览、快速导航和核心功能入口。 1.1 功能定位 系统入口：用户访问系统的第一个页面 功能导航：快速访问各个核心功能模块 系统概览：展示系统统计信息和状态 快速操作：提供常用功能的快速入口  1.2 访问路径 URL：&#x2F; 文件位置：static&#x2F;home.html 权限要求：所有用户（包括游客）可访问  2. 模块架构123456789101">
+<meta property="og:type" content="article">
+<meta property="og:title" content="系统首页模块架构说明">
+<meta property="og:url" content="https://1660479817.github.io/AIDF.github.io/2025/12/30/home-architecture/index.html">
+<meta property="og:site_name" content="AI NAS 技术博客">
+<meta property="og:description" content="1. 模块概述系统首页是AI NAS的入口页面，提供系统概览、快速导航和核心功能入口。 1.1 功能定位 系统入口：用户访问系统的第一个页面 功能导航：快速访问各个核心功能模块 系统概览：展示系统统计信息和状态 快速操作：提供常用功能的快速入口  1.2 访问路径 URL：&#x2F; 文件位置：static&#x2F;home.html 权限要求：所有用户（包括游客）可访问  2. 模块架构123456789101">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-12-30T07:50:06.000Z">
+<meta property="article:modified_time" content="2025-12-30T09:21:14.959Z">
+<meta property="article:author" content="AI NAS Team">
+<meta property="article:tag" content="架构">
+<meta property="article:tag" content="模块架构">
+<meta property="article:tag" content="系统首页">
+<meta name="twitter:card" content="summary">
+  
+  
+  
+  
+<link rel="stylesheet" href="/AIDF.github.io/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+  <style>
+    /* 确保 Emoji 图标正确显示 */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "EmojiOne Color", "EmojiOne Mozilla", "Twemoji Mozilla", "Segoe UI Emoji", "Segoe UI Symbol", Arial, sans-serif;
+    }
+    /* 为 Emoji 添加更好的渲染支持 */
+    * {
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/AIDF.github.io/" id="logo">AI NAS 技术博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/AIDF.github.io/" id="subtitle">AI NAS 系统技术文档与分享</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+        <a class="nav-icon nav-search-btn" title="search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://1660479817.github.io/AIDF.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-home-architecture" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/AIDF.github.io/2025/12/30/home-architecture/" class="article-date">
+  <time class="dt-published" datetime="2025-12-30T07:50:06.000Z" itemprop="datePublished">2025-12-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/AIDF.github.io/categories/AI-NAS-%E7%B3%BB%E7%BB%9F%E9%A6%96%E9%A1%B5/">AI NAS - 系统首页</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      系统首页模块架构说明
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="1-模块概述"><a href="#1-模块概述" class="headerlink" title="1. 模块概述"></a>1. 模块概述</h2><p>系统首页是AI NAS的入口页面，提供系统概览、快速导航和核心功能入口。</p>
+<h3 id="1-1-功能定位"><a href="#1-1-功能定位" class="headerlink" title="1.1 功能定位"></a>1.1 功能定位</h3><ul>
+<li><strong>系统入口</strong>：用户访问系统的第一个页面</li>
+<li><strong>功能导航</strong>：快速访问各个核心功能模块</li>
+<li><strong>系统概览</strong>：展示系统统计信息和状态</li>
+<li><strong>快速操作</strong>：提供常用功能的快速入口</li>
+</ul>
+<h3 id="1-2-访问路径"><a href="#1-2-访问路径" class="headerlink" title="1.2 访问路径"></a>1.2 访问路径</h3><ul>
+<li><strong>URL</strong>：<code>/</code></li>
+<li><strong>文件位置</strong>：<code>static/home.html</code></li>
+<li><strong>权限要求</strong>：所有用户（包括游客）可访问</li>
+</ul>
+<h2 id="2-模块架构"><a href="#2-模块架构" class="headerlink" title="2. 模块架构"></a>2. 模块架构</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                    前端页面层                              │</span><br><span class="line">│  - home.html (静态页面)                                   │</span><br><span class="line">│  - 导航栏组件 (navbar.html)                              │</span><br><span class="line">│  - JavaScript交互逻辑                                     │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                    API接口层                              │</span><br><span class="line">│  - GET /api/v1/system/info (系统信息)                    │</span><br><span class="line">│  - GET /api/v1/stats/summary (系统统计)                   │</span><br><span class="line">│  - GET /api/v1/stats/dashboard (仪表板数据)              │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                   业务服务层                              │</span><br><span class="line">│  - System Service (系统服务)                             │</span><br><span class="line">│  - Stats Service (统计服务)                              │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                   数据层                                  │</span><br><span class="line">│  - ai_nas: system_logs, processing_logs                  │</span><br><span class="line">│  - ai_nas_app: users (用户统计)                          │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-核心组件"><a href="#3-核心组件" class="headerlink" title="3. 核心组件"></a>3. 核心组件</h2><h3 id="3-1-前端组件"><a href="#3-1-前端组件" class="headerlink" title="3.1 前端组件"></a>3.1 前端组件</h3><h4 id="3-1-1-Hero区域"><a href="#3-1-1-Hero区域" class="headerlink" title="3.1.1 Hero区域"></a>3.1.1 Hero区域</h4><p><strong>功能</strong>：</p>
+<ul>
+<li>展示系统Logo和标题</li>
+<li>显示系统描述和口号</li>
+<li>提供快速操作按钮（文档中心、AI助手）</li>
+</ul>
+<p><strong>实现</strong>：</p>
+<ul>
+<li>HTML结构：<code>hero-section</code></li>
+<li>CSS样式：渐变背景、动画效果</li>
+<li>JavaScript：动态加载系统信息</li>
+</ul>
+<h4 id="3-1-2-功能卡片区域"><a href="#3-1-2-功能卡片区域" class="headerlink" title="3.1.2 功能卡片区域"></a>3.1.2 功能卡片区域</h4><p><strong>功能</strong>：</p>
+<ul>
+<li>展示核心功能模块卡片</li>
+<li>提供快速导航入口</li>
+<li>显示功能描述和图标</li>
+</ul>
+<p><strong>核心功能卡片</strong>：</p>
+<ol>
+<li><strong>文档中心</strong>：文档搜索、浏览、管理</li>
+<li><strong>AI助手中心</strong>：智能对话、企业查询等AI应用</li>
+<li><strong>数据工场</strong>：AI文档处理流水线</li>
+<li><strong>数据仓库看板</strong>：文档统计、趋势分析</li>
+</ol>
+<h4 id="3-1-3-系统统计区域"><a href="#3-1-3-系统统计区域" class="headerlink" title="3.1.3 系统统计区域"></a>3.1.3 系统统计区域</h4><p><strong>功能</strong>：</p>
+<ul>
+<li>展示系统统计数据</li>
+<li>显示文档数量、处理状态等</li>
+<li>实时更新系统状态</li>
+</ul>
+<p><strong>统计数据</strong>：</p>
+<ul>
+<li>总文档数</li>
+<li>处理中文档数</li>
+<li>已完成文档数</li>
+<li>失败文档数</li>
+<li>系统版本信息</li>
+</ul>
+<h3 id="3-2-后端API"><a href="#3-2-后端API" class="headerlink" title="3.2 后端API"></a>3.2 后端API</h3><h4 id="3-2-1-系统信息API"><a href="#3-2-1-系统信息API" class="headerlink" title="3.2.1 系统信息API"></a>3.2.1 系统信息API</h4><p><strong>接口</strong>：<code>GET /api/v1/system/info</code></p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>获取系统基本信息</li>
+<li>返回系统版本、IP地址、端口等</li>
+<li>提供访问链接</li>
+</ul>
+<p><strong>响应数据</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;v5.10.1&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;AI NAS&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;local_ip&quot;</span><span class="punctuation">:</span> <span class="string">&quot;192.168.1.100&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;port&quot;</span><span class="punctuation">:</span> <span class="number">8000</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;local_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://localhost:8000&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;network_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://192.168.1.100:8000&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;api_docs_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://192.168.1.100:8000/docs&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data_storage_path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/path/to/data&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;system_status&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>...<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;stats&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>...<span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-2-系统统计API"><a href="#3-2-2-系统统计API" class="headerlink" title="3.2.2 系统统计API"></a>3.2.2 系统统计API</h4><p><strong>接口</strong>：<code>GET /api/v1/stats/summary</code></p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>获取系统整体统计信息</li>
+<li>返回文档数量、处理状态统计</li>
+<li>提供系统健康度指标</li>
+</ul>
+<p><strong>响应数据</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;total_files&quot;</span><span class="punctuation">:</span> <span class="number">100</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;total_size&quot;</span><span class="punctuation">:</span> <span class="number">1024000000</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;completed_files&quot;</span><span class="punctuation">:</span> <span class="number">90</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;failed_files&quot;</span><span class="punctuation">:</span> <span class="number">3</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;processing_files&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;queued_files&quot;</span><span class="punctuation">:</span> <span class="number">5</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-3-仪表板数据API"><a href="#3-2-3-仪表板数据API" class="headerlink" title="3.2.3 仪表板数据API"></a>3.2.3 仪表板数据API</h4><p><strong>接口</strong>：<code>GET /api/v1/stats/dashboard</code></p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>获取仪表板详细数据</li>
+<li>返回趋势分析、分类统计等</li>
+<li>提供可视化数据支持</li>
+</ul>
+<h2 id="4-数据流"><a href="#4-数据流" class="headerlink" title="4. 数据流"></a>4. 数据流</h2><h3 id="4-1-页面加载流程"><a href="#4-1-页面加载流程" class="headerlink" title="4.1 页面加载流程"></a>4.1 页面加载流程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">用户访问首页 (/)</span><br><span class="line">    ↓</span><br><span class="line">加载静态HTML (home.html)</span><br><span class="line">    ↓</span><br><span class="line">初始化JavaScript</span><br><span class="line">    ↓</span><br><span class="line">并行请求API</span><br><span class="line">    ├─ GET /api/v1/system/info</span><br><span class="line">    ├─ GET /api/v1/stats/summary</span><br><span class="line">    └─ GET /api/v1/stats/dashboard</span><br><span class="line">    ↓</span><br><span class="line">渲染页面内容</span><br><span class="line">    ├─ Hero区域</span><br><span class="line">    ├─ 功能卡片区域</span><br><span class="line">    └─ 系统统计区域</span><br><span class="line">    ↓</span><br><span class="line">页面展示完成</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-数据更新流程"><a href="#4-2-数据更新流程" class="headerlink" title="4.2 数据更新流程"></a>4.2 数据更新流程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">定时器触发 (每30秒)</span><br><span class="line">    ↓</span><br><span class="line">请求系统统计API</span><br><span class="line">    ↓</span><br><span class="line">更新统计数据</span><br><span class="line">    ↓</span><br><span class="line">刷新统计区域显示</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-技术实现"><a href="#5-技术实现" class="headerlink" title="5. 技术实现"></a>5. 技术实现</h2><h3 id="5-1-前端技术"><a href="#5-1-前端技术" class="headerlink" title="5.1 前端技术"></a>5.1 前端技术</h3><ul>
+<li><strong>HTML5</strong>：页面结构</li>
+<li><strong>CSS3</strong>：样式和动画（渐变、过渡、浮动动画）</li>
+<li><strong>JavaScript</strong>：交互逻辑和API调用</li>
+<li><strong>Bootstrap</strong>：响应式布局</li>
+<li><strong>Font Awesome</strong>：图标库</li>
+</ul>
+<h3 id="5-2-后端技术"><a href="#5-2-后端技术" class="headerlink" title="5.2 后端技术"></a>5.2 后端技术</h3><ul>
+<li><strong>FastAPI</strong>：API服务</li>
+<li><strong>SQLAlchemy</strong>：数据库查询</li>
+<li><strong>异步处理</strong>：API异步响应</li>
+</ul>
+<h3 id="5-3-性能优化"><a href="#5-3-性能优化" class="headerlink" title="5.3 性能优化"></a>5.3 性能优化</h3><ul>
+<li><strong>静态资源缓存</strong>：CSS、JS文件缓存</li>
+<li><strong>API请求合并</strong>：并行请求多个API</li>
+<li><strong>懒加载</strong>：统计区域按需加载</li>
+<li><strong>响应式设计</strong>：适配不同屏幕尺寸</li>
+</ul>
+<h2 id="6-扩展性"><a href="#6-扩展性" class="headerlink" title="6. 扩展性"></a>6. 扩展性</h2><h3 id="6-1-功能扩展"><a href="#6-1-功能扩展" class="headerlink" title="6.1 功能扩展"></a>6.1 功能扩展</h3><ul>
+<li>支持自定义功能卡片</li>
+<li>支持动态配置导航链接</li>
+<li>支持主题切换</li>
+</ul>
+<h3 id="6-2-数据扩展"><a href="#6-2-数据扩展" class="headerlink" title="6.2 数据扩展"></a>6.2 数据扩展</h3><ul>
+<li>支持更多统计维度</li>
+<li>支持自定义仪表板</li>
+<li>支持实时数据推送</li>
+</ul>
+<h2 id="7-安全设计"><a href="#7-安全设计" class="headerlink" title="7. 安全设计"></a>7. 安全设计</h2><h3 id="7-1-访问控制"><a href="#7-1-访问控制" class="headerlink" title="7.1 访问控制"></a>7.1 访问控制</h3><ul>
+<li>首页对所有用户开放（包括游客）</li>
+<li>功能卡片根据权限显示&#x2F;隐藏</li>
+<li>API接口根据用户角色返回不同数据</li>
+</ul>
+<h3 id="7-2-数据安全"><a href="#7-2-数据安全" class="headerlink" title="7.2 数据安全"></a>7.2 数据安全</h3><ul>
+<li>敏感信息不暴露在首页</li>
+<li>统计数据聚合显示，不暴露详细信息</li>
+<li>API接口有权限验证</li>
+</ul>
+<h2 id="8-总结"><a href="#8-总结" class="headerlink" title="8. 总结"></a>8. 总结</h2><p>系统首页作为AI NAS的入口页面，提供了清晰的导航和系统概览功能。通过模块化的设计和异步API调用，实现了良好的用户体验和性能表现。页面设计简洁美观，功能布局合理，为用户提供了便捷的系统访问入口。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/home-architecture/" data-id="cmjsdrfgx000bwm1w9e1c0yig" data-title="系统首页模块架构说明" class="article-share-link"><span class="fa fa-share">share</span></a>
+      
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/AIDF.github.io/tags/%E6%9E%B6%E6%9E%84/" rel="tag">架构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/AIDF.github.io/tags/%E6%A8%A1%E5%9D%97%E6%9E%B6%E6%9E%84/" rel="tag">模块架构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/AIDF.github.io/tags/%E7%B3%BB%E7%BB%9F%E9%A6%96%E9%A1%B5/" rel="tag">系统首页</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/AIDF.github.io/2025/12/30/home-api/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
+        
+          系统首页模块API接口文档
+        
+      </div>
+    </a>
+  
+  
+    <a href="/AIDF.github.io/2025/12/30/management-api/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title">管理中心模块API接口文档</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 AI NAS Team<br>
+      powered_by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+</nav>
+    
+
+
+<script src="/AIDF.github.io/js/jquery-3.6.4.min.js"></script>
+
+
+
+
+<script>
+// 修复 exmid 错误：捕获并忽略相关错误
+(function() {
+  var originalErrorHandler = window.onerror;
+  window.addEventListener('error', function(event) {
+    // 检查是否是 exmid 相关的错误
+    if (event.message && (
+      event.message.indexOf('exmid') !== -1 || 
+      event.message.indexOf('Cannot set properties of null') !== -1
+    )) {
+      event.preventDefault();
+      event.stopPropagation();
+      console.warn('已忽略 exmid 相关错误（不影响功能）');
+      return true;
+    }
+    // 其他错误正常处理
+    if (originalErrorHandler) {
+      return originalErrorHandler.apply(this, arguments);
+    }
+    return false;
+  }, true);
+})();
+</script>
+
+<script src="/AIDF.github.io/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
+

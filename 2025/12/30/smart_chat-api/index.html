@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Smart Chat 模块API接口文档 | AI NAS 技术博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="1. 概述Smart Chat模块使用的API接口，提供智能对话、执行器管理、会话管理等功能。 1.1 基础信息 Base URL：http:&#x2F;&#x2F;localhost:8000 API前缀：&#x2F;api&#x2F;v1&#x2F;smart-chat Content-Type：application&#x2F;json  2. 对话API2.1 发送消息接口：POST &#x2F;api&#x2F;v1&#x2F;smart-chat&#x2F;chat 说明：发送消息并">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Smart Chat 模块API接口文档">
+<meta property="og:url" content="https://1660479817.github.io/AIDF.github.io/2025/12/30/smart_chat-api/index.html">
+<meta property="og:site_name" content="AI NAS 技术博客">
+<meta property="og:description" content="1. 概述Smart Chat模块使用的API接口，提供智能对话、执行器管理、会话管理等功能。 1.1 基础信息 Base URL：http:&#x2F;&#x2F;localhost:8000 API前缀：&#x2F;api&#x2F;v1&#x2F;smart-chat Content-Type：application&#x2F;json  2. 对话API2.1 发送消息接口：POST &#x2F;api&#x2F;v1&#x2F;smart-chat&#x2F;chat 说明：发送消息并">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-12-30T07:50:06.000Z">
+<meta property="article:modified_time" content="2025-12-30T09:21:14.959Z">
+<meta property="article:author" content="AI NAS Team">
+<meta property="article:tag" content="API">
+<meta property="article:tag" content="接口文档">
+<meta property="article:tag" content="Smart Chat">
+<meta name="twitter:card" content="summary">
+  
+  
+  
+  
+<link rel="stylesheet" href="/AIDF.github.io/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+  <style>
+    /* 确保 Emoji 图标正确显示 */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "EmojiOne Color", "EmojiOne Mozilla", "Twemoji Mozilla", "Segoe UI Emoji", "Segoe UI Symbol", Arial, sans-serif;
+    }
+    /* 为 Emoji 添加更好的渲染支持 */
+    * {
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/AIDF.github.io/" id="logo">AI NAS 技术博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/AIDF.github.io/" id="subtitle">AI NAS 系统技术文档与分享</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+        <a class="nav-icon nav-search-btn" title="search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://1660479817.github.io/AIDF.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-smart_chat-api" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/AIDF.github.io/2025/12/30/smart_chat-api/" class="article-date">
+  <time class="dt-published" datetime="2025-12-30T07:50:06.000Z" itemprop="datePublished">2025-12-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/AIDF.github.io/categories/AI-NAS-Smart-Chat/">AI NAS - Smart Chat</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Smart Chat 模块API接口文档
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><p>Smart Chat模块使用的API接口，提供智能对话、执行器管理、会话管理等功能。</p>
+<h3 id="1-1-基础信息"><a href="#1-1-基础信息" class="headerlink" title="1.1 基础信息"></a>1.1 基础信息</h3><ul>
+<li><strong>Base URL</strong>：<code>http://localhost:8000</code></li>
+<li><strong>API前缀</strong>：<code>/api/v1/smart-chat</code></li>
+<li><strong>Content-Type</strong>：<code>application/json</code></li>
+</ul>
+<h2 id="2-对话API"><a href="#2-对话API" class="headerlink" title="2. 对话API"></a>2. 对话API</h2><h3 id="2-1-发送消息"><a href="#2-1-发送消息" class="headerlink" title="2.1 发送消息"></a>2.1 发送消息</h3><p><strong>接口</strong>：<code>POST /api/v1/smart-chat/chat</code></p>
+<p><strong>说明</strong>：发送消息并获取AI回复</p>
+<p><strong>权限</strong>：需要用户认证</p>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;用户消息内容&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;conversation_id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;uuid&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;executor&quot;</span><span class="punctuation">:</span> <span class="string">&quot;document_query&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;context&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>参数说明</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>message</td>
+<td>string</td>
+<td>用户消息（必需）</td>
+</tr>
+<tr>
+<td>conversation_id</td>
+<td>string</td>
+<td>会话ID（可选）</td>
+</tr>
+<tr>
+<td>executor</td>
+<td>string</td>
+<td>执行器名称（可选）</td>
+</tr>
+<tr>
+<td>context</td>
+<td>object</td>
+<td>上下文信息（可选）</td>
+</tr>
+</tbody></table>
+<p><strong>响应示例</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;message_id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;uuid&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;reply&quot;</span><span class="punctuation">:</span> <span class="string">&quot;AI回复内容&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;conversation_id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;uuid&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;executor_used&quot;</span><span class="punctuation">:</span> <span class="string">&quot;document_query&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;references&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;file_id&quot;</span><span class="punctuation">:</span> <span class="number">123</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;相关文档.pdf&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;snippet&quot;</span><span class="punctuation">:</span> <span class="string">&quot;相关片段&quot;</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">1234</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-流式对话"><a href="#2-2-流式对话" class="headerlink" title="2.2 流式对话"></a>2.2 流式对话</h3><p><strong>接口</strong>：<code>POST /api/v1/smart-chat/chat/stream</code></p>
+<p><strong>说明</strong>：流式返回AI回复（Server-Sent Events）</p>
+<p><strong>请求体</strong>：同对话接口</p>
+<p><strong>响应格式</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;&quot;type&quot;: &quot;token&quot;, &quot;content&quot;: &quot;部分内容&quot;&#125;</span><br><span class="line">data: &#123;&quot;type&quot;: &quot;token&quot;, &quot;content&quot;: &quot;更多内容&quot;&#125;</span><br><span class="line">data: &#123;&quot;type&quot;: &quot;done&quot;, &quot;message_id&quot;: &quot;uuid&quot;&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-执行器API"><a href="#3-执行器API" class="headerlink" title="3. 执行器API"></a>3. 执行器API</h2><h3 id="3-1-获取执行器列表"><a href="#3-1-获取执行器列表" class="headerlink" title="3.1 获取执行器列表"></a>3.1 获取执行器列表</h3><p><strong>接口</strong>：<code>GET /api/v1/smart-chat/executors</code></p>
+<p><strong>说明</strong>：获取所有可用执行器列表</p>
+<p><strong>响应示例</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;executors&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;document_query&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;display_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;文档查询&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;查询和检索文档内容&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;icon&quot;</span><span class="punctuation">:</span> <span class="string">&quot;fa-search&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;examples&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;查找关于AI的文档&quot;</span><span class="punctuation">,</span> <span class="string">&quot;搜索技术文档&quot;</span><span class="punctuation">]</span></span><br><span class="line">      <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;data_analysis&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;display_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;数据分析&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;分析数据和生成报告&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;icon&quot;</span><span class="punctuation">:</span> <span class="string">&quot;fa-chart-bar&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;examples&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;分析文档统计&quot;</span><span class="punctuation">,</span> <span class="string">&quot;生成数据报告&quot;</span><span class="punctuation">]</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">45</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-会话管理API"><a href="#4-会话管理API" class="headerlink" title="4. 会话管理API"></a>4. 会话管理API</h2><h3 id="4-1-获取会话列表"><a href="#4-1-获取会话列表" class="headerlink" title="4.1 获取会话列表"></a>4.1 获取会话列表</h3><p><strong>接口</strong>：<code>GET /api/v1/smart-chat/conversations</code></p>
+<p><strong>参数</strong>：</p>
+<ul>
+<li><code>page</code> (int, 可选)：页码，默认1</li>
+<li><code>page_size</code> (int, 可选)：每页数量，默认20</li>
+</ul>
+<p><strong>响应示例</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;items&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;uuid&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;会话标题&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;created_at&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;updated_at&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T11:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;message_count&quot;</span><span class="punctuation">:</span> <span class="number">10</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;total&quot;</span><span class="punctuation">:</span> <span class="number">50</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;page&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;page_size&quot;</span><span class="punctuation">:</span> <span class="number">20</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">67</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-创建会话"><a href="#4-2-创建会话" class="headerlink" title="4.2 创建会话"></a>4.2 创建会话</h3><p><strong>接口</strong>：<code>POST /api/v1/smart-chat/conversations</code></p>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;会话标题&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-获取会话详情"><a href="#4-3-获取会话详情" class="headerlink" title="4.3 获取会话详情"></a>4.3 获取会话详情</h3><p><strong>接口</strong>：<code>GET /api/v1/smart-chat/conversations/&#123;conversation_id&#125;</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>conversation_id</code> (string, 必需)：会话ID</li>
+</ul>
+<p><strong>响应示例</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;uuid&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;会话标题&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;messages&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;uuid&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;role&quot;</span><span class="punctuation">:</span> <span class="string">&quot;user&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;content&quot;</span><span class="punctuation">:</span> <span class="string">&quot;用户消息&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;created_at&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span></span><br><span class="line">      <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;uuid&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;role&quot;</span><span class="punctuation">:</span> <span class="string">&quot;assistant&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;content&quot;</span><span class="punctuation">:</span> <span class="string">&quot;AI回复&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;created_at&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:01&quot;</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;created_at&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;updated_at&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T11:00:00&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">89</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-4-删除会话"><a href="#4-4-删除会话" class="headerlink" title="4.4 删除会话"></a>4.4 删除会话</h3><p><strong>接口</strong>：<code>DELETE /api/v1/smart-chat/conversations/&#123;conversation_id&#125;</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>conversation_id</code> (string, 必需)：会话ID</li>
+</ul>
+<h2 id="5-使用示例"><a href="#5-使用示例" class="headerlink" title="5. 使用示例"></a>5. 使用示例</h2><h3 id="5-1-发送消息"><a href="#5-1-发送消息" class="headerlink" title="5.1 发送消息"></a>5.1 发送消息</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">sendMessage</span>(<span class="params">message, conversationId = <span class="literal">null</span></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> response = <span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">&#x27;/api/v1/smart-chat/chat&#x27;</span>, &#123;</span><br><span class="line">    <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">    <span class="attr">headers</span>: &#123;</span><br><span class="line">      <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;Authorization&#x27;</span>: <span class="string">`Bearer <span class="subst">$&#123;getAuthToken()&#125;</span>`</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">body</span>: <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(&#123;</span><br><span class="line">      <span class="attr">message</span>: message,</span><br><span class="line">      <span class="attr">conversation_id</span>: conversationId,</span><br><span class="line">      <span class="attr">executor</span>: <span class="string">&#x27;document_query&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> data = <span class="keyword">await</span> response.<span class="title function_">json</span>();</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span> (data.<span class="property">success</span>) &#123;</span><br><span class="line">    <span class="title function_">displayMessage</span>(data.<span class="property">data</span>.<span class="property">reply</span>);</span><br><span class="line">    <span class="keyword">if</span> (data.<span class="property">data</span>.<span class="property">references</span>) &#123;</span><br><span class="line">      <span class="title function_">displayReferences</span>(data.<span class="property">data</span>.<span class="property">references</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-流式对话"><a href="#5-2-流式对话" class="headerlink" title="5.2 流式对话"></a>5.2 流式对话</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">streamChat</span>(<span class="params">message, conversationId = <span class="literal">null</span></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> response = <span class="keyword">await</span> <span class="title function_">fetch</span>(<span class="string">&#x27;/api/v1/smart-chat/chat/stream&#x27;</span>, &#123;</span><br><span class="line">    <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">    <span class="attr">headers</span>: &#123;</span><br><span class="line">      <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;Authorization&#x27;</span>: <span class="string">`Bearer <span class="subst">$&#123;getAuthToken()&#125;</span>`</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">body</span>: <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(&#123;</span><br><span class="line">      <span class="attr">message</span>: message,</span><br><span class="line">      <span class="attr">conversation_id</span>: conversationId</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> reader = response.<span class="property">body</span>.<span class="title function_">getReader</span>();</span><br><span class="line">  <span class="keyword">const</span> decoder = <span class="keyword">new</span> <span class="title class_">TextDecoder</span>();</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; done, value &#125; = <span class="keyword">await</span> reader.<span class="title function_">read</span>();</span><br><span class="line">    <span class="keyword">if</span> (done) <span class="keyword">break</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> chunk = decoder.<span class="title function_">decode</span>(value);</span><br><span class="line">    <span class="keyword">const</span> lines = chunk.<span class="title function_">split</span>(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> line <span class="keyword">of</span> lines) &#123;</span><br><span class="line">      <span class="keyword">if</span> (line.<span class="title function_">startsWith</span>(<span class="string">&#x27;data: &#x27;</span>)) &#123;</span><br><span class="line">        <span class="keyword">const</span> data = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(line.<span class="title function_">slice</span>(<span class="number">6</span>));</span><br><span class="line">        <span class="keyword">if</span> (data.<span class="property">type</span> === <span class="string">&#x27;token&#x27;</span>) &#123;</span><br><span class="line">          <span class="title function_">appendToMessage</span>(data.<span class="property">content</span>);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-总结"><a href="#6-总结" class="headerlink" title="6. 总结"></a>6. 总结</h2><p>Smart Chat模块提供了完整的智能对话API，支持多种执行器和流式响应，为前端提供了强大的AI对话能力。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/smart_chat-api/" data-id="cmjsdrfh1000rwm1w729f0c57" data-title="Smart Chat 模块API接口文档" class="article-share-link"><span class="fa fa-share">share</span></a>
+      
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/AIDF.github.io/tags/API/" rel="tag">API</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/AIDF.github.io/tags/Smart-Chat/" rel="tag">Smart Chat</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/AIDF.github.io/tags/%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" rel="tag">接口文档</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/AIDF.github.io/2025/12/30/project_center-architecture/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
+        
+          项目中心模块架构说明
+        
+      </div>
+    </a>
+  
+  
+    <a href="/AIDF.github.io/2025/12/30/smart_chat-architecture/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title">Smart Chat 模块架构说明</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 AI NAS Team<br>
+      powered_by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+</nav>
+    
+
+
+<script src="/AIDF.github.io/js/jquery-3.6.4.min.js"></script>
+
+
+
+
+<script>
+// 修复 exmid 错误：捕获并忽略相关错误
+(function() {
+  var originalErrorHandler = window.onerror;
+  window.addEventListener('error', function(event) {
+    // 检查是否是 exmid 相关的错误
+    if (event.message && (
+      event.message.indexOf('exmid') !== -1 || 
+      event.message.indexOf('Cannot set properties of null') !== -1
+    )) {
+      event.preventDefault();
+      event.stopPropagation();
+      console.warn('已忽略 exmid 相关错误（不影响功能）');
+      return true;
+    }
+    // 其他错误正常处理
+    if (originalErrorHandler) {
+      return originalErrorHandler.apply(this, arguments);
+    }
+    return false;
+  }, true);
+})();
+</script>
+
+<script src="/AIDF.github.io/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
+
