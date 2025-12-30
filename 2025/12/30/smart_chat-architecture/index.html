@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Smart Chat 模块架构说明 | AI NAS 技术博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Smart Chat 模块架构说明1. 模块概述Smart Chat 是AI NAS的智能对话助手模块，提供通用智能对话、文档检索、问题分析等多种AI应用功能。 1.1 功能定位 智能对话：基于LLM的自然语言对话 文档检索：结合向量检索和全文检索的智能文档搜索 问题分析：复杂问题的分解和分析 知识解释：文档内容的理解和解释  1.2 访问路径 URL：&#x2F;smart-chat 文件位置：app&#x2F;m">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Smart Chat 模块架构说明">
+<meta property="og:url" content="https://1660479817.github.io/AIDF.github.io/2025/12/30/smart_chat-architecture/index.html">
+<meta property="og:site_name" content="AI NAS 技术博客">
+<meta property="og:description" content="Smart Chat 模块架构说明1. 模块概述Smart Chat 是AI NAS的智能对话助手模块，提供通用智能对话、文档检索、问题分析等多种AI应用功能。 1.1 功能定位 智能对话：基于LLM的自然语言对话 文档检索：结合向量检索和全文检索的智能文档搜索 问题分析：复杂问题的分解和分析 知识解释：文档内容的理解和解释  1.2 访问路径 URL：&#x2F;smart-chat 文件位置：app&#x2F;m">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-12-30T07:15:42.000Z">
+<meta property="article:modified_time" content="2025-12-30T07:15:42.352Z">
+<meta property="article:author" content="AI NAS Team">
+<meta property="article:tag" content="架构">
+<meta property="article:tag" content="模块架构">
+<meta property="article:tag" content="Smart Chat">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/AIDF.github.io/atom.xml" title="AI NAS 技术博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/AIDF.github.io/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/AIDF.github.io/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/AIDF.github.io/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/AIDF.github.io/" id="logo">AI NAS 技术博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/AIDF.github.io/" id="subtitle">AI NAS 系统技术文档与分享</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/AIDF.github.io/">Home</a>
+        
+          <a class="main-nav-link" href="/AIDF.github.io/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/AIDF.github.io/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://1660479817.github.io/AIDF.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-smart_chat-architecture" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/AIDF.github.io/2025/12/30/smart_chat-architecture/" class="article-date">
+  <time class="dt-published" datetime="2025-12-30T07:15:42.000Z" itemprop="datePublished">2025-12-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/AIDF.github.io/categories/AI-NAS-Smart-Chat/">AI NAS - Smart Chat</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Smart Chat 模块架构说明
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Smart-Chat-模块架构说明"><a href="#Smart-Chat-模块架构说明" class="headerlink" title="Smart Chat 模块架构说明"></a>Smart Chat 模块架构说明</h1><h2 id="1-模块概述"><a href="#1-模块概述" class="headerlink" title="1. 模块概述"></a>1. 模块概述</h2><p>Smart Chat 是AI NAS的智能对话助手模块，提供通用智能对话、文档检索、问题分析等多种AI应用功能。</p>
+<h3 id="1-1-功能定位"><a href="#1-1-功能定位" class="headerlink" title="1.1 功能定位"></a>1.1 功能定位</h3><ul>
+<li><strong>智能对话</strong>：基于LLM的自然语言对话</li>
+<li><strong>文档检索</strong>：结合向量检索和全文检索的智能文档搜索</li>
+<li><strong>问题分析</strong>：复杂问题的分解和分析</li>
+<li><strong>知识解释</strong>：文档内容的理解和解释</li>
+</ul>
+<h3 id="1-2-访问路径"><a href="#1-2-访问路径" class="headerlink" title="1.2 访问路径"></a>1.2 访问路径</h3><ul>
+<li><strong>URL</strong>：<code>/smart-chat</code></li>
+<li><strong>文件位置</strong>：<code>app/modules/smart_chat/static/smart_chat.html</code></li>
+<li><strong>权限要求</strong>：正式用户（USER）或管理员（ADMIN）</li>
+</ul>
+<h2 id="2-模块架构"><a href="#2-模块架构" class="headerlink" title="2. 模块架构"></a>2. 模块架构</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                    前端页面层                              │</span><br><span class="line">│  - smart_chat.html (主页面)                              │</span><br><span class="line">│  - SmartChatApp (主应用类)                               │</span><br><span class="line">│  - 对话界面组件                                          │</span><br><span class="line">│  - 执行器选择组件                                        │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                    API接口层                              │</span><br><span class="line">│  - POST /api/v1/smart-chat/chat (对话接口)              │</span><br><span class="line">│  - GET /api/v1/smart-chat/executors (执行器列表)        │</span><br><span class="line">│  - GET /api/v1/smart-chat/conversations (会话列表)      │</span><br><span class="line">│  - POST /api/v1/smart-chat/conversations (创建会话)     │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                   业务服务层                              │</span><br><span class="line">│  - Smart Chat Service (智能对话服务)                      │</span><br><span class="line">│  - Chat2Doc Service (文档检索服务)                       │</span><br><span class="line">│  - LLM Client (大语言模型客户端)                         │</span><br><span class="line">│  - Embedding Client (向量嵌入客户端)                     │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                   执行器层                                │</span><br><span class="line">│  - 文档查询执行器                                         │</span><br><span class="line">│  - 数据分析执行器                                         │</span><br><span class="line">│  - 代码生成执行器                                         │</span><br><span class="line">│  - 其他专业执行器                                         │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                   数据层                                  │</span><br><span class="line">│  - ai_nas_app: smart_chat_conversations, smart_chat_messages │</span><br><span class="line">│  - ai_nas: file_meta (文档数据)                          │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-核心组件"><a href="#3-核心组件" class="headerlink" title="3. 核心组件"></a>3. 核心组件</h2><h3 id="3-1-前端组件"><a href="#3-1-前端组件" class="headerlink" title="3.1 前端组件"></a>3.1 前端组件</h3><h4 id="3-1-1-对话界面"><a href="#3-1-1-对话界面" class="headerlink" title="3.1.1 对话界面"></a>3.1.1 对话界面</h4><p><strong>功能</strong>：</p>
+<ul>
+<li>消息显示区域</li>
+<li>输入框和发送按钮</li>
+<li>执行器选择</li>
+<li>会话管理</li>
+</ul>
+<p><strong>实现</strong>：</p>
+<ul>
+<li>主应用类：<code>SmartChatApp</code></li>
+<li>消息渲染：支持Markdown、代码高亮</li>
+<li>流式响应：支持实时流式输出</li>
+</ul>
+<h4 id="3-1-2-执行器选择"><a href="#3-1-2-执行器选择" class="headerlink" title="3.1.2 执行器选择"></a>3.1.2 执行器选择</h4><p><strong>功能</strong>：</p>
+<ul>
+<li>显示可用执行器列表</li>
+<li>执行器描述和示例</li>
+<li>执行器选择切换</li>
+</ul>
+<p><strong>执行器类型</strong>：</p>
+<ul>
+<li>文档查询执行器</li>
+<li>数据分析执行器</li>
+<li>代码生成执行器</li>
+<li>任务分解执行器</li>
+<li>其他专业执行器</li>
+</ul>
+<h3 id="3-2-后端服务"><a href="#3-2-后端服务" class="headerlink" title="3.2 后端服务"></a>3.2 后端服务</h3><h4 id="3-2-1-Smart-Chat服务"><a href="#3-2-1-Smart-Chat服务" class="headerlink" title="3.2.1 Smart Chat服务"></a>3.2.1 Smart Chat服务</h4><p><strong>服务</strong>：<code>app/modules/smart_chat/services/</code></p>
+<p><strong>功能</strong>：</p>
+<ul>
+<li>对话管理</li>
+<li>消息处理</li>
+<li>执行器协调</li>
+<li>上下文管理</li>
+</ul>
+<h4 id="3-2-2-执行器框架"><a href="#3-2-2-执行器框架" class="headerlink" title="3.2.2 执行器框架"></a>3.2.2 执行器框架</h4><p><strong>功能</strong>：</p>
+<ul>
+<li>执行器注册和管理</li>
+<li>执行器调用和结果处理</li>
+<li>执行器链式调用</li>
+</ul>
+<p><strong>执行器接口</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Executor</span>:</span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">execute</span>(<span class="params">self, query: <span class="built_in">str</span>, context: <span class="built_in">dict</span></span>) -&gt; <span class="built_in">dict</span>:</span><br><span class="line">        <span class="comment"># 执行器逻辑</span></span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-数据流"><a href="#4-数据流" class="headerlink" title="4. 数据流"></a>4. 数据流</h2><h3 id="4-1-对话流程"><a href="#4-1-对话流程" class="headerlink" title="4.1 对话流程"></a>4.1 对话流程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">用户输入消息</span><br><span class="line">    ↓</span><br><span class="line">选择执行器（可选）</span><br><span class="line">    ↓</span><br><span class="line">调用对话API</span><br><span class="line">    POST /api/v1/smart-chat/chat</span><br><span class="line">    ↓</span><br><span class="line">Smart Chat Service处理</span><br><span class="line">    ├─ 理解用户意图</span><br><span class="line">    ├─ 选择执行器</span><br><span class="line">    ├─ 调用执行器</span><br><span class="line">    └─ 生成回复</span><br><span class="line">    ↓</span><br><span class="line">返回回复消息</span><br><span class="line">    ↓</span><br><span class="line">前端显示消息</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-文档检索流程"><a href="#4-2-文档检索流程" class="headerlink" title="4.2 文档检索流程"></a>4.2 文档检索流程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">用户查询文档</span><br><span class="line">    ↓</span><br><span class="line">文档查询执行器</span><br><span class="line">    ↓</span><br><span class="line">调用Chat2Doc服务</span><br><span class="line">    ├─ 向量检索</span><br><span class="line">    ├─ 全文检索</span><br><span class="line">    └─ 结果合并</span><br><span class="line">    ↓</span><br><span class="line">返回相关文档</span><br><span class="line">    ↓</span><br><span class="line">LLM生成回答</span><br><span class="line">    ↓</span><br><span class="line">返回带引用的回答</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-技术实现"><a href="#5-技术实现" class="headerlink" title="5. 技术实现"></a>5. 技术实现</h2><h3 id="5-1-前端技术"><a href="#5-1-前端技术" class="headerlink" title="5.1 前端技术"></a>5.1 前端技术</h3><ul>
+<li><strong>HTML5</strong>：页面结构</li>
+<li><strong>CSS3</strong>：样式和动画</li>
+<li><strong>JavaScript (ES6+)</strong>：交互逻辑</li>
+<li><strong>Marked.js</strong>：Markdown渲染</li>
+<li><strong>Highlight.js</strong>：代码高亮</li>
+<li><strong>Stream API</strong>：流式响应处理</li>
+</ul>
+<h3 id="5-2-后端技术"><a href="#5-2-后端技术" class="headerlink" title="5.2 后端技术"></a>5.2 后端技术</h3><ul>
+<li><strong>FastAPI</strong>：API服务</li>
+<li><strong>异步处理</strong>：对话处理异步化</li>
+<li><strong>LLM集成</strong>：OpenAI API</li>
+<li><strong>向量检索</strong>：Embedding + 向量数据库</li>
+</ul>
+<h3 id="5-3-AI技术"><a href="#5-3-AI技术" class="headerlink" title="5.3 AI技术"></a>5.3 AI技术</h3><ul>
+<li><strong>大语言模型</strong>：GPT系列模型</li>
+<li><strong>向量嵌入</strong>：文本向量化</li>
+<li><strong>检索增强生成</strong>：RAG技术</li>
+<li><strong>上下文管理</strong>：会话上下文维护</li>
+</ul>
+<h2 id="6-性能优化"><a href="#6-性能优化" class="headerlink" title="6. 性能优化"></a>6. 性能优化</h2><h3 id="6-1-前端优化"><a href="#6-1-前端优化" class="headerlink" title="6.1 前端优化"></a>6.1 前端优化</h3><ul>
+<li><strong>流式渲染</strong>：实时显示生成内容</li>
+<li><strong>消息缓存</strong>：会话消息缓存</li>
+<li><strong>防抖处理</strong>：输入防抖</li>
+</ul>
+<h3 id="6-2-后端优化"><a href="#6-2-后端优化" class="headerlink" title="6.2 后端优化"></a>6.2 后端优化</h3><ul>
+<li><strong>异步处理</strong>：对话处理异步化</li>
+<li><strong>缓存机制</strong>：常见问题缓存</li>
+<li><strong>批量处理</strong>：批量向量检索</li>
+</ul>
+<h2 id="7-扩展性"><a href="#7-扩展性" class="headerlink" title="7. 扩展性"></a>7. 扩展性</h2><h3 id="7-1-执行器扩展"><a href="#7-1-执行器扩展" class="headerlink" title="7.1 执行器扩展"></a>7.1 执行器扩展</h3><ul>
+<li>支持自定义执行器</li>
+<li>支持执行器插件</li>
+<li>支持执行器链式调用</li>
+</ul>
+<h3 id="7-2-功能扩展"><a href="#7-2-功能扩展" class="headerlink" title="7.2 功能扩展"></a>7.2 功能扩展</h3><ul>
+<li>支持更多对话模式</li>
+<li>支持多轮对话</li>
+<li>支持对话历史管理</li>
+</ul>
+<h2 id="8-安全设计"><a href="#8-安全设计" class="headerlink" title="8. 安全设计"></a>8. 安全设计</h2><h3 id="8-1-访问控制"><a href="#8-1-访问控制" class="headerlink" title="8.1 访问控制"></a>8.1 访问控制</h3><ul>
+<li>需要用户认证</li>
+<li>会话隔离</li>
+<li>执行器权限控制</li>
+</ul>
+<h3 id="8-2-数据安全"><a href="#8-2-数据安全" class="headerlink" title="8.2 数据安全"></a>8.2 数据安全</h3><ul>
+<li>敏感信息过滤</li>
+<li>查询内容验证</li>
+<li>响应内容审核</li>
+</ul>
+<h2 id="9-总结"><a href="#9-总结" class="headerlink" title="9. 总结"></a>9. 总结</h2><p>Smart Chat模块是AI NAS的智能对话核心，通过执行器框架和RAG技术，提供了强大的智能对话能力。模块设计灵活，支持多种执行器，具备良好的扩展性和安全性。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/smart_chat-architecture/" data-id="cmjs96wqv000sci1w0ygfh6v2" data-title="Smart Chat 模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/AIDF.github.io/tags/Smart-Chat/" rel="tag">Smart Chat</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/AIDF.github.io/tags/%E6%9E%B6%E6%9E%84/" rel="tag">架构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/AIDF.github.io/tags/%E6%A8%A1%E5%9D%97%E6%9E%B6%E6%9E%84/" rel="tag">模块架构</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/AIDF.github.io/2025/12/30/smart_chat-api/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          Smart Chat 模块API接口文档
+        
+      </div>
+    </a>
+  
+  
+    <a href="/AIDF.github.io/2025/12/30/workspace-api/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">文档中心模块API接口文档</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AI-NAS/">AI NAS</a></li><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AI-NAS-Smart-Chat/">AI NAS - Smart Chat</a></li><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AI-NAS-%E6%95%B0%E6%8D%AE%E5%B7%A5%E5%9C%BA/">AI NAS - 数据工场</a></li><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AI-NAS-%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83/">AI NAS - 文档中心</a></li><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AI-NAS-%E7%AE%A1%E7%90%86%E4%B8%AD%E5%BF%83/">AI NAS - 管理中心</a></li><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AI-NAS-%E7%B3%BB%E7%BB%9F%E9%A6%96%E9%A1%B5/">AI NAS - 系统首页</a></li><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AI-NAS-%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%BF%83/">AI NAS - 项目中心</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/API/" rel="tag">API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/Smart-Chat/" rel="tag">Smart Chat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E6%80%BB%E8%A7%88/" rel="tag">总览</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" rel="tag">接口文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E6%95%B0%E6%8D%AE%E5%B7%A5%E5%9C%BA/" rel="tag">数据工场</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83/" rel="tag">文档中心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E6%9E%B6%E6%9E%84/" rel="tag">架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E6%A8%A1%E5%9D%97%E6%9E%B6%E6%9E%84/" rel="tag">模块架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E7%AE%A1%E7%90%86%E4%B8%AD%E5%BF%83/" rel="tag">管理中心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" rel="tag">系统架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E7%B3%BB%E7%BB%9F%E9%A6%96%E9%A1%B5/" rel="tag">系统首页</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%BF%83/" rel="tag">项目中心</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/AIDF.github.io/tags/API/" style="font-size: 20px;">API</a> <a href="/AIDF.github.io/tags/Smart-Chat/" style="font-size: 12.5px;">Smart Chat</a> <a href="/AIDF.github.io/tags/%E6%80%BB%E8%A7%88/" style="font-size: 10px;">总览</a> <a href="/AIDF.github.io/tags/%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" style="font-size: 20px;">接口文档</a> <a href="/AIDF.github.io/tags/%E6%95%B0%E6%8D%AE%E5%B7%A5%E5%9C%BA/" style="font-size: 12.5px;">数据工场</a> <a href="/AIDF.github.io/tags/%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83/" style="font-size: 15px;">文档中心</a> <a href="/AIDF.github.io/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 20px;">架构</a> <a href="/AIDF.github.io/tags/%E6%A8%A1%E5%9D%97%E6%9E%B6%E6%9E%84/" style="font-size: 17.5px;">模块架构</a> <a href="/AIDF.github.io/tags/%E7%AE%A1%E7%90%86%E4%B8%AD%E5%BF%83/" style="font-size: 12.5px;">管理中心</a> <a href="/AIDF.github.io/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">系统架构</a> <a href="/AIDF.github.io/tags/%E7%B3%BB%E7%BB%9F%E9%A6%96%E9%A1%B5/" style="font-size: 12.5px;">系统首页</a> <a href="/AIDF.github.io/tags/%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%BF%83/" style="font-size: 12.5px;">项目中心</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/AIDF.github.io/archives/2025/12/">十二月 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/AIDF.github.io/2025/12/30/README/">AI NAS 文档中心</a>
+          </li>
+        
+          <li>
+            <a href="/AIDF.github.io/2025/12/30/api/">API接口说明文档</a>
+          </li>
+        
+          <li>
+            <a href="/AIDF.github.io/2025/12/30/architecture/">AI NAS 系统架构说明文档</a>
+          </li>
+        
+          <li>
+            <a href="/AIDF.github.io/2025/12/30/data_factory-api/">数据工场模块API接口文档</a>
+          </li>
+        
+          <li>
+            <a href="/AIDF.github.io/2025/12/30/data_factory-architecture/">数据工场模块架构说明</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 AI NAS Team<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/AIDF.github.io/" class="mobile-nav-link">Home</a>
+  
+    <a href="/AIDF.github.io/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/AIDF.github.io/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/AIDF.github.io/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/AIDF.github.io/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

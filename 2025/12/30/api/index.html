@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>API接口说明文档 | AI NAS 技术博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="API接口说明文档文档导航本文档提供所有API接口的汇总说明。各模块的详细API接口请参考：  系统首页API 文档中心API Smart Chat API 项目中心API 数据工场API 管理中心API  1. 概述AI NAS 提供完整的 RESTful API 接口，基于 FastAPI 框架实现。所有 API 接口都支持异步处理，返回 JSON 格式数据。 1.1 基础信息 Base UR">
+<meta property="og:type" content="article">
+<meta property="og:title" content="API接口说明文档">
+<meta property="og:url" content="https://1660479817.github.io/AIDF.github.io/2025/12/30/api/index.html">
+<meta property="og:site_name" content="AI NAS 技术博客">
+<meta property="og:description" content="API接口说明文档文档导航本文档提供所有API接口的汇总说明。各模块的详细API接口请参考：  系统首页API 文档中心API Smart Chat API 项目中心API 数据工场API 管理中心API  1. 概述AI NAS 提供完整的 RESTful API 接口，基于 FastAPI 框架实现。所有 API 接口都支持异步处理，返回 JSON 格式数据。 1.1 基础信息 Base UR">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-12-30T07:15:42.000Z">
+<meta property="article:modified_time" content="2025-12-30T07:15:42.348Z">
+<meta property="article:author" content="AI NAS Team">
+<meta property="article:tag" content="API">
+<meta property="article:tag" content="接口文档">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/AIDF.github.io/atom.xml" title="AI NAS 技术博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/AIDF.github.io/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/AIDF.github.io/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/AIDF.github.io/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/AIDF.github.io/" id="logo">AI NAS 技术博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/AIDF.github.io/" id="subtitle">AI NAS 系统技术文档与分享</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/AIDF.github.io/">Home</a>
+        
+          <a class="main-nav-link" href="/AIDF.github.io/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/AIDF.github.io/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://1660479817.github.io/AIDF.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-api" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/AIDF.github.io/2025/12/30/api/" class="article-date">
+  <time class="dt-published" datetime="2025-12-30T07:15:42.000Z" itemprop="datePublished">2025-12-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/AIDF.github.io/categories/AI-NAS/">AI NAS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      API接口说明文档
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="API接口说明文档"><a href="#API接口说明文档" class="headerlink" title="API接口说明文档"></a>API接口说明文档</h1><h2 id="文档导航"><a href="#文档导航" class="headerlink" title="文档导航"></a>文档导航</h2><p>本文档提供所有API接口的汇总说明。各模块的详细API接口请参考：</p>
+<ul>
+<li><a href="./modules/home/api.md">系统首页API</a></li>
+<li><a href="./modules/workspace/api.md">文档中心API</a></li>
+<li><a href="./modules/smart_chat/api.md">Smart Chat API</a></li>
+<li><a href="./modules/project_center/api.md">项目中心API</a></li>
+<li><a href="./modules/data_factory/api.md">数据工场API</a></li>
+<li><a href="./modules/management/api.md">管理中心API</a></li>
+</ul>
+<h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><p>AI NAS 提供完整的 RESTful API 接口，基于 FastAPI 框架实现。所有 API 接口都支持异步处理，返回 JSON 格式数据。</p>
+<h3 id="1-1-基础信息"><a href="#1-1-基础信息" class="headerlink" title="1.1 基础信息"></a>1.1 基础信息</h3><ul>
+<li><strong>Base URL</strong>：<code>http://localhost:8000</code>（开发环境）</li>
+<li><strong>API前缀</strong>：<code>/api/v1</code></li>
+<li><strong>Content-Type</strong>：<code>application/json</code></li>
+<li><strong>响应格式</strong>：统一使用 JSON 格式</li>
+</ul>
+<h3 id="1-2-统一响应格式"><a href="#1-2-统一响应格式" class="headerlink" title="1.2 统一响应格式"></a>1.2 统一响应格式</h3><p>所有 API 接口遵循统一的响应格式：</p>
+<p><strong>成功响应（数据响应）</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;操作成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>...<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">123</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>成功响应（列表响应）</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;操作成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;items&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span>...<span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;total&quot;</span><span class="punctuation">:</span> <span class="number">100</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;page&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;page_size&quot;</span><span class="punctuation">:</span> <span class="number">20</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;total_pages&quot;</span><span class="punctuation">:</span> <span class="number">5</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">123</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>错误响应</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;error&quot;</span><span class="punctuation">:</span> <span class="string">&quot;错误信息&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;error_code&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ERROR_CODE&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;details&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>...<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">123</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-状态码"><a href="#1-3-状态码" class="headerlink" title="1.3 状态码"></a>1.3 状态码</h3><ul>
+<li><code>200</code>：成功</li>
+<li><code>400</code>：请求参数错误</li>
+<li><code>401</code>：未授权</li>
+<li><code>403</code>：禁止访问</li>
+<li><code>404</code>：资源不存在</li>
+<li><code>500</code>：服务器内部错误</li>
+</ul>
+<h3 id="1-4-认证"><a href="#1-4-认证" class="headerlink" title="1.4 认证"></a>1.4 认证</h3><p>大部分API需要认证，使用Bearer Token方式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Authorization: Bearer &lt;token&gt;</span><br></pre></td></tr></table></figure>
+
+<p>或者通过Cookie传递：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cookie: auth_token=&lt;token&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-认证API"><a href="#2-认证API" class="headerlink" title="2. 认证API"></a>2. 认证API</h2><h3 id="2-1-用户注册"><a href="#2-1-用户注册" class="headerlink" title="2.1 用户注册"></a>2.1 用户注册</h3><p><strong>接口</strong>：<code>POST /api/v1/auth/register</code></p>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;username&quot;</span><span class="punctuation">:</span> <span class="string">&quot;user123&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;email&quot;</span><span class="punctuation">:</span> <span class="string">&quot;user@example.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;password&quot;</span><span class="punctuation">:</span> <span class="string">&quot;password123&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;display_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;显示名称&quot;</span>  <span class="comment">// 可选</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>响应示例</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;注册成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;user_id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;uuid&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;username&quot;</span><span class="punctuation">:</span> <span class="string">&quot;user123&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;email&quot;</span><span class="punctuation">:</span> <span class="string">&quot;user@example.com&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">123</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-用户登录"><a href="#2-2-用户登录" class="headerlink" title="2.2 用户登录"></a>2.2 用户登录</h3><p><strong>接口</strong>：<code>POST /api/v1/auth/login</code></p>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;username&quot;</span><span class="punctuation">:</span> <span class="string">&quot;user123&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;password&quot;</span><span class="punctuation">:</span> <span class="string">&quot;password123&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>响应示例</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;access_token&quot;</span><span class="punctuation">:</span> <span class="string">&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;token_type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bearer&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;expires_in&quot;</span><span class="punctuation">:</span> <span class="number">86400</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;user&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;uuid&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;username&quot;</span><span class="punctuation">:</span> <span class="string">&quot;user123&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;email&quot;</span><span class="punctuation">:</span> <span class="string">&quot;user@example.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;role&quot;</span><span class="punctuation">:</span> <span class="string">&quot;user&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;display_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;显示名称&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;is_active&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;is_verified&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-用户登出"><a href="#2-3-用户登出" class="headerlink" title="2.3 用户登出"></a>2.3 用户登出</h3><p><strong>接口</strong>：<code>POST /api/v1/auth/logout</code></p>
+<p><strong>说明</strong>：需要认证</p>
+<p><strong>响应示例</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;登出成功&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-4-获取当前用户信息"><a href="#2-4-获取当前用户信息" class="headerlink" title="2.4 获取当前用户信息"></a>2.4 获取当前用户信息</h3><p><strong>接口</strong>：<code>GET /api/v1/auth/me</code></p>
+<p><strong>说明</strong>：需要认证</p>
+<p><strong>响应示例</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;uuid&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;username&quot;</span><span class="punctuation">:</span> <span class="string">&quot;user123&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;email&quot;</span><span class="punctuation">:</span> <span class="string">&quot;user@example.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;role&quot;</span><span class="punctuation">:</span> <span class="string">&quot;user&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;display_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;显示名称&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;is_active&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;is_verified&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;created_at&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;last_login_at&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">123</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-5-获取用户权限"><a href="#2-5-获取用户权限" class="headerlink" title="2.5 获取用户权限"></a>2.5 获取用户权限</h3><p><strong>接口</strong>：<code>GET /api/v1/auth/permissions</code></p>
+<p><strong>说明</strong>：需要认证</p>
+<h3 id="2-6-修改密码"><a href="#2-6-修改密码" class="headerlink" title="2.6 修改密码"></a>2.6 修改密码</h3><p><strong>接口</strong>：<code>POST /api/v1/auth/change-password</code></p>
+<p><strong>说明</strong>：需要认证</p>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;old_password&quot;</span><span class="punctuation">:</span> <span class="string">&quot;old_password123&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;new_password&quot;</span><span class="punctuation">:</span> <span class="string">&quot;new_password123&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-7-验证Token"><a href="#2-7-验证Token" class="headerlink" title="2.7 验证Token"></a>2.7 验证Token</h3><p><strong>接口</strong>：<code>POST /api/v1/auth/verify-token</code></p>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;token&quot;</span><span class="punctuation">:</span> <span class="string">&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-文件管理API"><a href="#3-文件管理API" class="headerlink" title="3. 文件管理API"></a>3. 文件管理API</h2><h3 id="3-1-上传文件"><a href="#3-1-上传文件" class="headerlink" title="3.1 上传文件"></a>3.1 上传文件</h3><p><strong>接口</strong>：<code>POST /api/v1/files/upload</code></p>
+<p><strong>请求</strong>：<code>multipart/form-data</code></p>
+<p><strong>参数</strong>：</p>
+<ul>
+<li><code>file</code> (file, 必需)：要上传的文件</li>
+</ul>
+<p><strong>响应示例</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;file_id&quot;</span><span class="punctuation">:</span> <span class="number">123</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;文件上传成功，已加入自动处理队列&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;processing_status&quot;</span><span class="punctuation">:</span> <span class="string">&quot;queued&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;duplicate_info&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>说明</strong>：</p>
+<ul>
+<li>前5个文件会自动加入处理队列（状态为<code>queued</code>）</li>
+<li>超过5个的文件状态为<code>unanalyzed</code>，需要手动触发处理</li>
+<li>如果文件已存在，返回<code>already_exists</code>状态</li>
+</ul>
+<h3 id="3-2-获取文件列表"><a href="#3-2-获取文件列表" class="headerlink" title="3.2 获取文件列表"></a>3.2 获取文件列表</h3><p><strong>接口</strong>：<code>GET /api/v1/files/</code></p>
+<p><strong>参数</strong>：</p>
+<ul>
+<li><code>skip</code> (int, 可选)：跳过的记录数，默认0</li>
+<li><code>limit</code> (int, 可选)：返回的记录数，默认20，最大100</li>
+<li><code>directory</code> (string, 可选)：目录过滤</li>
+<li><code>search</code> (string, 可选)：搜索关键词（搜索文件名）</li>
+<li><code>status</code> (string, 可选)：状态过滤（queued&#x2F;processing&#x2F;completed&#x2F;failed&#x2F;unanalyzed）</li>
+<li><code>sort_by</code> (string, 可选)：排序字段（created_at&#x2F;file_size&#x2F;title），默认created_at</li>
+<li><code>sort_order</code> (string, 可选)：排序顺序（asc&#x2F;desc），默认desc</li>
+</ul>
+<p><strong>响应示例</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;items&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="number">123</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;示例文档.pdf&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;original_filename&quot;</span><span class="punctuation">:</span> <span class="string">&quot;example.pdf&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;file_size&quot;</span><span class="punctuation">:</span> <span class="number">1024000</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;mime_type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;application/pdf&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;status&quot;</span><span class="punctuation">:</span> <span class="string">&quot;completed&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;created_at&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;access_count&quot;</span><span class="punctuation">:</span> <span class="number">5</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;last_accessed_at&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T11:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;processing_completed_at&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:05:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;summary&quot;</span><span class="punctuation">:</span> <span class="string">&quot;文档摘要&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;directory_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;documents&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;file_path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;documents/example.pdf&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;md_path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;documents/example.md&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;total&quot;</span><span class="punctuation">:</span> <span class="number">100</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;page&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;page_size&quot;</span><span class="punctuation">:</span> <span class="number">20</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;total_pages&quot;</span><span class="punctuation">:</span> <span class="number">5</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">123</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-按状态获取文件列表"><a href="#3-3-按状态获取文件列表" class="headerlink" title="3.3 按状态获取文件列表"></a>3.3 按状态获取文件列表</h3><p><strong>接口</strong>：<code>GET /api/v1/files/by-status</code></p>
+<p><strong>参数</strong>：</p>
+<ul>
+<li><code>status</code> (string, 必需)：状态（queued&#x2F;processing&#x2F;completed&#x2F;failed&#x2F;unanalyzed）</li>
+<li><code>skip</code> (int, 可选)：跳过的记录数，默认0</li>
+<li><code>limit</code> (int, 可选)：返回的记录数，默认20</li>
+</ul>
+<h3 id="3-4-获取文件详情"><a href="#3-4-获取文件详情" class="headerlink" title="3.4 获取文件详情"></a>3.4 获取文件详情</h3><p><strong>接口</strong>：<code>GET /api/v1/files/&#123;file_id&#125;</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 必需)：文件ID</li>
+</ul>
+<p><strong>响应示例</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="number">123</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;示例文档.pdf&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;original_filename&quot;</span><span class="punctuation">:</span> <span class="string">&quot;example.pdf&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;file_size&quot;</span><span class="punctuation">:</span> <span class="number">1024000</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;mime_type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;application/pdf&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;status&quot;</span><span class="punctuation">:</span> <span class="string">&quot;completed&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;created_at&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;access_count&quot;</span><span class="punctuation">:</span> <span class="number">5</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;last_accessed_at&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T11:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;processing_completed_at&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:05:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;summary&quot;</span><span class="punctuation">:</span> <span class="string">&quot;文档摘要&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;keywords&quot;</span><span class="punctuation">:</span> <span class="string">&quot;关键词1,关键词2&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;directory_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;documents&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;file_path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;documents/example.pdf&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;md_path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;documents/example.md&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;notes&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;tags&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">123</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-5-获取文件Markdown内容"><a href="#3-5-获取文件Markdown内容" class="headerlink" title="3.5 获取文件Markdown内容"></a>3.5 获取文件Markdown内容</h3><p><strong>接口</strong>：<code>GET /api/v1/files/&#123;file_id&#125;/markdown</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 必需)：文件ID</li>
+</ul>
+<p><strong>响应示例</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;file_id&quot;</span><span class="punctuation">:</span> <span class="number">123</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;markdown_content&quot;</span><span class="punctuation">:</span> <span class="string">&quot;# 文档标题\n\n文档内容...&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;file_path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;documents/example.md&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">123</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-6-更新文件Markdown内容"><a href="#3-6-更新文件Markdown内容" class="headerlink" title="3.6 更新文件Markdown内容"></a>3.6 更新文件Markdown内容</h3><p><strong>接口</strong>：<code>PUT /api/v1/files/&#123;file_id&#125;/markdown</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 必需)：文件ID</li>
+</ul>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;markdown_content&quot;</span><span class="punctuation">:</span> <span class="string">&quot;# 更新后的文档内容&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;update_vector&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span>  <span class="comment">// 是否更新向量索引，默认true</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-7-更新文件元数据"><a href="#3-7-更新文件元数据" class="headerlink" title="3.7 更新文件元数据"></a>3.7 更新文件元数据</h3><p><strong>接口</strong>：<code>PATCH /api/v1/files/&#123;file_id&#125;/metadata</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 必需)：文件ID</li>
+</ul>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;summary&quot;</span><span class="punctuation">:</span> <span class="string">&quot;更新后的摘要&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;keywords&quot;</span><span class="punctuation">:</span> <span class="string">&quot;关键词1,关键词2&quot;</span>  <span class="comment">// 可选</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-8-获取文件状态"><a href="#3-8-获取文件状态" class="headerlink" title="3.8 获取文件状态"></a>3.8 获取文件状态</h3><p><strong>接口</strong>：<code>GET /api/v1/files/&#123;file_id&#125;/status</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 必需)：文件ID</li>
+</ul>
+<p><strong>响应示例</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;file_id&quot;</span><span class="punctuation">:</span> <span class="number">123</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;status&quot;</span><span class="punctuation">:</span> <span class="string">&quot;completed&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;progress_data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;stage&quot;</span><span class="punctuation">:</span> <span class="string">&quot;completed&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;progress&quot;</span><span class="punctuation">:</span> <span class="number">100</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;处理完成&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">123</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-9-获取文件处理进度"><a href="#3-9-获取文件处理进度" class="headerlink" title="3.9 获取文件处理进度"></a>3.9 获取文件处理进度</h3><p><strong>接口</strong>：<code>GET /api/v1/files/&#123;file_id&#125;/processing-progress</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 必需)：文件ID</li>
+</ul>
+<h3 id="3-10-下载文件"><a href="#3-10-下载文件" class="headerlink" title="3.10 下载文件"></a>3.10 下载文件</h3><p><strong>接口</strong>：<code>GET /api/v1/files/&#123;file_id&#125;/download</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 必需)：文件ID</li>
+</ul>
+<p><strong>响应</strong>：返回文件流</p>
+<h3 id="3-11-查看文件"><a href="#3-11-查看文件" class="headerlink" title="3.11 查看文件"></a>3.11 查看文件</h3><p><strong>接口</strong>：<code>GET /api/v1/files/&#123;file_id&#125;/view</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 必需)：文件ID</li>
+</ul>
+<p><strong>说明</strong>：返回文件的HTML预览页面</p>
+<h3 id="3-12-获取文件关键词"><a href="#3-12-获取文件关键词" class="headerlink" title="3.12 获取文件关键词"></a>3.12 获取文件关键词</h3><p><strong>接口</strong>：<code>GET /api/v1/files/&#123;file_id&#125;/keywords</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 必需)：文件ID</li>
+</ul>
+<h3 id="3-13-删除文件"><a href="#3-13-删除文件" class="headerlink" title="3.13 删除文件"></a>3.13 删除文件</h3><p><strong>接口</strong>：<code>DELETE /api/v1/files/&#123;file_id&#125;</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 必需)：文件ID</li>
+</ul>
+<h3 id="3-14-恢复处理"><a href="#3-14-恢复处理" class="headerlink" title="3.14 恢复处理"></a>3.14 恢复处理</h3><p><strong>接口</strong>：<code>POST /api/v1/files/&#123;file_id&#125;/resume</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 必需)：文件ID</li>
+</ul>
+<p><strong>说明</strong>：恢复失败的文件处理</p>
+<h3 id="3-15-重新处理"><a href="#3-15-重新处理" class="headerlink" title="3.15 重新处理"></a>3.15 重新处理</h3><p><strong>接口</strong>：<code>POST /api/v1/files/&#123;file_id&#125;/reprocess</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 必需)：文件ID</li>
+</ul>
+<p><strong>说明</strong>：重新处理文件</p>
+<h3 id="3-16-开始处理"><a href="#3-16-开始处理" class="headerlink" title="3.16 开始处理"></a>3.16 开始处理</h3><p><strong>接口</strong>：<code>POST /api/v1/files/&#123;file_id&#125;/start-processing</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 必需)：文件ID</li>
+</ul>
+<p><strong>说明</strong>：手动触发文件处理</p>
+<h3 id="3-17-人工处理"><a href="#3-17-人工处理" class="headerlink" title="3.17 人工处理"></a>3.17 人工处理</h3><p><strong>接口</strong>：<code>POST /api/v1/files/&#123;file_id&#125;/manual-processing</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 必需)：文件ID</li>
+</ul>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;content&quot;</span><span class="punctuation">:</span> <span class="string">&quot;文档内容（Markdown格式）&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;summary&quot;</span><span class="punctuation">:</span> <span class="string">&quot;文档摘要&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;keywords&quot;</span><span class="punctuation">:</span> <span class="string">&quot;关键词1,关键词2&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-18-批量向量化"><a href="#3-18-批量向量化" class="headerlink" title="3.18 批量向量化"></a>3.18 批量向量化</h3><p><strong>接口</strong>：<code>POST /api/v1/files/batch-vectorize</code></p>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;file_ids&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="number">1</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">,</span> <span class="number">3</span><span class="punctuation">]</span>  <span class="comment">// 文件ID列表</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-19-获取目录列表"><a href="#3-19-获取目录列表" class="headerlink" title="3.19 获取目录列表"></a>3.19 获取目录列表</h3><p><strong>接口</strong>：<code>GET /api/v1/files/directories</code></p>
+<p><strong>响应示例</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;directories&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;documents&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;documents&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;file_count&quot;</span><span class="punctuation">:</span> <span class="number">10</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">123</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-20-获取状态列表"><a href="#3-20-获取状态列表" class="headerlink" title="3.20 获取状态列表"></a>3.20 获取状态列表</h3><p><strong>接口</strong>：<code>GET /api/v1/files/statuses</code></p>
+<p><strong>响应示例</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;statuses&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">&#123;</span><span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="string">&quot;queued&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;排队中&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;count&quot;</span><span class="punctuation">:</span> <span class="number">5</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="punctuation">&#123;</span><span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="string">&quot;processing&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;处理中&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;count&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="punctuation">&#123;</span><span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="string">&quot;completed&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;已完成&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;count&quot;</span><span class="punctuation">:</span> <span class="number">100</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="punctuation">&#123;</span><span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="string">&quot;failed&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;失败&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;count&quot;</span><span class="punctuation">:</span> <span class="number">3</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="punctuation">&#123;</span><span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="string">&quot;unanalyzed&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;未分析&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;count&quot;</span><span class="punctuation">:</span> <span class="number">10</span><span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">123</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-21-工作区API"><a href="#3-21-工作区API" class="headerlink" title="3.21 工作区API"></a>3.21 工作区API</h3><h4 id="3-21-1-获取热门文档"><a href="#3-21-1-获取热门文档" class="headerlink" title="3.21.1 获取热门文档"></a>3.21.1 获取热门文档</h4><p><strong>接口</strong>：<code>GET /api/v1/files/workspace/hot-documents</code></p>
+<p><strong>参数</strong>：</p>
+<ul>
+<li><code>limit</code> (int, 可选)：返回数量，默认10</li>
+</ul>
+<h4 id="3-21-2-获取最近访问"><a href="#3-21-2-获取最近访问" class="headerlink" title="3.21.2 获取最近访问"></a>3.21.2 获取最近访问</h4><p><strong>接口</strong>：<code>GET /api/v1/files/workspace/recent-access</code></p>
+<p><strong>参数</strong>：</p>
+<ul>
+<li><code>limit</code> (int, 可选)：返回数量，默认10</li>
+</ul>
+<h4 id="3-21-3-获取最新上传"><a href="#3-21-3-获取最新上传" class="headerlink" title="3.21.3 获取最新上传"></a>3.21.3 获取最新上传</h4><p><strong>接口</strong>：<code>GET /api/v1/files/workspace/latest-upload</code></p>
+<p><strong>参数</strong>：</p>
+<ul>
+<li><code>limit</code> (int, 可选)：返回数量，默认10</li>
+</ul>
+<h4 id="3-21-4-获取最新处理"><a href="#3-21-4-获取最新处理" class="headerlink" title="3.21.4 获取最新处理"></a>3.21.4 获取最新处理</h4><p><strong>接口</strong>：<code>GET /api/v1/files/workspace/latest-processed</code></p>
+<p><strong>参数</strong>：</p>
+<ul>
+<li><code>limit</code> (int, 可选)：返回数量，默认10</li>
+</ul>
+<h3 id="3-22-获取文件内容"><a href="#3-22-获取文件内容" class="headerlink" title="3.22 获取文件内容"></a>3.22 获取文件内容</h3><p><strong>接口</strong>：<code>GET /api/v1/files/content</code></p>
+<p><strong>参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 可选)：文件ID</li>
+<li><code>file_path</code> (string, 可选)：文件路径</li>
+</ul>
+<p><strong>说明</strong>：获取文件的原始内容或Markdown内容</p>
+<h3 id="3-23-Mermaid修复"><a href="#3-23-Mermaid修复" class="headerlink" title="3.23 Mermaid修复"></a>3.23 Mermaid修复</h3><p><strong>接口</strong>：<code>POST /api/v1/files/&#123;file_id&#125;/markdown/mermaid/repair</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 必需)：文件ID</li>
+</ul>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;block_index&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;mermaid_code&quot;</span><span class="punctuation">:</span> <span class="string">&quot;graph TD\n    A--&gt;B&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;error_message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;错误信息&quot;</span>  <span class="comment">// 可选</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-24-更新MIME类型"><a href="#3-24-更新MIME类型" class="headerlink" title="3.24 更新MIME类型"></a>3.24 更新MIME类型</h3><p><strong>接口</strong>：<code>PATCH /api/v1/files/&#123;file_id&#125;/mime-type</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 必需)：文件ID</li>
+</ul>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;mime_type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;application/pdf&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-25-优化分类"><a href="#3-25-优化分类" class="headerlink" title="3.25 优化分类"></a>3.25 优化分类</h3><p><strong>接口</strong>：<code>POST /api/v1/files/&#123;file_id&#125;/optimize-classification</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 必需)：文件ID</li>
+</ul>
+<p><strong>说明</strong>：使用AI优化文件分类</p>
+<h3 id="3-26-获取文件日志"><a href="#3-26-获取文件日志" class="headerlink" title="3.26 获取文件日志"></a>3.26 获取文件日志</h3><p><strong>接口</strong>：<code>GET /api/v1/files/&#123;file_id&#125;/logs</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 必需)：文件ID</li>
+</ul>
+<h2 id="4-文档处理API"><a href="#4-文档处理API" class="headerlink" title="4. 文档处理API"></a>4. 文档处理API</h2><h3 id="4-1-获取处理状态"><a href="#4-1-获取处理状态" class="headerlink" title="4.1 获取处理状态"></a>4.1 获取处理状态</h3><p><strong>接口</strong>：<code>GET /api/v1/processing/status</code></p>
+<p><strong>响应示例</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;total_files&quot;</span><span class="punctuation">:</span> <span class="number">100</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;queued&quot;</span><span class="punctuation">:</span> <span class="number">5</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;processing&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;completed&quot;</span><span class="punctuation">:</span> <span class="number">90</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;failed&quot;</span><span class="punctuation">:</span> <span class="number">3</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">123</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-获取处理进度"><a href="#4-2-获取处理进度" class="headerlink" title="4.2 获取处理进度"></a>4.2 获取处理进度</h3><p><strong>接口</strong>：<code>GET /api/v1/processing/progress/&#123;file_id&#125;</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 必需)：文件ID</li>
+</ul>
+<h3 id="4-3-获取处理队列"><a href="#4-3-获取处理队列" class="headerlink" title="4.3 获取处理队列"></a>4.3 获取处理队列</h3><p><strong>接口</strong>：<code>GET /api/v1/processing/queue</code></p>
+<p><strong>响应示例</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;queued&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;file_id&quot;</span><span class="punctuation">:</span> <span class="number">123</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;filename&quot;</span><span class="punctuation">:</span> <span class="string">&quot;example.pdf&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;status&quot;</span><span class="punctuation">:</span> <span class="string">&quot;queued&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;queued_at&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;processing&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;file_id&quot;</span><span class="punctuation">:</span> <span class="number">124</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;filename&quot;</span><span class="punctuation">:</span> <span class="string">&quot;example2.pdf&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;status&quot;</span><span class="punctuation">:</span> <span class="string">&quot;processing&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;started_at&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:05:00&quot;</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">123</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-4-获取处理统计"><a href="#4-4-获取处理统计" class="headerlink" title="4.4 获取处理统计"></a>4.4 获取处理统计</h3><p><strong>接口</strong>：<code>GET /api/v1/processing/stats</code></p>
+<h3 id="4-5-获取监控快照"><a href="#4-5-获取监控快照" class="headerlink" title="4.5 获取监控快照"></a>4.5 获取监控快照</h3><p><strong>接口</strong>：<code>GET /api/v1/processing/monitor-snapshot</code></p>
+<h3 id="4-6-获取处理任务列表"><a href="#4-6-获取处理任务列表" class="headerlink" title="4.6 获取处理任务列表"></a>4.6 获取处理任务列表</h3><p><strong>接口</strong>：<code>GET /api/v1/processing/tasks</code></p>
+<p><strong>参数</strong>：</p>
+<ul>
+<li><code>status</code> (string, 可选)：任务状态过滤</li>
+<li><code>limit</code> (int, 可选)：返回数量，默认50</li>
+</ul>
+<h3 id="4-7-获取任务详情"><a href="#4-7-获取任务详情" class="headerlink" title="4.7 获取任务详情"></a>4.7 获取任务详情</h3><p><strong>接口</strong>：<code>GET /api/v1/processing/tasks/&#123;task_id&#125;</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>task_id</code> (string, 必需)：任务ID</li>
+</ul>
+<h3 id="4-8-删除任务"><a href="#4-8-删除任务" class="headerlink" title="4.8 删除任务"></a>4.8 删除任务</h3><p><strong>接口</strong>：<code>DELETE /api/v1/processing/tasks/&#123;task_id&#125;</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>task_id</code> (string, 必需)：任务ID</li>
+</ul>
+<h3 id="4-9-状态流（SSE）"><a href="#4-9-状态流（SSE）" class="headerlink" title="4.9 状态流（SSE）"></a>4.9 状态流（SSE）</h3><p><strong>接口</strong>：<code>GET /api/v1/processing/status-stream</code></p>
+<p><strong>说明</strong>：使用 Server-Sent Events (SSE) 实时推送处理状态更新</p>
+<h2 id="5-处理详情API"><a href="#5-处理详情API" class="headerlink" title="5. 处理详情API"></a>5. 处理详情API</h2><h3 id="5-1-获取文件处理详情"><a href="#5-1-获取文件处理详情" class="headerlink" title="5.1 获取文件处理详情"></a>5.1 获取文件处理详情</h3><p><strong>接口</strong>：<code>GET /api/v1/processing-detail/files/&#123;file_id&#125;</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 必需)：文件ID</li>
+</ul>
+<h3 id="5-2-获取活跃处理"><a href="#5-2-获取活跃处理" class="headerlink" title="5.2 获取活跃处理"></a>5.2 获取活跃处理</h3><p><strong>接口</strong>：<code>GET /api/v1/processing-detail/active</code></p>
+<h3 id="5-3-获取缓存统计"><a href="#5-3-获取缓存统计" class="headerlink" title="5.3 获取缓存统计"></a>5.3 获取缓存统计</h3><p><strong>接口</strong>：<code>GET /api/v1/processing-detail/cache/stats</code></p>
+<h3 id="5-4-获取诊断信息"><a href="#5-4-获取诊断信息" class="headerlink" title="5.4 获取诊断信息"></a>5.4 获取诊断信息</h3><p><strong>接口</strong>：<code>GET /api/v1/processing-detail/diagnostic</code></p>
+<h3 id="5-5-修复状态"><a href="#5-5-修复状态" class="headerlink" title="5.5 修复状态"></a>5.5 修复状态</h3><p><strong>接口</strong>：<code>POST /api/v1/processing-detail/fix-status</code></p>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;file_id&quot;</span><span class="punctuation">:</span> <span class="number">123</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;target_status&quot;</span><span class="punctuation">:</span> <span class="string">&quot;completed&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="6-文档对话API-Chat2Doc"><a href="#6-文档对话API-Chat2Doc" class="headerlink" title="6. 文档对话API (Chat2Doc)"></a>6. 文档对话API (Chat2Doc)</h2><h3 id="6-1-搜索文档"><a href="#6-1-搜索文档" class="headerlink" title="6.1 搜索文档"></a>6.1 搜索文档</h3><p><strong>接口</strong>：<code>POST /api/v1/chat2doc/search</code></p>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;query&quot;</span><span class="punctuation">:</span> <span class="string">&quot;自然语言查询&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;mode&quot;</span><span class="punctuation">:</span> <span class="string">&quot;auto&quot;</span><span class="punctuation">,</span>  <span class="comment">// fast/smart/vector/auto</span></span><br><span class="line">  <span class="attr">&quot;output_format&quot;</span><span class="punctuation">:</span> <span class="string">&quot;standard&quot;</span><span class="punctuation">,</span>  <span class="comment">// standard/card/list/custom</span></span><br><span class="line">  <span class="attr">&quot;user_id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;uuid&quot;</span><span class="punctuation">,</span>  <span class="comment">// 可选，用于访问统计</span></span><br><span class="line">  <span class="attr">&quot;page&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;page_size&quot;</span><span class="punctuation">:</span> <span class="number">20</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;similarity_threshold&quot;</span><span class="punctuation">:</span> <span class="number">0.7</span><span class="punctuation">,</span>  <span class="comment">// 可选，仅vector模式</span></span><br><span class="line">  <span class="attr">&quot;allow_fallback&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span>  <span class="comment">// 可选，仅vector模式</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>响应示例</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;query&quot;</span><span class="punctuation">:</span> <span class="string">&quot;自然语言查询&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;mode&quot;</span><span class="punctuation">:</span> <span class="string">&quot;auto&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;results&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;file_id&quot;</span><span class="punctuation">:</span> <span class="number">123</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;示例文档.pdf&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;relevance_score&quot;</span><span class="punctuation">:</span> <span class="number">0.95</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;snippets&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;相关片段1&quot;</span><span class="punctuation">,</span> <span class="string">&quot;相关片段2&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;file_path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;documents/example.pdf&quot;</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;total&quot;</span><span class="punctuation">:</span> <span class="number">10</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;page&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;page_size&quot;</span><span class="punctuation">:</span> <span class="number">20</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">123</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="6-2-获取搜索模式"><a href="#6-2-获取搜索模式" class="headerlink" title="6.2 获取搜索模式"></a>6.2 获取搜索模式</h3><p><strong>接口</strong>：<code>GET /api/v1/chat2doc/modes</code></p>
+<p><strong>响应示例</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;modes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">&#123;</span><span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="string">&quot;fast&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;快速搜索&quot;</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="punctuation">&#123;</span><span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="string">&quot;smart&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;智能搜索&quot;</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="punctuation">&#123;</span><span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="string">&quot;vector&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;向量搜索&quot;</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="punctuation">&#123;</span><span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="string">&quot;auto&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;自动选择&quot;</span><span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">123</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="6-3-获取输出格式"><a href="#6-3-获取输出格式" class="headerlink" title="6.3 获取输出格式"></a>6.3 获取输出格式</h3><p><strong>接口</strong>：<code>GET /api/v1/chat2doc/formats</code></p>
+<h3 id="6-4-健康检查"><a href="#6-4-健康检查" class="headerlink" title="6.4 健康检查"></a>6.4 健康检查</h3><p><strong>接口</strong>：<code>GET /api/v1/chat2doc/health</code></p>
+<h2 id="7-系统管理API"><a href="#7-系统管理API" class="headerlink" title="7. 系统管理API"></a>7. 系统管理API</h2><h3 id="7-1-获取系统信息"><a href="#7-1-获取系统信息" class="headerlink" title="7.1 获取系统信息"></a>7.1 获取系统信息</h3><p><strong>接口</strong>：<code>GET /api/v1/system/info</code></p>
+<p><strong>响应示例</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;v5.10.1&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;AI NAS&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;local_ip&quot;</span><span class="punctuation">:</span> <span class="string">&quot;192.168.1.100&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;port&quot;</span><span class="punctuation">:</span> <span class="number">8000</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;local_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://localhost:8000&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;network_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://192.168.1.100:8000&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;api_docs_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://192.168.1.100:8000/docs&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data_storage_path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/path/to/data&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;system_status&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>...<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;stats&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span>...<span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">123</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="7-2-获取系统时间"><a href="#7-2-获取系统时间" class="headerlink" title="7.2 获取系统时间"></a>7.2 获取系统时间</h3><p><strong>接口</strong>：<code>GET /api/v1/system/time</code></p>
+<h3 id="7-3-获取系统状态"><a href="#7-3-获取系统状态" class="headerlink" title="7.3 获取系统状态"></a>7.3 获取系统状态</h3><p><strong>接口</strong>：<code>GET /api/v1/system/status</code></p>
+<h3 id="7-4-获取查询缓冲统计"><a href="#7-4-获取查询缓冲统计" class="headerlink" title="7.4 获取查询缓冲统计"></a>7.4 获取查询缓冲统计</h3><p><strong>接口</strong>：<code>GET /api/v1/system/query-buffer/stats</code></p>
+<h3 id="7-5-获取连接泄漏状态"><a href="#7-5-获取连接泄漏状态" class="headerlink" title="7.5 获取连接泄漏状态"></a>7.5 获取连接泄漏状态</h3><p><strong>接口</strong>：<code>GET /api/v1/system/connection-leak/status</code></p>
+<h3 id="7-6-获取连接泄漏报告"><a href="#7-6-获取连接泄漏报告" class="headerlink" title="7.6 获取连接泄漏报告"></a>7.6 获取连接泄漏报告</h3><p><strong>接口</strong>：<code>GET /api/v1/system/connection-leak/report</code></p>
+<h3 id="7-7-获取连接泄漏历史"><a href="#7-7-获取连接泄漏历史" class="headerlink" title="7.7 获取连接泄漏历史"></a>7.7 获取连接泄漏历史</h3><p><strong>接口</strong>：<code>GET /api/v1/system/connection-leak/history</code></p>
+<h3 id="7-8-获取连接池状态"><a href="#7-8-获取连接池状态" class="headerlink" title="7.8 获取连接池状态"></a>7.8 获取连接池状态</h3><p><strong>接口</strong>：<code>GET /api/v1/system/pool-status</code></p>
+<h3 id="7-9-系统关闭"><a href="#7-9-系统关闭" class="headerlink" title="7.9 系统关闭"></a>7.9 系统关闭</h3><p><strong>接口</strong>：<code>POST /api/v1/system/shutdown</code></p>
+<p><strong>说明</strong>：需要管理员权限</p>
+<h3 id="7-10-系统重启"><a href="#7-10-系统重启" class="headerlink" title="7.10 系统重启"></a>7.10 系统重启</h3><p><strong>接口</strong>：<code>POST /api/v1/system/restart</code></p>
+<p><strong>说明</strong>：需要管理员权限</p>
+<h2 id="8-健康检查API"><a href="#8-健康检查API" class="headerlink" title="8. 健康检查API"></a>8. 健康检查API</h2><h3 id="8-1-Ping"><a href="#8-1-Ping" class="headerlink" title="8.1 Ping"></a>8.1 Ping</h3><p><strong>接口</strong>：<code>GET /api/v1/health/ping</code></p>
+<p><strong>响应示例</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;pong&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">1</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="8-2-健康检查"><a href="#8-2-健康检查" class="headerlink" title="8.2 健康检查"></a>8.2 健康检查</h3><p><strong>接口</strong>：<code>GET /api/v1/health/check</code></p>
+<p><strong>响应示例</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;status&quot;</span><span class="punctuation">:</span> <span class="string">&quot;healthy&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;checks&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;database&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ok&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;storage&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ok&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;llm&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ok&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">123</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="8-3-健康摘要"><a href="#8-3-健康摘要" class="headerlink" title="8.3 健康摘要"></a>8.3 健康摘要</h3><p><strong>接口</strong>：<code>GET /api/v1/health/summary</code></p>
+<h3 id="8-4-修复健康问题"><a href="#8-4-修复健康问题" class="headerlink" title="8.4 修复健康问题"></a>8.4 修复健康问题</h3><p><strong>接口</strong>：<code>POST /api/v1/health/fix</code></p>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;checker_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;database&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;action&quot;</span><span class="punctuation">:</span> <span class="string">&quot;repair&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="8-5-获取监控状态"><a href="#8-5-获取监控状态" class="headerlink" title="8.5 获取监控状态"></a>8.5 获取监控状态</h3><p><strong>接口</strong>：<code>GET /api/v1/health/monitor/status</code></p>
+<h3 id="8-6-强制检查"><a href="#8-6-强制检查" class="headerlink" title="8.6 强制检查"></a>8.6 强制检查</h3><p><strong>接口</strong>：<code>POST /api/v1/health/monitor/force-check</code></p>
+<h3 id="8-7-状态检查"><a href="#8-7-状态检查" class="headerlink" title="8.7 状态检查"></a>8.7 状态检查</h3><p><strong>接口</strong>：<code>GET /api/v1/health/status-check</code></p>
+<h3 id="8-8-获取检查器列表"><a href="#8-8-获取检查器列表" class="headerlink" title="8.8 获取检查器列表"></a>8.8 获取检查器列表</h3><p><strong>接口</strong>：<code>GET /api/v1/health/checkers</code></p>
+<h3 id="8-9-数据存储检查"><a href="#8-9-数据存储检查" class="headerlink" title="8.9 数据存储检查"></a>8.9 数据存储检查</h3><p><strong>接口</strong>：<code>POST /api/v1/health/check/data-storage</code></p>
+<h3 id="8-10-运行检查器"><a href="#8-10-运行检查器" class="headerlink" title="8.10 运行检查器"></a>8.10 运行检查器</h3><p><strong>接口</strong>：<code>POST /api/v1/health/check/&#123;checker_name&#125;</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>checker_name</code> (string, 必需)：检查器名称</li>
+</ul>
+<h3 id="8-11-实时日志"><a href="#8-11-实时日志" class="headerlink" title="8.11 实时日志"></a>8.11 实时日志</h3><p><strong>接口</strong>：<code>GET /api/v1/health/logs/realtime</code></p>
+<p><strong>说明</strong>：使用 Server-Sent Events (SSE) 实时推送健康检查日志</p>
+<h3 id="8-12-深度分析"><a href="#8-12-深度分析" class="headerlink" title="8.12 深度分析"></a>8.12 深度分析</h3><p><strong>接口</strong>：<code>POST /api/v1/health/deep-analysis/run</code></p>
+<h3 id="8-13-获取深度分析状态"><a href="#8-13-获取深度分析状态" class="headerlink" title="8.13 获取深度分析状态"></a>8.13 获取深度分析状态</h3><p><strong>接口</strong>：<code>GET /api/v1/health/deep-analysis/status</code></p>
+<h3 id="8-14-维护检查"><a href="#8-14-维护检查" class="headerlink" title="8.14 维护检查"></a>8.14 维护检查</h3><p><strong>接口</strong>：<code>GET /api/v1/health/maintenance/check</code></p>
+<h3 id="8-15-数据库维护"><a href="#8-15-数据库维护" class="headerlink" title="8.15 数据库维护"></a>8.15 数据库维护</h3><p><strong>接口</strong>：<code>POST /api/v1/health/maintenance/vacuum</code></p>
+<h3 id="8-16-获取维护建议"><a href="#8-16-获取维护建议" class="headerlink" title="8.16 获取维护建议"></a>8.16 获取维护建议</h3><p><strong>接口</strong>：<code>GET /api/v1/health/maintenance/recommendations</code></p>
+<h2 id="9-统计API"><a href="#9-统计API" class="headerlink" title="9. 统计API"></a>9. 统计API</h2><h3 id="9-1-获取系统摘要"><a href="#9-1-获取系统摘要" class="headerlink" title="9.1 获取系统摘要"></a>9.1 获取系统摘要</h3><p><strong>接口</strong>：<code>GET /api/v1/stats/summary</code></p>
+<p><strong>响应示例</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;total_files&quot;</span><span class="punctuation">:</span> <span class="number">100</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;total_size&quot;</span><span class="punctuation">:</span> <span class="number">1024000000</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;completed_files&quot;</span><span class="punctuation">:</span> <span class="number">90</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;failed_files&quot;</span><span class="punctuation">:</span> <span class="number">3</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;processing_files&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;queued_files&quot;</span><span class="punctuation">:</span> <span class="number">5</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">123</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="9-2-获取Token使用统计"><a href="#9-2-获取Token使用统计" class="headerlink" title="9.2 获取Token使用统计"></a>9.2 获取Token使用统计</h3><p><strong>接口</strong>：<code>GET /api/v1/stats/tokens</code></p>
+<p><strong>响应示例</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;total_llm_requests&quot;</span><span class="punctuation">:</span> <span class="number">1000</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;total_llm_tokens&quot;</span><span class="punctuation">:</span> <span class="number">500000</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;total_vlm_requests&quot;</span><span class="punctuation">:</span> <span class="number">100</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;total_vlm_tokens&quot;</span><span class="punctuation">:</span> <span class="number">200000</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">123</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="9-3-获取仪表板数据"><a href="#9-3-获取仪表板数据" class="headerlink" title="9.3 获取仪表板数据"></a>9.3 获取仪表板数据</h3><p><strong>接口</strong>：<code>GET /api/v1/stats/dashboard</code></p>
+<h2 id="10-日志API"><a href="#10-日志API" class="headerlink" title="10. 日志API"></a>10. 日志API</h2><h3 id="10-1-创建日志"><a href="#10-1-创建日志" class="headerlink" title="10.1 创建日志"></a>10.1 创建日志</h3><p><strong>接口</strong>：<code>POST /api/v1/logs/</code></p>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;level&quot;</span><span class="punctuation">:</span> <span class="string">&quot;info&quot;</span><span class="punctuation">,</span>  <span class="comment">// debug/info/warning/error/critical</span></span><br><span class="line">  <span class="attr">&quot;category&quot;</span><span class="punctuation">:</span> <span class="string">&quot;system&quot;</span><span class="punctuation">,</span>  <span class="comment">// system/api/upload/processing/user/security/performance/database/external</span></span><br><span class="line">  <span class="attr">&quot;event&quot;</span><span class="punctuation">:</span> <span class="string">&quot;事件名称&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;日志消息&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;details&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="punctuation">&#125;</span><span class="punctuation">,</span>  <span class="comment">// 可选</span></span><br><span class="line">  <span class="attr">&quot;user_id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;uuid&quot;</span><span class="punctuation">,</span>  <span class="comment">// 可选</span></span><br><span class="line">  <span class="attr">&quot;session_id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;session_id&quot;</span><span class="punctuation">,</span>  <span class="comment">// 可选</span></span><br><span class="line">  <span class="attr">&quot;duration_ms&quot;</span><span class="punctuation">:</span> <span class="number">123</span><span class="punctuation">,</span>  <span class="comment">// 可选</span></span><br><span class="line">  <span class="attr">&quot;error_code&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ERROR_CODE&quot;</span><span class="punctuation">,</span>  <span class="comment">// 可选</span></span><br><span class="line">  <span class="attr">&quot;stack_trace&quot;</span><span class="punctuation">:</span> <span class="string">&quot;堆栈跟踪&quot;</span>  <span class="comment">// 可选</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="10-2-获取日志列表"><a href="#10-2-获取日志列表" class="headerlink" title="10.2 获取日志列表"></a>10.2 获取日志列表</h3><p><strong>接口</strong>：<code>GET /api/v1/logs/</code></p>
+<p><strong>参数</strong>：</p>
+<ul>
+<li><code>level</code> (string, 可选)：日志级别</li>
+<li><code>category</code> (string, 可选)：日志类别</li>
+<li><code>start_date</code> (string, 可选)：开始日期</li>
+<li><code>end_date</code> (string, 可选)：结束日期</li>
+<li><code>page</code> (int, 可选)：页码，默认1</li>
+<li><code>page_size</code> (int, 可选)：每页数量，默认20</li>
+</ul>
+<h3 id="10-3-获取文件日志"><a href="#10-3-获取文件日志" class="headerlink" title="10.3 获取文件日志"></a>10.3 获取文件日志</h3><p><strong>接口</strong>：<code>GET /api/v1/logs/file/&#123;file_id&#125;</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 必需)：文件ID</li>
+</ul>
+<h3 id="10-4-获取日志详情"><a href="#10-4-获取日志详情" class="headerlink" title="10.4 获取日志详情"></a>10.4 获取日志详情</h3><p><strong>接口</strong>：<code>GET /api/v1/logs/&#123;log_id&#125;</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>log_id</code> (int, 必需)：日志ID</li>
+</ul>
+<h3 id="10-5-获取日志统计摘要"><a href="#10-5-获取日志统计摘要" class="headerlink" title="10.5 获取日志统计摘要"></a>10.5 获取日志统计摘要</h3><p><strong>接口</strong>：<code>GET /api/v1/logs/stats/summary</code></p>
+<h3 id="10-6-删除日志"><a href="#10-6-删除日志" class="headerlink" title="10.6 删除日志"></a>10.6 删除日志</h3><p><strong>接口</strong>：<code>DELETE /api/v1/logs/&#123;log_id&#125;</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>log_id</code> (int, 必需)：日志ID</li>
+</ul>
+<h2 id="11-任务管理API"><a href="#11-任务管理API" class="headerlink" title="11. 任务管理API"></a>11. 任务管理API</h2><h3 id="11-1-获取任务状态"><a href="#11-1-获取任务状态" class="headerlink" title="11.1 获取任务状态"></a>11.1 获取任务状态</h3><p><strong>接口</strong>：<code>GET /api/v1/tasks/&#123;task_id&#125;</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>task_id</code> (string, 必需)：任务ID</li>
+</ul>
+<h3 id="11-2-获取任务管理器性能"><a href="#11-2-获取任务管理器性能" class="headerlink" title="11.2 获取任务管理器性能"></a>11.2 获取任务管理器性能</h3><p><strong>接口</strong>：<code>GET /api/v1/tasks/performance</code></p>
+<h3 id="11-3-重置性能统计"><a href="#11-3-重置性能统计" class="headerlink" title="11.3 重置性能统计"></a>11.3 重置性能统计</h3><p><strong>接口</strong>：<code>POST /api/v1/tasks/performance/reset</code></p>
+<h3 id="11-4-获取任务列表"><a href="#11-4-获取任务列表" class="headerlink" title="11.4 获取任务列表"></a>11.4 获取任务列表</h3><p><strong>接口</strong>：<code>GET /api/v1/tasks/</code></p>
+<p><strong>参数</strong>：</p>
+<ul>
+<li><code>status</code> (string, 可选)：任务状态过滤</li>
+<li><code>limit</code> (int, 可选)：返回数量，默认50</li>
+</ul>
+<h3 id="11-5-删除任务"><a href="#11-5-删除任务" class="headerlink" title="11.5 删除任务"></a>11.5 删除任务</h3><p><strong>接口</strong>：<code>DELETE /api/v1/tasks/&#123;task_id&#125;</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>task_id</code> (string, 必需)：任务ID</li>
+</ul>
+<h3 id="11-6-获取队列统计"><a href="#11-6-获取队列统计" class="headerlink" title="11.6 获取队列统计"></a>11.6 获取队列统计</h3><p><strong>接口</strong>：<code>GET /api/v1/tasks/queue/stats</code></p>
+<h2 id="12-处理时间统计API"><a href="#12-处理时间统计API" class="headerlink" title="12. 处理时间统计API"></a>12. 处理时间统计API</h2><h3 id="12-1-获取文件处理时间"><a href="#12-1-获取文件处理时间" class="headerlink" title="12.1 获取文件处理时间"></a>12.1 获取文件处理时间</h3><p><strong>接口</strong>：<code>GET /api/v1/timing/file/&#123;file_id&#125;/timings</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 必需)：文件ID</li>
+</ul>
+<h3 id="12-2-获取最新处理时间"><a href="#12-2-获取最新处理时间" class="headerlink" title="12.2 获取最新处理时间"></a>12.2 获取最新处理时间</h3><p><strong>接口</strong>：<code>GET /api/v1/timing/file/&#123;file_id&#125;/latest</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 必需)：文件ID</li>
+</ul>
+<h3 id="12-3-获取处理器统计"><a href="#12-3-获取处理器统计" class="headerlink" title="12.3 获取处理器统计"></a>12.3 获取处理器统计</h3><p><strong>接口</strong>：<code>GET /api/v1/timing/processor/&#123;processor_name&#125;/stats</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>processor_name</code> (string, 必需)：处理器名称</li>
+</ul>
+<h3 id="12-4-获取文件类型统计"><a href="#12-4-获取文件类型统计" class="headerlink" title="12.4 获取文件类型统计"></a>12.4 获取文件类型统计</h3><p><strong>接口</strong>：<code>GET /api/v1/timing/file-type/&#123;file_type&#125;/stats</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_type</code> (string, 必需)：文件类型</li>
+</ul>
+<h3 id="12-5-获取概览"><a href="#12-5-获取概览" class="headerlink" title="12.5 获取概览"></a>12.5 获取概览</h3><p><strong>接口</strong>：<code>GET /api/v1/timing/overview</code></p>
+<h2 id="13-配置管理API"><a href="#13-配置管理API" class="headerlink" title="13. 配置管理API"></a>13. 配置管理API</h2><h3 id="13-1-获取配置"><a href="#13-1-获取配置" class="headerlink" title="13.1 获取配置"></a>13.1 获取配置</h3><p><strong>接口</strong>：<code>GET /api/v1/config/</code></p>
+<h3 id="13-2-获取上传配置"><a href="#13-2-获取上传配置" class="headerlink" title="13.2 获取上传配置"></a>13.2 获取上传配置</h3><p><strong>接口</strong>：<code>GET /api/v1/config/upload</code></p>
+<h3 id="13-3-获取状态配置"><a href="#13-3-获取状态配置" class="headerlink" title="13.3 获取状态配置"></a>13.3 获取状态配置</h3><p><strong>接口</strong>：<code>GET /api/v1/config/status</code></p>
+<h3 id="13-4-获取日志级别"><a href="#13-4-获取日志级别" class="headerlink" title="13.4 获取日志级别"></a>13.4 获取日志级别</h3><p><strong>接口</strong>：<code>GET /api/v1/config/logging/level</code></p>
+<h3 id="13-5-设置日志级别"><a href="#13-5-设置日志级别" class="headerlink" title="13.5 设置日志级别"></a>13.5 设置日志级别</h3><p><strong>接口</strong>：<code>POST /api/v1/config/logging/level</code></p>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;level&quot;</span><span class="punctuation">:</span> <span class="string">&quot;INFO&quot;</span>  <span class="comment">// DEBUG/INFO/WARNING/ERROR/CRITICAL</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="13-6-重新加载日志配置"><a href="#13-6-重新加载日志配置" class="headerlink" title="13.6 重新加载日志配置"></a>13.6 重新加载日志配置</h3><p><strong>接口</strong>：<code>POST /api/v1/config/logging/reload</code></p>
+<h2 id="14-用户管理API"><a href="#14-用户管理API" class="headerlink" title="14. 用户管理API"></a>14. 用户管理API</h2><h3 id="14-1-获取用户列表"><a href="#14-1-获取用户列表" class="headerlink" title="14.1 获取用户列表"></a>14.1 获取用户列表</h3><p><strong>接口</strong>：<code>GET /api/v1/user-management/users</code></p>
+<p><strong>参数</strong>：</p>
+<ul>
+<li><code>page</code> (int, 可选)：页码，默认1</li>
+<li><code>page_size</code> (int, 可选)：每页数量，默认20</li>
+<li><code>search</code> (string, 可选)：搜索关键词</li>
+<li><code>role</code> (string, 可选)：角色过滤</li>
+<li><code>is_active</code> (bool, 可选)：是否激活过滤</li>
+</ul>
+<h3 id="14-2-创建用户"><a href="#14-2-创建用户" class="headerlink" title="14.2 创建用户"></a>14.2 创建用户</h3><p><strong>接口</strong>：<code>POST /api/v1/user-management/users</code></p>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;username&quot;</span><span class="punctuation">:</span> <span class="string">&quot;user123&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;email&quot;</span><span class="punctuation">:</span> <span class="string">&quot;user@example.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;password&quot;</span><span class="punctuation">:</span> <span class="string">&quot;password123&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;display_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;显示名称&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;role&quot;</span><span class="punctuation">:</span> <span class="string">&quot;user&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="14-3-更新用户"><a href="#14-3-更新用户" class="headerlink" title="14.3 更新用户"></a>14.3 更新用户</h3><p><strong>接口</strong>：<code>PUT /api/v1/user-management/users/&#123;user_id&#125;</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>user_id</code> (string, 必需)：用户ID</li>
+</ul>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;display_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;新显示名称&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;role&quot;</span><span class="punctuation">:</span> <span class="string">&quot;admin&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;is_active&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="14-4-删除用户"><a href="#14-4-删除用户" class="headerlink" title="14.4 删除用户"></a>14.4 删除用户</h3><p><strong>接口</strong>：<code>DELETE /api/v1/user-management/users/&#123;user_id&#125;</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>user_id</code> (string, 必需)：用户ID</li>
+</ul>
+<h3 id="14-5-批准用户"><a href="#14-5-批准用户" class="headerlink" title="14.5 批准用户"></a>14.5 批准用户</h3><p><strong>接口</strong>：<code>POST /api/v1/user-management/users/&#123;user_id&#125;/approve</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>user_id</code> (string, 必需)：用户ID</li>
+</ul>
+<h3 id="14-6-拒绝用户"><a href="#14-6-拒绝用户" class="headerlink" title="14.6 拒绝用户"></a>14.6 拒绝用户</h3><p><strong>接口</strong>：<code>POST /api/v1/user-management/users/&#123;user_id&#125;/reject</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>user_id</code> (string, 必需)：用户ID</li>
+</ul>
+<h3 id="14-7-重置密码"><a href="#14-7-重置密码" class="headerlink" title="14.7 重置密码"></a>14.7 重置密码</h3><p><strong>接口</strong>：<code>POST /api/v1/user-management/users/&#123;user_id&#125;/reset-password</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>user_id</code> (string, 必需)：用户ID</li>
+</ul>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;new_password&quot;</span><span class="punctuation">:</span> <span class="string">&quot;new_password123&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="14-8-获取用户配置"><a href="#14-8-获取用户配置" class="headerlink" title="14.8 获取用户配置"></a>14.8 获取用户配置</h3><p><strong>接口</strong>：<code>GET /api/v1/user-management/config</code></p>
+<h3 id="14-9-更新用户配置"><a href="#14-9-更新用户配置" class="headerlink" title="14.9 更新用户配置"></a>14.9 更新用户配置</h3><p><strong>接口</strong>：<code>PUT /api/v1/user-management/config</code></p>
+<h3 id="14-10-获取待审核用户"><a href="#14-10-获取待审核用户" class="headerlink" title="14.10 获取待审核用户"></a>14.10 获取待审核用户</h3><p><strong>接口</strong>：<code>GET /api/v1/user-management/pending-users</code></p>
+<h3 id="14-11-获取公开统计"><a href="#14-11-获取公开统计" class="headerlink" title="14.11 获取公开统计"></a>14.11 获取公开统计</h3><p><strong>接口</strong>：<code>GET /api/v1/user-management/public-stats</code></p>
+<h3 id="14-12-获取登录失败统计"><a href="#14-12-获取登录失败统计" class="headerlink" title="14.12 获取登录失败统计"></a>14.12 获取登录失败统计</h3><p><strong>接口</strong>：<code>GET /api/v1/user-management/login-failure-stats</code></p>
+<h3 id="14-13-获取用户统计"><a href="#14-13-获取用户统计" class="headerlink" title="14.13 获取用户统计"></a>14.13 获取用户统计</h3><p><strong>接口</strong>：<code>GET /api/v1/user-management/stats</code></p>
+<h3 id="14-14-获取用户资料"><a href="#14-14-获取用户资料" class="headerlink" title="14.14 获取用户资料"></a>14.14 获取用户资料</h3><p><strong>接口</strong>：<code>GET /api/v1/user-management/users/&#123;user_id&#125;/profile</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>user_id</code> (string, 必需)：用户ID</li>
+</ul>
+<h3 id="14-15-搜索用户"><a href="#14-15-搜索用户" class="headerlink" title="14.15 搜索用户"></a>14.15 搜索用户</h3><p><strong>接口</strong>：<code>GET /api/v1/user-management/search</code></p>
+<p><strong>参数</strong>：</p>
+<ul>
+<li><code>query</code> (string, 必需)：搜索关键词</li>
+<li><code>page</code> (int, 可选)：页码，默认1</li>
+<li><code>page_size</code> (int, 可选)：每页数量，默认20</li>
+</ul>
+<h2 id="15-权限管理API"><a href="#15-权限管理API" class="headerlink" title="15. 权限管理API"></a>15. 权限管理API</h2><h3 id="15-1-获取权限列表"><a href="#15-1-获取权限列表" class="headerlink" title="15.1 获取权限列表"></a>15.1 获取权限列表</h3><p><strong>接口</strong>：<code>GET /api/v1/permission-management/permissions</code></p>
+<h3 id="15-2-更新权限"><a href="#15-2-更新权限" class="headerlink" title="15.2 更新权限"></a>15.2 更新权限</h3><p><strong>接口</strong>：<code>PUT /api/v1/permission-management/permissions/&#123;permission_id&#125;</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>permission_id</code> (string, 必需)：权限ID</li>
+</ul>
+<h3 id="15-3-删除权限"><a href="#15-3-删除权限" class="headerlink" title="15.3 删除权限"></a>15.3 删除权限</h3><p><strong>接口</strong>：<code>DELETE /api/v1/permission-management/permissions/&#123;permission_id&#125;</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>permission_id</code> (string, 必需)：权限ID</li>
+</ul>
+<h3 id="15-4-获取用户权限"><a href="#15-4-获取用户权限" class="headerlink" title="15.4 获取用户权限"></a>15.4 获取用户权限</h3><p><strong>接口</strong>：<code>GET /api/v1/permission-management/users/&#123;user_id&#125;/permissions</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>user_id</code> (string, 必需)：用户ID</li>
+</ul>
+<h3 id="15-5-分配用户权限"><a href="#15-5-分配用户权限" class="headerlink" title="15.5 分配用户权限"></a>15.5 分配用户权限</h3><p><strong>接口</strong>：<code>POST /api/v1/permission-management/users/&#123;user_id&#125;/permissions</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>user_id</code> (string, 必需)：用户ID</li>
+</ul>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;permission_ids&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;permission_id1&quot;</span><span class="punctuation">,</span> <span class="string">&quot;permission_id2&quot;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="15-6-获取权限配置"><a href="#15-6-获取权限配置" class="headerlink" title="15.6 获取权限配置"></a>15.6 获取权限配置</h3><p><strong>接口</strong>：<code>GET /api/v1/permission-management/config</code></p>
+<h3 id="15-7-更新权限配置"><a href="#15-7-更新权限配置" class="headerlink" title="15.7 更新权限配置"></a>15.7 更新权限配置</h3><p><strong>接口</strong>：<code>PUT /api/v1/permission-management/config</code></p>
+<h3 id="15-8-获取权限统计"><a href="#15-8-获取权限统计" class="headerlink" title="15.8 获取权限统计"></a>15.8 获取权限统计</h3><p><strong>接口</strong>：<code>GET /api/v1/permission-management/stats</code></p>
+<h2 id="16-系统清理API"><a href="#16-系统清理API" class="headerlink" title="16. 系统清理API"></a>16. 系统清理API</h2><h3 id="16-1-扫描临时文件"><a href="#16-1-扫描临时文件" class="headerlink" title="16.1 扫描临时文件"></a>16.1 扫描临时文件</h3><p><strong>接口</strong>：<code>GET /api/v1/system-cleanup/scan-temp-files</code></p>
+<h3 id="16-2-清理临时文件"><a href="#16-2-清理临时文件" class="headerlink" title="16.2 清理临时文件"></a>16.2 清理临时文件</h3><p><strong>接口</strong>：<code>POST /api/v1/system-cleanup/cleanup-temp-files</code></p>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;file_patterns&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;*.tmp&quot;</span><span class="punctuation">,</span> <span class="string">&quot;*.log&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;older_than_days&quot;</span><span class="punctuation">:</span> <span class="number">7</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="16-3-优化数据库"><a href="#16-3-优化数据库" class="headerlink" title="16.3 优化数据库"></a>16.3 优化数据库</h3><p><strong>接口</strong>：<code>POST /api/v1/system-cleanup/optimize-database</code></p>
+<h3 id="16-4-清理日志"><a href="#16-4-清理日志" class="headerlink" title="16.4 清理日志"></a>16.4 清理日志</h3><p><strong>接口</strong>：<code>POST /api/v1/system-cleanup/clear-logs</code></p>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;older_than_days&quot;</span><span class="punctuation">:</span> <span class="number">30</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;log_levels&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;debug&quot;</span><span class="punctuation">,</span> <span class="string">&quot;info&quot;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="16-5-重启服务"><a href="#16-5-重启服务" class="headerlink" title="16.5 重启服务"></a>16.5 重启服务</h3><p><strong>接口</strong>：<code>POST /api/v1/system-cleanup/restart-services</code></p>
+<h2 id="17-数据健康检查API"><a href="#17-数据健康检查API" class="headerlink" title="17. 数据健康检查API"></a>17. 数据健康检查API</h2><h3 id="17-1-扫描数据健康"><a href="#17-1-扫描数据健康" class="headerlink" title="17.1 扫描数据健康"></a>17.1 扫描数据健康</h3><p><strong>接口</strong>：<code>GET /api/v1/data-health/scan</code></p>
+<h3 id="17-2-获取失败文件列表"><a href="#17-2-获取失败文件列表" class="headerlink" title="17.2 获取失败文件列表"></a>17.2 获取失败文件列表</h3><p><strong>接口</strong>：<code>GET /api/v1/data-health/failed-files</code></p>
+<p><strong>参数</strong>：</p>
+<ul>
+<li><code>page</code> (int, 可选)：页码，默认1</li>
+<li><code>page_size</code> (int, 可选)：每页数量，默认20</li>
+</ul>
+<h3 id="17-3-获取孤立文件列表"><a href="#17-3-获取孤立文件列表" class="headerlink" title="17.3 获取孤立文件列表"></a>17.3 获取孤立文件列表</h3><p><strong>接口</strong>：<code>GET /api/v1/data-health/orphaned-files</code></p>
+<p><strong>参数</strong>：</p>
+<ul>
+<li><code>page</code> (int, 可选)：页码，默认1</li>
+<li><code>page_size</code> (int, 可选)：每页数量，默认20</li>
+</ul>
+<h3 id="17-4-重新处理失败文件"><a href="#17-4-重新处理失败文件" class="headerlink" title="17.4 重新处理失败文件"></a>17.4 重新处理失败文件</h3><p><strong>接口</strong>：<code>POST /api/v1/data-health/failed-files/&#123;file_id&#125;/reprocess</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>file_id</code> (int, 必需)：文件ID</li>
+</ul>
+<h3 id="17-5-批量重新处理失败文件"><a href="#17-5-批量重新处理失败文件" class="headerlink" title="17.5 批量重新处理失败文件"></a>17.5 批量重新处理失败文件</h3><p><strong>接口</strong>：<code>POST /api/v1/data-health/failed-files/batch-reprocess</code></p>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;file_ids&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="number">1</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">,</span> <span class="number">3</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="17-6-删除孤立文件"><a href="#17-6-删除孤立文件" class="headerlink" title="17.6 删除孤立文件"></a>17.6 删除孤立文件</h3><p><strong>接口</strong>：<code>DELETE /api/v1/data-health/orphaned-files</code></p>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;file_ids&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="number">1</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">,</span> <span class="number">3</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="18-导出API"><a href="#18-导出API" class="headerlink" title="18. 导出API"></a>18. 导出API</h2><h3 id="18-1-导出PDF"><a href="#18-1-导出PDF" class="headerlink" title="18.1 导出PDF"></a>18.1 导出PDF</h3><p><strong>接口</strong>：<code>POST /api/v1/export-pdf/export-pdf</code></p>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;file_id&quot;</span><span class="punctuation">:</span> <span class="number">123</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;options&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;page_size&quot;</span><span class="punctuation">:</span> <span class="string">&quot;A4&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;margin&quot;</span><span class="punctuation">:</span> <span class="string">&quot;normal&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="18-2-获取Word格式模板"><a href="#18-2-获取Word格式模板" class="headerlink" title="18.2 获取Word格式模板"></a>18.2 获取Word格式模板</h3><p><strong>接口</strong>：<code>GET /api/v1/export-word/word-format-templates</code></p>
+<h3 id="18-3-导出Word"><a href="#18-3-导出Word" class="headerlink" title="18.3 导出Word"></a>18.3 导出Word</h3><p><strong>接口</strong>：<code>POST /api/v1/export-word/export-word</code></p>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;file_id&quot;</span><span class="punctuation">:</span> <span class="number">123</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;template&quot;</span><span class="punctuation">:</span> <span class="string">&quot;default&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;options&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="19-VLM批量处理API"><a href="#19-VLM批量处理API" class="headerlink" title="19. VLM批量处理API"></a>19. VLM批量处理API</h2><h3 id="19-1-分析单张图片"><a href="#19-1-分析单张图片" class="headerlink" title="19.1 分析单张图片"></a>19.1 分析单张图片</h3><p><strong>接口</strong>：<code>POST /api/v1/vlm-batch/analyze-single</code></p>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;image_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://example.com/image.jpg&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;prompt&quot;</span><span class="punctuation">:</span> <span class="string">&quot;描述这张图片&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="19-2-批量分析图片"><a href="#19-2-批量分析图片" class="headerlink" title="19.2 批量分析图片"></a>19.2 批量分析图片</h3><p><strong>接口</strong>：<code>POST /api/v1/vlm-batch/analyze-batch</code></p>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;images&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;image_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://example.com/image1.jpg&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;prompt&quot;</span><span class="punctuation">:</span> <span class="string">&quot;描述这张图片&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;image_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://example.com/image2.jpg&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;prompt&quot;</span><span class="punctuation">:</span> <span class="string">&quot;描述这张图片&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="19-3-获取处理状态"><a href="#19-3-获取处理状态" class="headerlink" title="19.3 获取处理状态"></a>19.3 获取处理状态</h3><p><strong>接口</strong>：<code>GET /api/v1/vlm-batch/status</code></p>
+<h2 id="20-Agent配置API"><a href="#20-Agent配置API" class="headerlink" title="20. Agent配置API"></a>20. Agent配置API</h2><h3 id="20-1-获取模块列表"><a href="#20-1-获取模块列表" class="headerlink" title="20.1 获取模块列表"></a>20.1 获取模块列表</h3><p><strong>接口</strong>：<code>GET /api/v1/agent-config/modules</code></p>
+<h3 id="20-2-获取配置"><a href="#20-2-获取配置" class="headerlink" title="20.2 获取配置"></a>20.2 获取配置</h3><p><strong>接口</strong>：<code>GET /api/v1/agent-config/config/&#123;module&#125;/&#123;filename:path&#125;</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>module</code> (string, 必需)：模块名称</li>
+<li><code>filename</code> (string, 必需)：配置文件名（路径格式）</li>
+</ul>
+<h3 id="20-3-更新配置"><a href="#20-3-更新配置" class="headerlink" title="20.3 更新配置"></a>20.3 更新配置</h3><p><strong>接口</strong>：<code>PUT /api/v1/agent-config/config/&#123;module&#125;/&#123;filename:path&#125;</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>module</code> (string, 必需)：模块名称</li>
+<li><code>filename</code> (string, 必需)：配置文件名（路径格式）</li>
+</ul>
+<p><strong>请求体</strong>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;content&quot;</span><span class="punctuation">:</span> <span class="string">&quot;配置内容&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="20-4-验证配置"><a href="#20-4-验证配置" class="headerlink" title="20.4 验证配置"></a>20.4 验证配置</h3><p><strong>接口</strong>：<code>POST /api/v1/agent-config/config/&#123;module&#125;/&#123;filename:path&#125;/validate</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>module</code> (string, 必需)：模块名称</li>
+<li><code>filename</code> (string, 必需)：配置文件名（路径格式）</li>
+</ul>
+<h2 id="21-事件流API"><a href="#21-事件流API" class="headerlink" title="21. 事件流API"></a>21. 事件流API</h2><h3 id="21-1-事件流（SSE）"><a href="#21-1-事件流（SSE）" class="headerlink" title="21.1 事件流（SSE）"></a>21.1 事件流（SSE）</h3><p><strong>接口</strong>：<code>GET /api/v1/events/stream</code></p>
+<p><strong>说明</strong>：使用 Server-Sent Events (SSE) 实时推送系统事件</p>
+<h2 id="22-开发工具API（仅开发模式）"><a href="#22-开发工具API（仅开发模式）" class="headerlink" title="22. 开发工具API（仅开发模式）"></a>22. 开发工具API（仅开发模式）</h2><h3 id="22-1-获取数据库统计"><a href="#22-1-获取数据库统计" class="headerlink" title="22.1 获取数据库统计"></a>22.1 获取数据库统计</h3><p><strong>接口</strong>：<code>GET /api/v1/db-browse/stats</code></p>
+<p><strong>说明</strong>：需要启用开发功能（<code>enable_dev_features=true</code>）</p>
+<h3 id="22-2-获取表列表"><a href="#22-2-获取表列表" class="headerlink" title="22.2 获取表列表"></a>22.2 获取表列表</h3><p><strong>接口</strong>：<code>GET /api/v1/db-browse/tables</code></p>
+<p><strong>说明</strong>：需要启用开发功能</p>
+<h3 id="22-3-获取表详情"><a href="#22-3-获取表详情" class="headerlink" title="22.3 获取表详情"></a>22.3 获取表详情</h3><p><strong>接口</strong>：<code>GET /api/v1/db-browse/tables/&#123;table_name&#125;</code></p>
+<p><strong>路径参数</strong>：</p>
+<ul>
+<li><code>table_name</code> (string, 必需)：表名</li>
+</ul>
+<p><strong>说明</strong>：需要启用开发功能</p>
+<h3 id="22-4-获取目录数据"><a href="#22-4-获取目录数据" class="headerlink" title="22.4 获取目录数据"></a>22.4 获取目录数据</h3><p><strong>接口</strong>：<code>GET /api/v1/db-browse/directories</code></p>
+<p><strong>说明</strong>：需要启用开发功能</p>
+<h3 id="22-5-获取文件数据"><a href="#22-5-获取文件数据" class="headerlink" title="22.5 获取文件数据"></a>22.5 获取文件数据</h3><p><strong>接口</strong>：<code>GET /api/v1/db-browse/files</code></p>
+<p><strong>说明</strong>：需要启用开发功能</p>
+<h3 id="22-6-获取关键词数据"><a href="#22-6-获取关键词数据" class="headerlink" title="22.6 获取关键词数据"></a>22.6 获取关键词数据</h3><p><strong>接口</strong>：<code>GET /api/v1/db-browse/keywords</code></p>
+<p><strong>说明</strong>：需要启用开发功能</p>
+<h3 id="22-7-获取处理日志数据"><a href="#22-7-获取处理日志数据" class="headerlink" title="22.7 获取处理日志数据"></a>22.7 获取处理日志数据</h3><p><strong>接口</strong>：<code>GET /api/v1/db-browse/processing_logs</code></p>
+<p><strong>说明</strong>：需要启用开发功能</p>
+<h3 id="22-8-执行SQL查询"><a href="#22-8-执行SQL查询" class="headerlink" title="22.8 执行SQL查询"></a>22.8 执行SQL查询</h3><p><strong>接口</strong>：<code>GET /api/v1/db-browse/query</code></p>
+<p><strong>参数</strong>：</p>
+<ul>
+<li><code>sql</code> (string, 必需)：SQL查询语句</li>
+</ul>
+<p><strong>说明</strong>：需要启用开发功能，仅支持SELECT查询</p>
+<h2 id="23-模块API"><a href="#23-模块API" class="headerlink" title="23. 模块API"></a>23. 模块API</h2><h3 id="23-1-Smart-Chat模块"><a href="#23-1-Smart-Chat模块" class="headerlink" title="23.1 Smart Chat模块"></a>23.1 Smart Chat模块</h3><p>Smart Chat模块的API接口请参考 <code>docs/smart_chat/USER_MANUAL.md</code></p>
+<h3 id="23-2-合同管理模块"><a href="#23-2-合同管理模块" class="headerlink" title="23.2 合同管理模块"></a>23.2 合同管理模块</h3><p>合同管理模块的API接口请参考模块文档</p>
+<h3 id="23-3-企业查询模块"><a href="#23-3-企业查询模块" class="headerlink" title="23.3 企业查询模块"></a>23.3 企业查询模块</h3><p>企业查询模块的API接口请参考模块文档</p>
+<h3 id="23-4-项目流程模块"><a href="#23-4-项目流程模块" class="headerlink" title="23.4 项目流程模块"></a>23.4 项目流程模块</h3><p>项目流程模块的API接口请参考 <code>docs/project_flow/README.md</code></p>
+<h2 id="24-错误码说明"><a href="#24-错误码说明" class="headerlink" title="24. 错误码说明"></a>24. 错误码说明</h2><h3 id="24-1-通用错误码"><a href="#24-1-通用错误码" class="headerlink" title="24.1 通用错误码"></a>24.1 通用错误码</h3><ul>
+<li><code>SUCCESS</code>：操作成功</li>
+<li><code>INVALID_PARAMETER</code>：参数错误</li>
+<li><code>UNAUTHORIZED</code>：未授权</li>
+<li><code>FORBIDDEN</code>：禁止访问</li>
+<li><code>NOT_FOUND</code>：资源不存在</li>
+<li><code>INTERNAL_ERROR</code>：服务器内部错误</li>
+</ul>
+<h3 id="24-2-文件相关错误码"><a href="#24-2-文件相关错误码" class="headerlink" title="24.2 文件相关错误码"></a>24.2 文件相关错误码</h3><ul>
+<li><code>FILE_NOT_FOUND</code>：文件不存在</li>
+<li><code>FILE_UPLOAD_FAILED</code>：文件上传失败</li>
+<li><code>FILE_PROCESSING_FAILED</code>：文件处理失败</li>
+<li><code>FILE_ALREADY_EXISTS</code>：文件已存在</li>
+</ul>
+<h3 id="24-3-用户相关错误码"><a href="#24-3-用户相关错误码" class="headerlink" title="24.3 用户相关错误码"></a>24.3 用户相关错误码</h3><ul>
+<li><code>USER_NOT_FOUND</code>：用户不存在</li>
+<li><code>USER_ALREADY_EXISTS</code>：用户已存在</li>
+<li><code>INVALID_CREDENTIALS</code>：凭证无效</li>
+<li><code>PASSWORD_TOO_WEAK</code>：密码太弱</li>
+</ul>
+<h2 id="25-使用示例"><a href="#25-使用示例" class="headerlink" title="25. 使用示例"></a>25. 使用示例</h2><h3 id="25-1-上传文件"><a href="#25-1-上传文件" class="headerlink" title="25.1 上传文件"></a>25.1 上传文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST <span class="string">&quot;http://localhost:8000/api/v1/files/upload&quot;</span> \</span><br><span class="line">  -H <span class="string">&quot;Authorization: Bearer &lt;token&gt;&quot;</span> \</span><br><span class="line">  -F <span class="string">&quot;file=@example.pdf&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="25-2-获取文件列表"><a href="#25-2-获取文件列表" class="headerlink" title="25.2 获取文件列表"></a>25.2 获取文件列表</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -X GET <span class="string">&quot;http://localhost:8000/api/v1/files/?skip=0&amp;limit=20&quot;</span> \</span><br><span class="line">  -H <span class="string">&quot;Authorization: Bearer &lt;token&gt;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="25-3-搜索文档"><a href="#25-3-搜索文档" class="headerlink" title="25.3 搜索文档"></a>25.3 搜索文档</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST <span class="string">&quot;http://localhost:8000/api/v1/chat2doc/search&quot;</span> \</span><br><span class="line">  -H <span class="string">&quot;Authorization: Bearer &lt;token&gt;&quot;</span> \</span><br><span class="line">  -H <span class="string">&quot;Content-Type: application/json&quot;</span> \</span><br><span class="line">  -d <span class="string">&#x27;&#123;</span></span><br><span class="line"><span class="string">    &quot;query&quot;: &quot;自然语言查询&quot;,</span></span><br><span class="line"><span class="string">    &quot;mode&quot;: &quot;auto&quot;,</span></span><br><span class="line"><span class="string">    &quot;page&quot;: 1,</span></span><br><span class="line"><span class="string">    &quot;page_size&quot;: 20</span></span><br><span class="line"><span class="string">  &#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="25-4-获取处理状态（SSE）"><a href="#25-4-获取处理状态（SSE）" class="headerlink" title="25.4 获取处理状态（SSE）"></a>25.4 获取处理状态（SSE）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> eventSource = <span class="keyword">new</span> <span class="title class_">EventSource</span>(<span class="string">&#x27;http://localhost:8000/api/v1/processing/status-stream&#x27;</span>);</span><br><span class="line">eventSource.<span class="property">onmessage</span> = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> data = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(event.<span class="property">data</span>);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;处理状态更新:&#x27;</span>, data);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="26-总结"><a href="#26-总结" class="headerlink" title="26. 总结"></a>26. 总结</h2><p>AI NAS提供了完整的RESTful API接口，涵盖文件管理、文档处理、智能对话、系统管理等各个方面。所有接口都遵循统一的响应格式，支持异步处理，具备良好的扩展性和可维护性。</p>
+<p>通过统一的认证机制、错误处理和日志记录，系统提供了稳定可靠的API服务。同时，通过SSE支持实时状态推送，为前端提供了良好的用户体验。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://1660479817.github.io/AIDF.github.io/2025/12/30/api/" data-id="cmjs96wql0001ci1w77obdnkx" data-title="API接口说明文档" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/AIDF.github.io/tags/API/" rel="tag">API</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/AIDF.github.io/tags/%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" rel="tag">接口文档</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/AIDF.github.io/2025/12/30/README/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          AI NAS 文档中心
+        
+      </div>
+    </a>
+  
+  
+    <a href="/AIDF.github.io/2025/12/30/architecture/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">AI NAS 系统架构说明文档</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AI-NAS/">AI NAS</a></li><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AI-NAS-Smart-Chat/">AI NAS - Smart Chat</a></li><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AI-NAS-%E6%95%B0%E6%8D%AE%E5%B7%A5%E5%9C%BA/">AI NAS - 数据工场</a></li><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AI-NAS-%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83/">AI NAS - 文档中心</a></li><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AI-NAS-%E7%AE%A1%E7%90%86%E4%B8%AD%E5%BF%83/">AI NAS - 管理中心</a></li><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AI-NAS-%E7%B3%BB%E7%BB%9F%E9%A6%96%E9%A1%B5/">AI NAS - 系统首页</a></li><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AI-NAS-%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%BF%83/">AI NAS - 项目中心</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/API/" rel="tag">API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/Smart-Chat/" rel="tag">Smart Chat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E6%80%BB%E8%A7%88/" rel="tag">总览</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" rel="tag">接口文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E6%95%B0%E6%8D%AE%E5%B7%A5%E5%9C%BA/" rel="tag">数据工场</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83/" rel="tag">文档中心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E6%9E%B6%E6%9E%84/" rel="tag">架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E6%A8%A1%E5%9D%97%E6%9E%B6%E6%9E%84/" rel="tag">模块架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E7%AE%A1%E7%90%86%E4%B8%AD%E5%BF%83/" rel="tag">管理中心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" rel="tag">系统架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E7%B3%BB%E7%BB%9F%E9%A6%96%E9%A1%B5/" rel="tag">系统首页</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%BF%83/" rel="tag">项目中心</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/AIDF.github.io/tags/API/" style="font-size: 20px;">API</a> <a href="/AIDF.github.io/tags/Smart-Chat/" style="font-size: 12.5px;">Smart Chat</a> <a href="/AIDF.github.io/tags/%E6%80%BB%E8%A7%88/" style="font-size: 10px;">总览</a> <a href="/AIDF.github.io/tags/%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" style="font-size: 20px;">接口文档</a> <a href="/AIDF.github.io/tags/%E6%95%B0%E6%8D%AE%E5%B7%A5%E5%9C%BA/" style="font-size: 12.5px;">数据工场</a> <a href="/AIDF.github.io/tags/%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83/" style="font-size: 15px;">文档中心</a> <a href="/AIDF.github.io/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 20px;">架构</a> <a href="/AIDF.github.io/tags/%E6%A8%A1%E5%9D%97%E6%9E%B6%E6%9E%84/" style="font-size: 17.5px;">模块架构</a> <a href="/AIDF.github.io/tags/%E7%AE%A1%E7%90%86%E4%B8%AD%E5%BF%83/" style="font-size: 12.5px;">管理中心</a> <a href="/AIDF.github.io/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">系统架构</a> <a href="/AIDF.github.io/tags/%E7%B3%BB%E7%BB%9F%E9%A6%96%E9%A1%B5/" style="font-size: 12.5px;">系统首页</a> <a href="/AIDF.github.io/tags/%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%BF%83/" style="font-size: 12.5px;">项目中心</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/AIDF.github.io/archives/2025/12/">十二月 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/AIDF.github.io/2025/12/30/README/">AI NAS 文档中心</a>
+          </li>
+        
+          <li>
+            <a href="/AIDF.github.io/2025/12/30/api/">API接口说明文档</a>
+          </li>
+        
+          <li>
+            <a href="/AIDF.github.io/2025/12/30/architecture/">AI NAS 系统架构说明文档</a>
+          </li>
+        
+          <li>
+            <a href="/AIDF.github.io/2025/12/30/data_factory-api/">数据工场模块API接口文档</a>
+          </li>
+        
+          <li>
+            <a href="/AIDF.github.io/2025/12/30/data_factory-architecture/">数据工场模块架构说明</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 AI NAS Team<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/AIDF.github.io/" class="mobile-nav-link">Home</a>
+  
+    <a href="/AIDF.github.io/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/AIDF.github.io/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/AIDF.github.io/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/AIDF.github.io/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
