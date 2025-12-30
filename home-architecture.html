@@ -6,15 +6,15 @@
   
   <title>系统首页模块架构说明 | AI NAS 技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="1. 模块概述系统首页是AI NAS的入口页面，提供系统概览、快速导航和核心功能入口。 1.1 功能定位 系统入口：用户访问系统的第一个页面 功能导航：快速访问各个核心功能模块 系统概览：展示系统统计信息和状态 快速操作：提供常用功能的快速入口  1.2 访问路径 URL：&#x2F; 文件位置：static&#x2F;home.html 权限要求：所有用户（包括游客）可访问  2. 模块架构123456789101">
+  <meta name="description" content="1. 模块概述系统首页是AI NAS的入口页面，提供系统概览、快速导航和核心功能入口。 1.1 功能定位 系统入口：用户访问系统的第一个页面 功能导航：快速访问各个核心功能模块 系统概览：展示系统统计信息和状态 快速操作：提供常用功能的快速入口  1.2 访问路径 URL：&#x2F; 文件位置：static&#x2F;home.html 权限要求：所有用户（包括游客）可访问  2. 模块架构flowchart TD">
 <meta property="og:type" content="article">
 <meta property="og:title" content="系统首页模块架构说明">
 <meta property="og:url" content="https://1660479817.github.io/AIDF.github.io/home-architecture.html">
 <meta property="og:site_name" content="AI NAS 技术博客">
-<meta property="og:description" content="1. 模块概述系统首页是AI NAS的入口页面，提供系统概览、快速导航和核心功能入口。 1.1 功能定位 系统入口：用户访问系统的第一个页面 功能导航：快速访问各个核心功能模块 系统概览：展示系统统计信息和状态 快速操作：提供常用功能的快速入口  1.2 访问路径 URL：&#x2F; 文件位置：static&#x2F;home.html 权限要求：所有用户（包括游客）可访问  2. 模块架构123456789101">
+<meta property="og:description" content="1. 模块概述系统首页是AI NAS的入口页面，提供系统概览、快速导航和核心功能入口。 1.1 功能定位 系统入口：用户访问系统的第一个页面 功能导航：快速访问各个核心功能模块 系统概览：展示系统统计信息和状态 快速操作：提供常用功能的快速入口  1.2 访问路径 URL：&#x2F; 文件位置：static&#x2F;home.html 权限要求：所有用户（包括游客）可访问  2. 模块架构flowchart TD">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-12-30T07:50:06.000Z">
-<meta property="article:modified_time" content="2025-12-30T09:21:14.959Z">
+<meta property="article:modified_time" content="2025-12-30T13:41:34.209Z">
 <meta property="article:author" content="AI NAS Team">
 <meta property="article:tag" content="架构">
 <meta property="article:tag" content="模块架构">
@@ -118,7 +118,23 @@
 <li><strong>文件位置</strong>：<code>static/home.html</code></li>
 <li><strong>权限要求</strong>：所有用户（包括游客）可访问</li>
 </ul>
-<h2 id="2-模块架构"><a href="#2-模块架构" class="headerlink" title="2. 模块架构"></a>2. 模块架构</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                    前端页面层                              │</span><br><span class="line">│  - home.html (静态页面)                                   │</span><br><span class="line">│  - 导航栏组件 (navbar.html)                              │</span><br><span class="line">│  - JavaScript交互逻辑                                     │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                    API接口层                              │</span><br><span class="line">│  - GET /api/v1/system/info (系统信息)                    │</span><br><span class="line">│  - GET /api/v1/stats/summary (系统统计)                   │</span><br><span class="line">│  - GET /api/v1/stats/dashboard (仪表板数据)              │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                   业务服务层                              │</span><br><span class="line">│  - System Service (系统服务)                             │</span><br><span class="line">│  - Stats Service (统计服务)                              │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                   数据层                                  │</span><br><span class="line">│  - ai_nas: system_logs, processing_logs                  │</span><br><span class="line">│  - ai_nas_app: users (用户统计)                          │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
+<h2 id="2-模块架构"><a href="#2-模块架构" class="headerlink" title="2. 模块架构"></a>2. 模块架构</h2><pre class="mermaid">flowchart TD
+    A["前端页面层<br/>• home.html (静态页面)<br/>• 导航栏组件 (navbar.html)<br/>• JavaScript交互逻辑"]
+    
+    B["API接口层<br/>• GET /api/v1/system/info (系统信息)<br/>• GET /api/v1/stats/summary (系统统计)<br/>• GET /api/v1/stats/dashboard (仪表板数据)"]
+    
+    C["业务服务层<br/>• System Service (系统服务)<br/>• Stats Service (统计服务)"]
+    
+    D["数据层<br/>• ai_nas: system_logs, processing_logs<br/>• ai_nas_app: users (用户统计)"]
+    
+    A --> B
+    B --> C
+    C --> D
+    
+    style A fill:#e1f5ff
+    style B fill:#fff4e1
+    style C fill:#e8f5e9
+    style D fill:#f3e5f5</pre>
 
 <h2 id="3-核心组件"><a href="#3-核心组件" class="headerlink" title="3. 核心组件"></a>3. 核心组件</h2><h3 id="3-1-前端组件"><a href="#3-1-前端组件" class="headerlink" title="3.1 前端组件"></a>3.1 前端组件</h3><h4 id="3-1-1-Hero区域"><a href="#3-1-1-Hero区域" class="headerlink" title="3.1.1 Hero区域"></a>3.1.1 Hero区域</h4><p><strong>功能</strong>：</p>
 <ul>
@@ -233,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/home-architecture.html" data-id="cmjsltz6m000b8w1wcatx96sw" data-title="系统首页模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/home-architecture.html" data-id="cmjsn32vi000b6s1w0jqqc7f7" data-title="系统首页模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -381,17 +397,112 @@
 
 
 <!-- Mermaid.js for diagrams -->
+<style>
+  /* Mermaid 图表样式优化 - 浅色背景，清晰易读 */
+  .mermaid {
+    background-color: #ffffff !important;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+  }
+  .mermaid svg {
+    background-color: #ffffff !important;
+  }
+  /* 确保文字颜色清晰 */
+  .mermaid .nodeLabel,
+  .mermaid .edgeLabel {
+    color: #333 !important;
+    fill: #333 !important;
+  }
+  /* 节点背景色优化 */
+  .mermaid .node rect,
+  .mermaid .node circle,
+  .mermaid .node ellipse,
+  .mermaid .node polygon {
+    fill: #f8f9fa !important;
+    stroke: #333 !important;
+    stroke-width: 2px !important;
+  }
+  /* 箭头和连接线颜色 */
+  .mermaid .flowchart-link {
+    stroke: #666 !important;
+  }
+  .mermaid .arrowheadPath {
+    fill: #666 !important;
+  }
+</style>
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
 <script>
-  mermaid.initialize({ 
-    startOnLoad: true,
-    theme: 'default',
-    flowchart: {
-      useMaxWidth: true,
-      htmlLabels: true,
-      curve: 'basis'
+  // 初始化 Mermaid 配置
+  function initMermaid() {
+    if (typeof mermaid !== 'undefined') {
+      mermaid.initialize({ 
+        startOnLoad: false,  // 禁用自动渲染，手动控制
+        theme: 'base',  // 使用 base 主题（浅色背景）
+        themeVariables: {
+          primaryColor: '#e1f5ff',
+          primaryTextColor: '#333',
+          primaryBorderColor: '#333',
+          lineColor: '#666',
+          secondaryColor: '#fff4e1',
+          tertiaryColor: '#e8f5e9',
+          background: '#ffffff',
+          mainBkgColor: '#ffffff',
+          textColor: '#333',
+          border1: '#333',
+          border2: '#666',
+          arrowheadColor: '#666',
+          clusterBkg: '#f8f9fa',
+          clusterBorder: '#333',
+          defaultLinkColor: '#666',
+          titleColor: '#333',
+          edgeLabelBackground: '#ffffff',
+          actorBorder: '#333',
+          actorBkg: '#f8f9fa',
+          actorTextColor: '#333',
+          actorLineColor: '#666',
+          signalColor: '#333',
+          signalTextColor: '#333',
+          labelBoxBkgColor: '#ffffff',
+          labelBoxBorderColor: '#333',
+          labelTextColor: '#333',
+          loopTextColor: '#333',
+          noteBorderColor: '#333',
+          noteBkgColor: '#fff4e1',
+          noteTextColor: '#333',
+          activationBorderColor: '#333',
+          activationBkgColor: '#e1f5ff',
+          sequenceNumberColor: '#333',
+          sectionBkgColor: '#f8f9fa',
+          altBkgColor: '#ffffff',
+          classText: '#333',
+          fillType0: '#e1f5ff',
+          fillType1: '#fff4e1',
+          fillType2: '#e8f5e9',
+          fillType3: '#f3e5f5',
+          fillType4: '#ffebee'
+        },
+        flowchart: {
+          useMaxWidth: true,
+          htmlLabels: true,
+          curve: 'basis',
+          nodeSpacing: 50,
+          rankSpacing: 80
+        }
+      });
+      
+      // 手动触发渲染
+      mermaid.run();
     }
-  });
+  }
+  
+  // 确保在 DOM 完全加载后再初始化
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMermaid);
+  } else {
+    // DOM 已经加载完成，直接初始化
+    initMermaid();
+  }
 </script>
 
 

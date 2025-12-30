@@ -138,7 +138,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/README.html" data-id="cmjsltz6f00018w1w39i53i7i" data-title="AI NAS - 企业级智能文档管理系统" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/README.html" data-id="cmjsn32vb00016s1w4fjbfwrb" data-title="AI NAS - 企业级智能文档管理系统" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -277,17 +277,112 @@
 
 
 <!-- Mermaid.js for diagrams -->
+<style>
+  /* Mermaid 图表样式优化 - 浅色背景，清晰易读 */
+  .mermaid {
+    background-color: #ffffff !important;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+  }
+  .mermaid svg {
+    background-color: #ffffff !important;
+  }
+  /* 确保文字颜色清晰 */
+  .mermaid .nodeLabel,
+  .mermaid .edgeLabel {
+    color: #333 !important;
+    fill: #333 !important;
+  }
+  /* 节点背景色优化 */
+  .mermaid .node rect,
+  .mermaid .node circle,
+  .mermaid .node ellipse,
+  .mermaid .node polygon {
+    fill: #f8f9fa !important;
+    stroke: #333 !important;
+    stroke-width: 2px !important;
+  }
+  /* 箭头和连接线颜色 */
+  .mermaid .flowchart-link {
+    stroke: #666 !important;
+  }
+  .mermaid .arrowheadPath {
+    fill: #666 !important;
+  }
+</style>
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
 <script>
-  mermaid.initialize({ 
-    startOnLoad: true,
-    theme: 'default',
-    flowchart: {
-      useMaxWidth: true,
-      htmlLabels: true,
-      curve: 'basis'
+  // 初始化 Mermaid 配置
+  function initMermaid() {
+    if (typeof mermaid !== 'undefined') {
+      mermaid.initialize({ 
+        startOnLoad: false,  // 禁用自动渲染，手动控制
+        theme: 'base',  // 使用 base 主题（浅色背景）
+        themeVariables: {
+          primaryColor: '#e1f5ff',
+          primaryTextColor: '#333',
+          primaryBorderColor: '#333',
+          lineColor: '#666',
+          secondaryColor: '#fff4e1',
+          tertiaryColor: '#e8f5e9',
+          background: '#ffffff',
+          mainBkgColor: '#ffffff',
+          textColor: '#333',
+          border1: '#333',
+          border2: '#666',
+          arrowheadColor: '#666',
+          clusterBkg: '#f8f9fa',
+          clusterBorder: '#333',
+          defaultLinkColor: '#666',
+          titleColor: '#333',
+          edgeLabelBackground: '#ffffff',
+          actorBorder: '#333',
+          actorBkg: '#f8f9fa',
+          actorTextColor: '#333',
+          actorLineColor: '#666',
+          signalColor: '#333',
+          signalTextColor: '#333',
+          labelBoxBkgColor: '#ffffff',
+          labelBoxBorderColor: '#333',
+          labelTextColor: '#333',
+          loopTextColor: '#333',
+          noteBorderColor: '#333',
+          noteBkgColor: '#fff4e1',
+          noteTextColor: '#333',
+          activationBorderColor: '#333',
+          activationBkgColor: '#e1f5ff',
+          sequenceNumberColor: '#333',
+          sectionBkgColor: '#f8f9fa',
+          altBkgColor: '#ffffff',
+          classText: '#333',
+          fillType0: '#e1f5ff',
+          fillType1: '#fff4e1',
+          fillType2: '#e8f5e9',
+          fillType3: '#f3e5f5',
+          fillType4: '#ffebee'
+        },
+        flowchart: {
+          useMaxWidth: true,
+          htmlLabels: true,
+          curve: 'basis',
+          nodeSpacing: 50,
+          rankSpacing: 80
+        }
+      });
+      
+      // 手动触发渲染
+      mermaid.run();
     }
-  });
+  }
+  
+  // 确保在 DOM 完全加载后再初始化
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMermaid);
+  } else {
+    // DOM 已经加载完成，直接初始化
+    initMermaid();
+  }
 </script>
 
 

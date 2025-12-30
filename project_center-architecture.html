@@ -14,7 +14,7 @@
 <meta property="og:description" content="1. 模块概述项目中心是AI NAS的项目管理模块，提供项目创建、管理、文档关联等功能。 1.1 功能定位 项目卡片视图：卡片式展示所有项目 项目管理：创建、编辑、删除项目 成员管理：项目成员添加、移除、角色管理 文档关联：项目文档关联和管理 时间轴展示：项目过程记录时间轴  1.2 访问路径 URL：&#x2F;project-overview（项目中心）、&#x2F;project-flow（我的项目） 文件位置">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-12-30T07:50:06.000Z">
-<meta property="article:modified_time" content="2025-12-30T09:21:14.959Z">
+<meta property="article:modified_time" content="2025-12-30T13:41:34.209Z">
 <meta property="article:author" content="AI NAS Team">
 <meta property="article:tag" content="架构">
 <meta property="article:tag" content="模块架构">
@@ -119,7 +119,23 @@
 <li><strong>文件位置</strong>：<code>app/modules/project_flow/static/</code></li>
 <li><strong>权限要求</strong>：正式用户（USER）或管理员（ADMIN）</li>
 </ul>
-<h2 id="2-模块架构"><a href="#2-模块架构" class="headerlink" title="2. 模块架构"></a>2. 模块架构</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                    前端页面层                              │</span><br><span class="line">│  - project_overview.html (项目中心)                     │</span><br><span class="line">│  - project_flow.html (我的项目)                          │</span><br><span class="line">│  - ProjectFlowAPIService (API服务)                      │</span><br><span class="line">│  - ProjectFlowStateManager (状态管理)                    │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                    API接口层                              │</span><br><span class="line">│  - GET /api/v1/project-flow/projects (项目列表)         │</span><br><span class="line">│  - POST /api/v1/project-flow/projects (创建项目)        │</span><br><span class="line">│  - GET /api/v1/project-flow/projects/&#123;id&#125; (项目详情)    │</span><br><span class="line">│  - PUT /api/v1/project-flow/projects/&#123;id&#125; (更新项目)    │</span><br><span class="line">│  - DELETE /api/v1/project-flow/projects/&#123;id&#125; (删除项目) │</span><br><span class="line">│  - GET /api/v1/project-flow/projects/&#123;id&#125;/members (成员)│</span><br><span class="line">│  - GET /api/v1/project-flow/projects/&#123;id&#125;/records (记录)│</span><br><span class="line">│  - GET /api/v1/project-flow/projects/&#123;id&#125;/documents (文档)│</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                   业务服务层                              │</span><br><span class="line">│  - Project Service (项目服务)                            │</span><br><span class="line">│  - Member Service (成员服务)                             │</span><br><span class="line">│  - Record Service (记录服务)                             │</span><br><span class="line">│  - Document Service (文档服务)                           │</span><br><span class="line">│  - AI Service (AI服务，用于生成摘要)                     │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br><span class="line">                            ↓</span><br><span class="line">┌─────────────────────────────────────────────────────────┐</span><br><span class="line">│                   数据层                                  │</span><br><span class="line">│  - ai_nas_app: projects, project_members                │</span><br><span class="line">│  - ai_nas_app: project_records, project_documents       │</span><br><span class="line">│  - ai_nas: file_meta (关联文档)                          │</span><br><span class="line">└─────────────────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
+<h2 id="2-模块架构"><a href="#2-模块架构" class="headerlink" title="2. 模块架构"></a>2. 模块架构</h2><pre class="mermaid">flowchart TD
+    A["前端页面层<br/>• project_overview.html (项目中心)<br/>• project_flow.html (我的项目)<br/>• ProjectFlowAPIService (API服务)<br/>• ProjectFlowStateManager (状态管理)"]
+    
+    B["API接口层<br/>• GET /api/v1/project-flow/projects (项目列表)<br/>• POST /api/v1/project-flow/projects (创建项目)<br/>• GET /api/v1/project-flow/projects/{id} (项目详情)<br/>• PUT /api/v1/project-flow/projects/{id} (更新项目)<br/>• DELETE /api/v1/project-flow/projects/{id} (删除项目)<br/>• GET /api/v1/project-flow/projects/{id}/members (成员)<br/>• GET /api/v1/project-flow/projects/{id}/records (记录)<br/>• GET /api/v1/project-flow/projects/{id}/documents (文档)"]
+    
+    C["业务服务层<br/>• Project Service (项目服务)<br/>• Member Service (成员服务)<br/>• Record Service (记录服务)<br/>• Document Service (文档服务)<br/>• AI Service (AI服务，用于生成摘要)"]
+    
+    D["数据层<br/>• ai_nas_app: projects, project_members<br/>• ai_nas_app: project_records, project_documents<br/>• ai_nas: file_meta (关联文档)"]
+    
+    A --> B
+    B --> C
+    C --> D
+    
+    style A fill:#e1f5ff
+    style B fill:#fff4e1
+    style C fill:#e8f5e9
+    style D fill:#f3e5f5</pre>
 
 <h2 id="3-核心组件"><a href="#3-核心组件" class="headerlink" title="3. 核心组件"></a>3. 核心组件</h2><h3 id="3-1-前端组件"><a href="#3-1-前端组件" class="headerlink" title="3.1 前端组件"></a>3.1 前端组件</h3><h4 id="3-1-1-项目中心页面"><a href="#3-1-1-项目中心页面" class="headerlink" title="3.1.1 项目中心页面"></a>3.1.1 项目中心页面</h4><p><strong>功能</strong>：</p>
 <ul>
@@ -242,7 +258,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/project_center-architecture.html" data-id="cmjsltz6p000n8w1wcc2vh0sh" data-title="项目中心模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/project_center-architecture.html" data-id="cmjsn32vk000n6s1wdfmchsxx" data-title="项目中心模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -390,17 +406,112 @@
 
 
 <!-- Mermaid.js for diagrams -->
+<style>
+  /* Mermaid 图表样式优化 - 浅色背景，清晰易读 */
+  .mermaid {
+    background-color: #ffffff !important;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+  }
+  .mermaid svg {
+    background-color: #ffffff !important;
+  }
+  /* 确保文字颜色清晰 */
+  .mermaid .nodeLabel,
+  .mermaid .edgeLabel {
+    color: #333 !important;
+    fill: #333 !important;
+  }
+  /* 节点背景色优化 */
+  .mermaid .node rect,
+  .mermaid .node circle,
+  .mermaid .node ellipse,
+  .mermaid .node polygon {
+    fill: #f8f9fa !important;
+    stroke: #333 !important;
+    stroke-width: 2px !important;
+  }
+  /* 箭头和连接线颜色 */
+  .mermaid .flowchart-link {
+    stroke: #666 !important;
+  }
+  .mermaid .arrowheadPath {
+    fill: #666 !important;
+  }
+</style>
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
 <script>
-  mermaid.initialize({ 
-    startOnLoad: true,
-    theme: 'default',
-    flowchart: {
-      useMaxWidth: true,
-      htmlLabels: true,
-      curve: 'basis'
+  // 初始化 Mermaid 配置
+  function initMermaid() {
+    if (typeof mermaid !== 'undefined') {
+      mermaid.initialize({ 
+        startOnLoad: false,  // 禁用自动渲染，手动控制
+        theme: 'base',  // 使用 base 主题（浅色背景）
+        themeVariables: {
+          primaryColor: '#e1f5ff',
+          primaryTextColor: '#333',
+          primaryBorderColor: '#333',
+          lineColor: '#666',
+          secondaryColor: '#fff4e1',
+          tertiaryColor: '#e8f5e9',
+          background: '#ffffff',
+          mainBkgColor: '#ffffff',
+          textColor: '#333',
+          border1: '#333',
+          border2: '#666',
+          arrowheadColor: '#666',
+          clusterBkg: '#f8f9fa',
+          clusterBorder: '#333',
+          defaultLinkColor: '#666',
+          titleColor: '#333',
+          edgeLabelBackground: '#ffffff',
+          actorBorder: '#333',
+          actorBkg: '#f8f9fa',
+          actorTextColor: '#333',
+          actorLineColor: '#666',
+          signalColor: '#333',
+          signalTextColor: '#333',
+          labelBoxBkgColor: '#ffffff',
+          labelBoxBorderColor: '#333',
+          labelTextColor: '#333',
+          loopTextColor: '#333',
+          noteBorderColor: '#333',
+          noteBkgColor: '#fff4e1',
+          noteTextColor: '#333',
+          activationBorderColor: '#333',
+          activationBkgColor: '#e1f5ff',
+          sequenceNumberColor: '#333',
+          sectionBkgColor: '#f8f9fa',
+          altBkgColor: '#ffffff',
+          classText: '#333',
+          fillType0: '#e1f5ff',
+          fillType1: '#fff4e1',
+          fillType2: '#e8f5e9',
+          fillType3: '#f3e5f5',
+          fillType4: '#ffebee'
+        },
+        flowchart: {
+          useMaxWidth: true,
+          htmlLabels: true,
+          curve: 'basis',
+          nodeSpacing: 50,
+          rankSpacing: 80
+        }
+      });
+      
+      // 手动触发渲染
+      mermaid.run();
     }
-  });
+  }
+  
+  // 确保在 DOM 完全加载后再初始化
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMermaid);
+  } else {
+    // DOM 已经加载完成，直接初始化
+    initMermaid();
+  }
 </script>
 
 
