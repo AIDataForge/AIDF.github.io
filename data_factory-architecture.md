@@ -195,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/data_factory-architecture.md" data-id="cmjsfnpnc00071e1w01bzfz9r" data-title="数据工场模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/data_factory-architecture.md" data-id="cmjsfswrb0007og1w7nbp2eqr" data-title="数据工场模块架构说明" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       

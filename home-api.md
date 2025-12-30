@@ -287,7 +287,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/home-api.md" data-id="cmjsfnpnd000a1e1w6n1r91e4" data-title="系统首页模块API接口文档" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/home-api.md" data-id="cmjsfswrc000aog1w540uhjct" data-title="系统首页模块API接口文档" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
