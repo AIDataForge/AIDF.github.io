@@ -4,24 +4,24 @@
   <meta charset="utf-8">
   
   
-  <title>系统首页模块API接口文档 | AI NAS 技术博客</title>
+  <title>系统首页模块API接口文档 | AIDF 技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="1. 概述系统首页模块使用的API接口，主要用于获取系统信息和统计数据。 1.1 基础信息 Base URL：http:&#x2F;&#x2F;localhost:8000 API前缀：&#x2F;api&#x2F;v1 Content-Type：application&#x2F;json  1.2 统一响应格式所有API接口遵循统一的响应格式： 成功响应： 1234567&#123;  &quot;success&quot;: true,  &amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="系统首页模块API接口文档">
 <meta property="og:url" content="https://1660479817.github.io/AIDF.github.io/home-api.html">
-<meta property="og:site_name" content="AI NAS 技术博客">
+<meta property="og:site_name" content="AIDF 技术博客">
 <meta property="og:description" content="1. 概述系统首页模块使用的API接口，主要用于获取系统信息和统计数据。 1.1 基础信息 Base URL：http:&#x2F;&#x2F;localhost:8000 API前缀：&#x2F;api&#x2F;v1 Content-Type：application&#x2F;json  1.2 统一响应格式所有API接口遵循统一的响应格式： 成功响应： 1234567&#123;  &quot;success&quot;: true,  &amp;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-12-30T07:50:06.000Z">
-<meta property="article:modified_time" content="2025-12-30T09:21:14.959Z">
-<meta property="article:author" content="AI NAS Team">
+<meta property="article:modified_time" content="2025-12-31T01:48:00.474Z">
+<meta property="article:author" content="AIDF Team">
 <meta property="article:tag" content="API">
 <meta property="article:tag" content="接口文档">
 <meta property="article:tag" content="系统首页">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/AIDF.github.io/atom.xml" title="AI NAS 技术博客" type="application/atom+xml">
+    <link rel="alternate" href="/AIDF.github.io/atom.xml" title="AIDF 技术博客" type="application/atom+xml">
   
   
     <link rel="shortcut icon" href="/AIDF.github.io/favicon.png">
@@ -48,11 +48,11 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/AIDF.github.io/" id="logo">AI NAS 技术博客</a>
+        <a href="/AIDF.github.io/" id="logo">AIDF 技术博客</a>
       </h1>
       
         <h2 id="subtitle-wrap">
-          <a href="/AIDF.github.io/" id="subtitle">AI NAS 系统技术文档与分享</a>
+          <a href="/AIDF.github.io/" id="subtitle">AIDF 系统技术文档与分享</a>
         </h2>
       
     </div>
@@ -60,9 +60,15 @@
       <nav id="main-nav">
         <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
         
-          <a class="main-nav-link" href="/AIDF.github.io/">Home</a>
+          
+          
+            <a class="main-nav-link nav-icon" href="/AIDF.github.io/" title="Home"><span class="fa fa-home"></span></a>
+          
         
-          <a class="main-nav-link" href="/AIDF.github.io/archives">Archives</a>
+          
+          
+            <a class="main-nav-link nav-icon" href="/AIDF.github.io/archives" title="Archives"><span class="fa fa-archive"></span></a>
+          
         
       </nav>
       <nav id="sub-nav">
@@ -87,7 +93,7 @@
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/AIDF.github.io/categories/AI-NAS-%E7%B3%BB%E7%BB%9F%E9%A6%96%E9%A1%B5/">AI NAS - 系统首页</a>
+    <a class="article-category-link" href="/AIDF.github.io/categories/AIDF-%E7%B3%BB%E7%BB%9F%E9%A6%96%E9%A1%B5/">AIDF - 系统首页</a>
   </div>
 
   </div>
@@ -120,7 +126,7 @@
 <p><strong>说明</strong>：获取系统基本信息，包括版本、IP地址、访问链接等</p>
 <p><strong>权限</strong>：所有用户可访问</p>
 <p><strong>响应示例</strong>：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;获取系统信息成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;v5.10.1&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;AI NAS&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;local_ip&quot;</span><span class="punctuation">:</span> <span class="string">&quot;192.168.1.100&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;port&quot;</span><span class="punctuation">:</span> <span class="number">8000</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;local_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://localhost:8000&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;network_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://192.168.1.100:8000&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;api_docs_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://192.168.1.100:8000/docs&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data_storage_path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/path/to/data&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;system_status&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;status&quot;</span><span class="punctuation">:</span> <span class="string">&quot;healthy&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;uptime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2 days 5 hours&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;stats&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;total_files&quot;</span><span class="punctuation">:</span> <span class="number">100</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;total_size&quot;</span><span class="punctuation">:</span> <span class="number">1024000000</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">45</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;success&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="string">&quot;获取系统信息成功&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;v5.10.1&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;AIDF&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;local_ip&quot;</span><span class="punctuation">:</span> <span class="string">&quot;192.168.1.100&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;port&quot;</span><span class="punctuation">:</span> <span class="number">8000</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;local_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://localhost:8000&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;network_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://192.168.1.100:8000&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;api_docs_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://192.168.1.100:8000/docs&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;data_storage_path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/path/to/data&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;system_status&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;status&quot;</span><span class="punctuation">:</span> <span class="string">&quot;healthy&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;uptime&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2 days 5 hours&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;stats&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;total_files&quot;</span><span class="punctuation">:</span> <span class="number">100</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;total_size&quot;</span><span class="punctuation">:</span> <span class="number">1024000000</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;timestamp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2025-10-19T10:00:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;response_time_ms&quot;</span><span class="punctuation">:</span> <span class="number">45</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>字段说明</strong>：</p>
 <table>
@@ -287,7 +293,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1660479817.github.io/AIDF.github.io/home-api.html" data-id="cmjss9sgl000ajy1w9i4w5mkf" data-title="系统首页模块API接口文档" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://1660479817.github.io/AIDF.github.io/home-api.html" data-id="cmjtde2670007nu1w6f88fech" data-title="系统首页模块API接口文档" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -328,7 +334,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AI-NAS/">AI NAS</a></li><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AI-NAS-Smart-Chat/">AI NAS - Smart Chat</a></li><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AI-NAS-%E6%95%B0%E6%8D%AE%E5%B7%A5%E5%9C%BA/">AI NAS - 数据工场</a></li><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AI-NAS-%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83/">AI NAS - 文档中心</a></li><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AI-NAS-%E7%AE%A1%E7%90%86%E4%B8%AD%E5%BF%83/">AI NAS - 管理中心</a></li><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AI-NAS-%E7%B3%BB%E7%BB%9F%E9%A6%96%E9%A1%B5/">AI NAS - 系统首页</a></li><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AI-NAS-%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%BF%83/">AI NAS - 项目中心</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AIDF/">AIDF</a></li><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AIDF-Smart-Chat/">AIDF - Smart Chat</a></li><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AIDF-%E6%95%B0%E6%8D%AE%E5%B7%A5%E5%9C%BA/">AIDF - 数据工场</a></li><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AIDF-%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83/">AIDF - 文档中心</a></li><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AIDF-%E7%AE%A1%E7%90%86%E4%B8%AD%E5%BF%83/">AIDF - 管理中心</a></li><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AIDF-%E7%B3%BB%E7%BB%9F%E9%A6%96%E9%A1%B5/">AIDF - 系统首页</a></li><li class="category-list-item"><a class="category-list-link" href="/AIDF.github.io/categories/AIDF-%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%BF%83/">AIDF - 项目中心</a></li></ul>
     </div>
   </div>
 
@@ -338,7 +344,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/API/" rel="tag">API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/Smart-Chat/" rel="tag">Smart Chat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E6%80%BB%E8%A7%88/" rel="tag">总览</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" rel="tag">接口文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E6%95%B0%E6%8D%AE%E5%B7%A5%E5%9C%BA/" rel="tag">数据工场</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83/" rel="tag">文档中心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E6%9E%B6%E6%9E%84/" rel="tag">架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E6%A8%A1%E5%9D%97%E6%9E%B6%E6%9E%84/" rel="tag">模块架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E7%AE%A1%E7%90%86%E4%B8%AD%E5%BF%83/" rel="tag">管理中心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" rel="tag">系统架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E7%B3%BB%E7%BB%9F%E9%A6%96%E9%A1%B5/" rel="tag">系统首页</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%BF%83/" rel="tag">项目中心</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/API/" rel="tag">API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/Smart-Chat/" rel="tag">Smart Chat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" rel="tag">接口文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E6%95%B0%E6%8D%AE%E5%B7%A5%E5%9C%BA/" rel="tag">数据工场</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83/" rel="tag">文档中心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E6%9E%B6%E6%9E%84/" rel="tag">架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E6%A8%A1%E5%9D%97%E6%9E%B6%E6%9E%84/" rel="tag">模块架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E7%AE%A1%E7%90%86%E4%B8%AD%E5%BF%83/" rel="tag">管理中心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" rel="tag">系统架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E7%B3%BB%E7%BB%9F%E9%A6%96%E9%A1%B5/" rel="tag">系统首页</a></li><li class="tag-list-item"><a class="tag-list-link" href="/AIDF.github.io/tags/%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%BF%83/" rel="tag">项目中心</a></li></ul>
     </div>
   </div>
 
@@ -348,7 +354,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/AIDF.github.io/tags/API/" style="font-size: 20px;">API</a> <a href="/AIDF.github.io/tags/Smart-Chat/" style="font-size: 12.5px;">Smart Chat</a> <a href="/AIDF.github.io/tags/%E6%80%BB%E8%A7%88/" style="font-size: 10px;">总览</a> <a href="/AIDF.github.io/tags/%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" style="font-size: 20px;">接口文档</a> <a href="/AIDF.github.io/tags/%E6%95%B0%E6%8D%AE%E5%B7%A5%E5%9C%BA/" style="font-size: 12.5px;">数据工场</a> <a href="/AIDF.github.io/tags/%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83/" style="font-size: 15px;">文档中心</a> <a href="/AIDF.github.io/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 20px;">架构</a> <a href="/AIDF.github.io/tags/%E6%A8%A1%E5%9D%97%E6%9E%B6%E6%9E%84/" style="font-size: 17.5px;">模块架构</a> <a href="/AIDF.github.io/tags/%E7%AE%A1%E7%90%86%E4%B8%AD%E5%BF%83/" style="font-size: 12.5px;">管理中心</a> <a href="/AIDF.github.io/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">系统架构</a> <a href="/AIDF.github.io/tags/%E7%B3%BB%E7%BB%9F%E9%A6%96%E9%A1%B5/" style="font-size: 12.5px;">系统首页</a> <a href="/AIDF.github.io/tags/%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%BF%83/" style="font-size: 12.5px;">项目中心</a>
+      <a href="/AIDF.github.io/tags/API/" style="font-size: 20px;">API</a> <a href="/AIDF.github.io/tags/Smart-Chat/" style="font-size: 13.33px;">Smart Chat</a> <a href="/AIDF.github.io/tags/%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" style="font-size: 20px;">接口文档</a> <a href="/AIDF.github.io/tags/%E6%95%B0%E6%8D%AE%E5%B7%A5%E5%9C%BA/" style="font-size: 13.33px;">数据工场</a> <a href="/AIDF.github.io/tags/%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83/" style="font-size: 13.33px;">文档中心</a> <a href="/AIDF.github.io/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 20px;">架构</a> <a href="/AIDF.github.io/tags/%E6%A8%A1%E5%9D%97%E6%9E%B6%E6%9E%84/" style="font-size: 16.67px;">模块架构</a> <a href="/AIDF.github.io/tags/%E7%AE%A1%E7%90%86%E4%B8%AD%E5%BF%83/" style="font-size: 13.33px;">管理中心</a> <a href="/AIDF.github.io/tags/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">系统架构</a> <a href="/AIDF.github.io/tags/%E7%B3%BB%E7%BB%9F%E9%A6%96%E9%A1%B5/" style="font-size: 13.33px;">系统首页</a> <a href="/AIDF.github.io/tags/%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%BF%83/" style="font-size: 13.33px;">项目中心</a>
     </div>
   </div>
 
@@ -370,15 +376,11 @@
       <ul>
         
           <li>
-            <a href="/AIDF.github.io/README.html">AI NAS - 企业级智能文档管理系统</a>
-          </li>
-        
-          <li>
             <a href="/AIDF.github.io/api.html">API接口说明文档</a>
           </li>
         
           <li>
-            <a href="/AIDF.github.io/architecture.html">AI NAS 系统架构说明</a>
+            <a href="/AIDF.github.io/architecture.html">AIDF 系统架构说明</a>
           </li>
         
           <li>
@@ -387,6 +389,10 @@
         
           <li>
             <a href="/AIDF.github.io/data_factory-architecture.html">数据工场模块架构说明</a>
+          </li>
+        
+          <li>
+            <a href="/AIDF.github.io/home-api.html">系统首页模块API接口文档</a>
           </li>
         
       </ul>
@@ -402,7 +408,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       
-      &copy; 2025 AI NAS Team<br>
+      &copy; 2025 AIDF Team<br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
